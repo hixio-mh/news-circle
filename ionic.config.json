@@ -1,0 +1,7 @@
+{
+  "name": "news-circle",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
