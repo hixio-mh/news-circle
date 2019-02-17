@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      News Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let news of newsfeed">
+      <ion-card-header>
+        <ion-card-subtitle>{{news.news_title}}</ion-card-subtitle>
+        <ion-card-title>{{news.news_author}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{news.news_content}}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
