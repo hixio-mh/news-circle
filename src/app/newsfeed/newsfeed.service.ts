@@ -15,7 +15,7 @@ export class NewsService {
     }
 
     getNews() {
-        this.httpClient.get<any>('http://127.0.0.1:8000/rest/news/').subscribe(
+        this.httpClient.get<any>('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=q5DYWq6v4jMl1N6xemfrA34rNHr4Avsw').subscribe(
             result => {
                 console.log(result);
                 this.news = result;
