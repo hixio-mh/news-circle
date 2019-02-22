@@ -5,6 +5,7 @@ class News(models.Model):
     news_title = models.TextField(null = False)
     news_content = models.TextField(null = False)
     news_author = models.TextField(max_length = 255)
+    news_url = models.TextField(null = True)
 
     class Meta:
         managed = True
