@@ -40,4 +40,5 @@ backend/venv/
 package-lock.json
 /e2e
 /backend/server/server/__pycache__/
+/backend/server/rest/nyt/secrets.py
 keys.txt
