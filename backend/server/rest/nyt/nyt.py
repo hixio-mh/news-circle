@@ -105,23 +105,23 @@ nyt = nyt_1 + nyt_2
 
 test_nyt = nyt[0]
 
-print("full")
-print(test_nyt)
+# print("full")
+# print(test_nyt)
 
-print("title")
-print(test_nyt.title)
-print("date")
-print(test_nyt.pub_date)
-print("abstract")
-print(test_nyt.abstract)
-print("author")
-print(test_nyt.author)
-print("source")
-print(test_nyt.source)
-print("url")
-print(test_nyt.url)
-print("records")
-print(len(nyt))
+# print("title")
+# print(test_nyt.title)
+# print("date")
+# print(test_nyt.pub_date)
+# print("abstract")
+# print(test_nyt.abstract)
+# print("author")
+# print(test_nyt.author)
+# print("source")
+# print(test_nyt.source)
+# print("url")
+# print(test_nyt.url)
+# print("records")
+# print(len(nyt))
 
 #Populate PGDB with articles if it isn't already in there, data comes from cache
 
@@ -131,7 +131,7 @@ def update_pgdb(article_list):
 
 	for article in article_list:
 		#Load in data, only if it doesn't already exist
-		cur.execute("INSERT INTO news(news_id, news_title, news_content, news_author, news_url, news_source) VALUES(NULL, %s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",article.db_row())
+		cur.execute("INSERT INTO news(news_title, news_content, news_author, news_url, news_source) VALUES(%s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",article.db_row())
 
 	conn.commit()
 	conn.close()
