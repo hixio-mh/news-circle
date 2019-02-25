@@ -28,10 +28,10 @@ export class NewsService {
 
     //Get articles via API
     getNewsNYT() {
-        this.httpClient.get<any>('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=q5DYWq6v4jMl1N6xemfrA34rNHr4Avsw').subscribe(
+        this.httpClient.get<any>('http://127.0.0.1:8000/rest/news/').subscribe(
             result => {
-                console.log(result.results); //NYT nests results in 'results ' object
-                this.news = result.results;
+                console.log(result); //NYT nests results in 'results ' object
+                this.news = result;
                 this.newsUpdate.next(this.news);
             }
 
