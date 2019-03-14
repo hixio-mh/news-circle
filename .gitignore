@@ -40,7 +40,10 @@ backend/venv/
 
 package-lock.json
 /e2e
-*config.json*
 /backend/server/server/__pycache__/
 
+
 .secrets
+
+keys.txt
+
