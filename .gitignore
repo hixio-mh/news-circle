@@ -34,6 +34,7 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 .env
+*./env/.*
 *./venv/.*
 backend/venv/
 
