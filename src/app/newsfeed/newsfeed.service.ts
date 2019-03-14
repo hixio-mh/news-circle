@@ -4,16 +4,10 @@ import { Subject } from 'rxjs';
 
 //For info on how we're sending data to django, see 'Sending data to the server' in the HttpClient section of these docs: https://angular.io/guide/http
 import { HttpHeaders } from '@angular/common/http';
-import { environment } from '../environment';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
+import { environment } from '../../environments/environment';
 
 const APIKEY = environment.APIKEY;
+
 @Injectable({
     providedIn: 'root'
   })
@@ -26,9 +20,14 @@ export class NewsService {
         this.newsUpdate = new Subject<any>();
     }
 
+    public sources = [
+        'abc-news-au',
+        'abc-news',
+    ];
+
     //Get articles via API
-    getNewsNYT() {
-        this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=abc-news&apiKey=${APIKEY}`).subscribe(
+    getNews() {
+        this.httpClient.get<any>(`https://newsapi.org/v2/top-headlines?sources=${this.sources.join(',')}&apiKey=${APIKEY}`).subscribe(
             result => {
                 console.log(result); //NYT nests results in 'results ' object
                 this.news = result.articles;

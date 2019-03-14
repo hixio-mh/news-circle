@@ -37,6 +37,8 @@ UserInterfaceState.xcuserstate
 *./env/.*
 *./venv/.*
 backend/venv/
+.environments/
+*.DS_Store
 
 package-lock.json
 /e2e

@@ -11,10 +11,9 @@ export class NewsfeedPage {
   
   constructor(private newsService: NewsService) {
     this.newsfeed = newsService.news;
-    this.newsService.getNewsNYT();
+    this.newsService.getNews();
     this.newsService.getNewsUpdate().subscribe(
       data => {
-        console.log(data);
         this.newsfeed = data;
       }
     );
