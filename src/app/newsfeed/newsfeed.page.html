@@ -9,11 +9,11 @@
 <ion-content>
     <ion-card *ngFor="let news of newsfeed">
       <ion-card-header> <!--Right now these are specific to NYT-->
-        <ion-card-title>{{news.news_title}}</ion-card-title>
+        <ion-card-title>{{news.title}}</ion-card-title>
         <ion-card-subtitle>{{news.news_author}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <p>{{news.news_content}}</p>
+        <p>{{news.description}}</p>
         
       </ion-card-content>
     </ion-card>
