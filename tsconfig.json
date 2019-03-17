@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "types": [
+      "node"
+   ],
+   "typeRoots": [
+      "node_modules/@types"
+   ],
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -25,4 +31,5 @@
   "atom": {
     "rewriteTsconfig": false
   }
+  
 }
