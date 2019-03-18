@@ -8,7 +8,7 @@
     - `cd server`
     - `python3 manage.py runserver`
 
-# package
--node-sass: `npm install --save-dev --unsafe-perm node-sass`
--oauth1: `npm i oauth-1.0a`
--crypto: `npm i crypto-js`
+## package
+- node-sass: `npm install --save-dev --unsafe-perm node-sass`
+- oauth1: `npm i oauth-1.0a`
+- crypto: `npm i crypto-js`
