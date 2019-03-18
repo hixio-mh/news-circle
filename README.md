@@ -7,3 +7,8 @@
     - Install dependencies `pip install -r requirements.txt`
     - `cd server`
     - `python3 manage.py runserver`
+
+#package
+npm i oauth-1.0a
+npm i crypto-js
+sudo npm install --save-dev --unsafe-perm node-sass
