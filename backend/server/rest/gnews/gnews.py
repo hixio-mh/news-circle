@@ -139,4 +139,4 @@ def update_pgdb(article_list):
 	conn.close()
 	#return output # for testing purposes
 
-#update_pgdb(g)
+update_pgdb(g)
