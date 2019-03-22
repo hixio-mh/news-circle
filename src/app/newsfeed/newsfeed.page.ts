@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class NewsfeedPage {
   newsfeed: any[];
 
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NewsService, private router: Router) {
     this.newsfeed = newsService.news;
     this.newsService.getNews();
     this.newsService.getNewsUpdate().subscribe(
@@ -24,18 +24,28 @@ export class NewsfeedPage {
     );
 
   }
-}
 
-//https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
-export class ArticleNav {
+  goToArticle(article) {
 
-  constructor(private router: Router) {}
-
-  goToArticle(articleUrl) {
-
-    this.router.navigate(['article',{articleUrl:articleUrl}]);
+    this.router.navigate(['article',{article:article}]);
 
   }
 
+
 }
+
+//https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
+
+
+// export class ArticleNav {
+
+//   constructor(private router: Router) {}
+
+//   goToArticle(article) {
+
+//     this.router.navigate(['article',{article:article}]);
+
+//   }
+
+// }
 

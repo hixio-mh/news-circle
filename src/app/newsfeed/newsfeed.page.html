@@ -7,10 +7,11 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let news of newsfeed">
+    <ion-card *ngFor="let news of newsfeed" (click)="goToArticle('article')">
       <ion-card-header> 
-        <ion-card-title><a routerLink="newsfeed/article">{{news.news_title}}</a></ion-card-title>
+        <ion-card-title>{{news.news_title}}</ion-card-title>
         <ion-card-subtitle>{{news.news_author}}</ion-card-subtitle>
+        <!-- <button ion-button (click)="goToArticle('news')">Punch it!</button> -->
       </ion-card-header>
       <ion-card-content>
         <p>{{news.news_source}}</p>

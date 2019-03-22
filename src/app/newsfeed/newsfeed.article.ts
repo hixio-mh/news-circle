@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArticlePage implements OnInit {
   newsfeed: any[];
-  articleUrl: any;
+  article: any;
   sub: any;
 
   constructor(private route: ActivatedRoute) {}
@@ -24,7 +24,7 @@ export class ArticlePage implements OnInit {
       //   console.log(JSON.parse(this.getValue))
 
       this.sub = this.route.params.subscribe(params => {
-        this.articleUrl = params['articleUrl']; 
+        this.article = params['article']; 
       });
   }
 
