@@ -27,7 +27,7 @@ export class NewsService {
     }
 
     //Get articles via API
-    getNewsNYT() {
+    getNews() {
         this.httpClient.get<any>('http://127.0.0.1:8000/rest/news/').subscribe(
             result => {
                 console.log(result); //NYT nests results in 'results ' object
@@ -40,16 +40,10 @@ export class NewsService {
        
     }
 
-    getNewsUpdate() {
-        return this.newsUpdate.asObservable();
+    getNewsUpdate() 
+ {       return this.newsUpdate.asObservable();
     }
 
     //Add article to DB
-    addNewsNYT() {
-        this.httpClient.post<any>(this.news)
-        .pipe(
-            catchError(this.handleError('addNewsNYT', hero))
-        );
-    }
 
 }

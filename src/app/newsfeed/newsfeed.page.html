@@ -8,13 +8,14 @@
 
 <ion-content>
     <ion-card *ngFor="let news of newsfeed">
-      <ion-card-header> <!--Right now these are specific to NYT-->
-        <ion-card-title>{{news.news_title}}</ion-card-title>
+      <ion-card-header> 
+        <ion-card-title><a href='{{news.news_url}}' target='_blank'>{{news.news_title}}</a></ion-card-title>
         <ion-card-subtitle>{{news.news_author}}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
+        <p>{{news.news_source}}</p>
         <p>{{news.news_content}}</p>
-        
+        <button ion-button (click)="onLoadArticle('{{news.news_url}}'')">View</button>
       </ion-card-content>
     </ion-card>
     <!-- <button ion-button (click)="getNewsNYT()">Punch it!</button> -->
