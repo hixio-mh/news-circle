@@ -39,6 +39,7 @@ UserInterfaceState.xcuserstate
 backend/venv/
 .environments/
 *.DS_Store
+config.py
 
 package-lock.json
 /e2e
