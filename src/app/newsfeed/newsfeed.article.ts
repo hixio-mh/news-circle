@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NewsService } from './newsfeed.service';
 import { NavController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -10,16 +11,25 @@ import { NavParams } from '@ionic/angular';
 })
 export class ArticlePage implements OnInit {
   newsfeed: any[];
+  articleUrl: any;
+  sub: any;
 
-  articleUrl: string;
+  constructor(private route: ActivatedRoute) {}
   
-  //This will allow us to pass properties as navigation parameters
-  constructor (
-        //Bring in NavController, required to do any kind of navigation
-         private navCtrl: NavController)  {}
+  //https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
 
-  ngOnInit() { //Also this, also necessary for passing data as nav params
-    this.articleUrl = this.navParams.get('articleUrl') //parameter (specified as an object property) all defined in onLoadUser() in users.ts, look at that file and this will make sense.
+
+  ngOnInit() {
+      // this.getValue= this.router.snapshot.paramMap.get("item")
+      //   console.log(JSON.parse(this.getValue))
+
+      this.sub = this.route.params.subscribe(params => {
+        this.articleUrl = params['articleUrl']; 
+      });
   }
+
+  
+
+
 
 }

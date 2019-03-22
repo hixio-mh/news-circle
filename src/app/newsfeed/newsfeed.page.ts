@@ -13,8 +13,6 @@ import { Router } from '@angular/router';
 export class NewsfeedPage {
   newsfeed: any[];
 
-  articlePage = ArticlePage;
-  
   constructor(private newsService: NewsService) {
     this.newsfeed = newsService.news;
     this.newsService.getNews();
@@ -28,10 +26,16 @@ export class NewsfeedPage {
   }
 }
 
+//https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
 export class ArticleNav {
 
-  constructor(private router: Router) {
-      //Injects the nav controller (default from ionic), need this to do any kind of navigation
+  constructor(private router: Router) {}
+
+  goToArticle(articleUrl) {
+
+    this.router.navigate(['article',{articleUrl:articleUrl}]);
+
   }
 
 }
+
