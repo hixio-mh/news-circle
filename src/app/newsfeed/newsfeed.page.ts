@@ -4,14 +4,6 @@ import { ArticlePage } from './newsfeed.article';
 import { NavParams } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { RouterModule, Routes } from '@angular/router';
-
-
-//On routes in Ionic 4
-const routes: Routes = [
-  { path: 'article/:url', component: ArticlePage },
-];
-
 
 @Component({
   selector: 'app-newsfeed',
@@ -23,7 +15,7 @@ export class NewsfeedPage {
 
   articlePage = ArticlePage;
   
-  constructor(private newsService: NewsService, navCtrl: NavController) {
+  constructor(private newsService: NewsService) {
     this.newsfeed = newsService.news;
     this.newsService.getNews();
     this.newsService.getNewsUpdate().subscribe(
@@ -42,8 +34,4 @@ export class ArticleNav {
       //Injects the nav controller (default from ionic), need this to do any kind of navigation
   }
 
-  onLoadArticle(articleUrl: string) {
-
-    this.router.navigate(['/article', { id: articleUrl }]);
-  }
 }

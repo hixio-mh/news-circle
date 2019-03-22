@@ -10,9 +10,11 @@ import { NavParams } from '@ionic/angular';
 })
 export class ArticlePage implements OnInit {
   newsfeed: any[];
+
+  articleUrl: string;
   
   //This will allow us to pass properties as navigation parameters
-  constructor (private navParams: NavParams, //Reqiured to pass data as nav parameteres
+  constructor (
         //Bring in NavController, required to do any kind of navigation
          private navCtrl: NavController)  {}
 

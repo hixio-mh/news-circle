@@ -10,9 +10,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
+import { ArticlePage } from './newsfeed/newsfeed.article';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ArticlePage
+  ],
   entryComponents: [],
   imports: [
     BrowserModule, 
