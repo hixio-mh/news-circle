@@ -17,8 +17,6 @@ class NewsView(APIView):
         return Response(serializer.data)
 
 class GroupsView(APIView):
-
-    permission_classes = (IsAuthenticated,) 
     def get(self, request, pk):
         # Return all groups by user id
         user = User.objects.get(pk = pk);
@@ -27,8 +25,31 @@ class GroupsView(APIView):
         return Response(serializer.data)
 
 class GroupView(APIView):
-    permission_classes = (IsAuthenticated,) 
     def get(self, request, pk):
         group = get_object_or_404(Group, pk = pk)
         serializer = GroupSerializer(group, many=False)
+        return Response(serializer.data)
+
+class RegisterView(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class LoginView(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data = request.data)
+        users = User.objects.all()
+        emails = [user.user_email for user in users]
+        print(request.data)
+        if request.data['user_email'] in emails and serializer.is_valid():
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
+
+class UsersView(APIView):
+    def get(self, request):
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
         return Response(serializer.data)

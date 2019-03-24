@@ -21,7 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('user_id', 'user_name', 'user_group')
+        fields = ('user_id', 'user_name', 'user_key', 'user_email', 'user_group')
 
 
 class GroupSerializer(serializers.ModelSerializer):

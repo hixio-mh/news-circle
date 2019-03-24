@@ -33,6 +33,8 @@ class Group(models.Model):
 class User(models.Model):
     user_id = models.AutoField(primary_key = True)
     user_name = models.TextField(null = False, max_length = 100)
+    user_key = models.TextField(null = False, max_length = 100)
+    user_email = models.EmailField(max_length=254, blank=False, unique=True, error_messages={'required': 'Please provide your email address.','unique': 'An account with this email exist.'})
     
     class Meta:
         managed = True
