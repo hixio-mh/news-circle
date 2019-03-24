@@ -5,8 +5,10 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'contact', loadChildren: './contact/contact.module#ContactPageModule' },
   { path: 'invitation', loadChildren: './invitation/invitation.module#InvitationPageModule' },
-  { path: 'message', loadChildren: './message/message.module#MessagePageModule' }
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+  { path: 'message', loadChildren: './message/message.module#MessagePageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' }
 ];
 @NgModule({
   imports: [
