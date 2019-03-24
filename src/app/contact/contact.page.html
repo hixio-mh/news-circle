@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let contact of contacts">
+    <ion-item>
+        <ion-avatar slot="start">
+            <img src="../../assets/image/batman.png">
+          </ion-avatar>
+      <ion-title>
+          {{contact.name}}
+      </ion-title> 
+       <!-- <ion-toolbar>
+          {{contact.email}}
+       </ion-toolbar>    -->
+                  
+
+    
+      <ion-button float-right (click)="invite(contact)">Invite</ion-button>
+    </ion-item>
+    </ion-list>
+</ion-content>

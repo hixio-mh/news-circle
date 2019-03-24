@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
+import { InvitationPageModule } from './invitation/invitation.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { NewsService } from './newsfeed/newsfeed.service';
     BrowserModule, 
     HttpClientModule,
     IonicModule.forRoot(), 
-    AppRoutingModule],
+    AppRoutingModule,
+    InvitationPageModule],
   providers: [
     StatusBar,
     NewsService,

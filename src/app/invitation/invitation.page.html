@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>invitation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  {{contact.id}}.{{contact.name}}
+<ion-toolbar>
+
+    <ion-list>
+        <ion-item *ngFor="let group of groups">
+          <ion-label>{{group.name}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="group.checked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+  <ion-button color="danger" (click)="close()" float-right>
+    Close
+  </ion-button>
+  <ion-button (click)="send()" float-left>
+    Send
+  </ion-button>  
+</ion-toolbar>
+</ion-content>
