@@ -5,7 +5,7 @@ import { ArticlePage } from './newsfeed/newsfeed.article';
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   //On routes in Ionic 4 - https://angularfirebase.com/lessons/ionic-4-routing-and-navigation-guide/s
-  { path: 'tabs/tab1/newsfeed/article', component: ArticlePage },
+  { path: 'tabs/tab1/article', component: ArticlePage },
 ];
 @NgModule({
   imports: [

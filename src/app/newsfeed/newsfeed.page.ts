@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 export class NewsfeedPage {
   newsfeed: any[];
 
+//https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
+
+  //Notice multiple parameters in one constructor
   constructor(private newsService: NewsService, private router: Router) {
     this.newsfeed = newsService.news;
     this.newsService.getNews();
@@ -27,7 +30,8 @@ export class NewsfeedPage {
 
   goToArticle(article) {
 
-    this.router.navigate(['article',{article:article}]);
+    this.router.navigate(['tabs/tab1/article',{article:article}]);
+
 
   }
 
