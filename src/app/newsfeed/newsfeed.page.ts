@@ -16,13 +16,7 @@ export class NewsfeedPage {
   constructor(private newsService: NewsService,
               private authService: AuthAPIService,
               ) {
-    this.isAuthed = this.authService.getIsAuth();
-    this.isAuthedUpdate = this.authService.getAuthStatusListener().subscribe(
-      status => {
-        this.isAuthed = status;
-        console.log('status changed');
-      }
-    );
+
     this.newsfeed = newsService.news;
     this.newsService.getNews();
     this.newsService.getNewsUpdate().subscribe(

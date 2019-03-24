@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: 'message', loadChildren: './message/message.module#MessagePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' }
 ];
 @NgModule({
   imports: [
