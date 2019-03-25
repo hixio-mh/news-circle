@@ -16,6 +16,7 @@ export class InvitationPage implements OnInit {
 
   ngOnInit() {
     this.contact= this.navParams.get('contact');
+    console.log(this.contact);
     this.user = this.navParams.get('user');
     this.groups = [
       {"name":"UMSI", "id":"01"},
