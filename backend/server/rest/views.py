@@ -53,3 +53,15 @@ class UsersView(APIView):
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
+
+class ContactView(APIView):
+    def get_queryset(self):
+        queryset = Contact.objects.all()
+        user_email = self.request.query_params.get('curuser_email', None)
+        if user_email is not None:
+            queryset = queryset.filter(curuser_email=user_email)
+        return queryset
+
+    def get(self, request):
+        serializer = ContactSerializer(self.get_queryset(),many=True)     
+        return Response(serializer.data)

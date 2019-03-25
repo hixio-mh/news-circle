@@ -33,3 +33,8 @@ class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
         fields = ('group_id', 'group_name', 'group_description', 'user_group')
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ('curuser_name', 'curuser_email', 'friend_name','friend_email')
