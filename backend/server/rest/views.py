@@ -8,7 +8,6 @@ from .models import *
 from .serializers import *
 from django.shortcuts import get_object_or_404
 
-from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 class NewsView(APIView):
     def get(self, request):
@@ -20,7 +19,7 @@ class GroupsView(APIView):
     def get(self, request, pk):
         # Return all groups by user id
         user = User.objects.get(pk = pk);
-        groups = user.group_set.all()
+        groups = user.user_group.all()
         serializer = GroupSerializer(groups, many=True)
         return Response(serializer.data)
 
@@ -29,6 +28,14 @@ class GroupView(APIView):
         group = get_object_or_404(Group, pk = pk)
         serializer = GroupSerializer(group, many=False)
         return Response(serializer.data)
+
+    def post(self, request):
+        # /?user=UID
+        user = request.POST.get('user')
+        serializer = UserGroupSerializer(data = request.data)
+        if serializer.is_valid():
+            serializer.create(user)
+
 
 class RegisterView(APIView):
     def post(self, request):
