@@ -8,16 +8,5 @@ import { PopoverController } from '@ionic/angular';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  // constructor(public popoverController: PopoverController) {}
-  // async presentPopover(ev: any) {
-  //   const popover = await this.popoverController.create({
-  //     component: PopoverComponent,
-  //     event: ev,
-  //     translucent: true
-  //   });
-  //   return await popover.present();
-  // }
-  invite(){
-   
-  }
+  
 }
