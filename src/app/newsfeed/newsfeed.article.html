@@ -1,13 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Article Page
-    </ion-title>
+    
+    <ion-button (click)="onGoBack()">Back to feed</ion-button>
+    <ion-button class="button-right">Share to group</ion-button>
+    <ion-button class="button-right">Save</ion-button>
+    
+
   </ion-toolbar>
+  
 </ion-header>
 
 <ion-content overflow-scroll="true">
-  <p>{{article}}</p>
-  <iframe src=""></iframe>
-  <button ion-button (click)="onGoBack()">Back</button>
+  <!-- <p>{{article}}</p> -->
+  <iframe src="https://www.washingtonpost.com/world/2019/03/24/passengers-recount-harrowing-hours-aboard-stranded-cruise-ship-facing-foot-swells-off-norway-coast/?noredirect=on&utm_term=.7e66a7662957"></iframe>
+
 </ion-content>
