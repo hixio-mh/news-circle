@@ -4,8 +4,21 @@ import { NavController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer} from '@angular/platform-browser';
+
+//Sanitize URL - https://stackoverflow.com/questions/38037760/how-to-set-iframe-src-in-angular-2-without-causing-unsafe-value-exception
+
+@Pipe({ name: 'safe' })
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) {}
+  transform(article) { //Article here refers to the article url, same is true in the export class below
+    return this.sanitizer.bypassSecurityTrustResourceUrl(article);
+  }
+} 
 
 
+//Page elements
 @Component({
   selector: 'app-article',
   templateUrl: 'newsfeed.article.html',

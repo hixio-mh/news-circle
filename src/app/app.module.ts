@@ -11,12 +11,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
 import { ArticlePage } from './newsfeed/newsfeed.article';
+import { SafePipe } from './newsfeed/newsfeed.article';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticlePage
+    ArticlePage,
+    SafePipe
   ],
   entryComponents: [],
   imports: [

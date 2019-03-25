@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let news of newsfeed" (click)="goToArticle(news.news_author)">
+    <ion-card *ngFor="let news of newsfeed" (click)="goToArticle(news.news_url)">
       <ion-card-header> 
         <ion-card-title>{{news.news_title}}</ion-card-title>
         <!-- <ion-card-subtitle>{{news.news_author}}</ion-card-subtitle> -->
@@ -15,7 +15,9 @@
       </ion-card-header>
       <ion-card-content>
         <p>{{news.news_source}}</p>
-        <p>{{news.news_content}}</p>
+        <!-- <p>{{news.news_content}}</p> -->
+        <ion-button size="small" class="button-right">Save</ion-button>
+        <ion-button size="small" class="button-right">Share to group</ion-button>
       </ion-card-content>
     </ion-card>
     <!-- <button ion-button (click)="getNewsNYT()">Punch it!</button> -->

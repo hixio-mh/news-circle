@@ -11,7 +11,6 @@
 </ion-header>
 
 <ion-content overflow-scroll="true">
-  <!-- <p>{{article}}</p> -->
-  <iframe src="https://www.washingtonpost.com/world/2019/03/24/passengers-recount-harrowing-hours-aboard-stranded-cruise-ship-facing-foot-swells-off-norway-coast/?noredirect=on&utm_term=.7e66a7662957"></iframe>
+  <iframe [src]="article | safe"></iframe>
 
 </ion-content>

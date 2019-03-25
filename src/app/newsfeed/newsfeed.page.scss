@@ -1,4 +1,14 @@
+
+
 .welcome-card ion-img {
   max-height: 35vh;
   overflow: hidden;
+}
+
+ion-card-title.hydrated {
+    font-size: 1.2em;
+}
+
+ion-card-content.card-content.card-content-ios.hydrated {
+    margin-top: -1.2em;
 }
