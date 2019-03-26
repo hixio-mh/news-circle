@@ -70,11 +70,11 @@ class Contact(models.Model):
 
 # class Invitation(models.Model):
 #     invitation_id = models.AutoField(primary_key = True)
-#     inviter_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="inviter")
-#     invitee_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="invitee")
+#     sender_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="inviter")
+#     receiver_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="invitee")
 #     invite_group_id = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
 #     timestamp = models.TextField(null = False, max_length = 100)
-#     status = models.TextField(null = False, max_length = 100)
+#     status = models.TextField(null = False, max_length = 100, default="pending")
 
 #     class Meta:
 #         managed = True

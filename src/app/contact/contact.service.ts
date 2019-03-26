@@ -23,8 +23,9 @@ export class ContactService {
       }
     ]
     this.user = {
-      "curuser_name":"unauth",
-      "curuser_email":"unauth@umich.edu"
+      "user_id":-1,
+      "user_name":"unauth",
+      "user_email":""
     }
   }
   
