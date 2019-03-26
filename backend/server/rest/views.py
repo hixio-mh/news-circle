@@ -26,16 +26,50 @@ class GroupsView(APIView):
 class GroupView(APIView):
     def get(self, request, pk):
         group = get_object_or_404(Group, pk = pk)
-        serializer = GroupSerializer(group, many=False)
-        return Response(serializer.data)
+        users = group.user_set.all()
+        user_serializer = UserSerializer(users, many = True)
+        group_serializer = GroupSerializer(group, many=False)
 
-    def post(self, request):
-        # /?user=UID
-        user = request.POST.get('user')
-        serializer = UserGroupSerializer(data = request.data)
+        content = {
+            'group': group_serializer.data,
+            'users': user_serializer.data
+        }
+        return Response(content)
+
+    def post(self, request, pk):
+        """
+        Create a new group for user_id = pk
+        """
+        user = User.objects.get(pk = pk)
+        group_serializer = GroupSerializer(data=request.data)
+
+        user_group_serializer = UserGroupSerializer.create(user = user, group = request.data)
+
+        if group_serializer.is_valid():
+            user_group_serializer.save()
+            return Response(group_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(group_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        # TODO: Avoid repeating user_group
+
+    def put(self, request, pk):
+        """
+        Update group name and description of group = pk
+        """
+        group = Group.objects.get(pk = pk)
+        serializer = GroupSerializer(group, data=request.data)
         if serializer.is_valid():
-            serializer.create(user)
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def delete(self, request, pk):
+        """
+        Delete group of user = pk
+        """
+        group = Group.objects.get(pk = pk)
+        group.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class RegisterView(APIView):
     def post(self, request):

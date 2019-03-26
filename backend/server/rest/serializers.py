@@ -12,13 +12,13 @@ class UserGroupSerializer(serializers.ModelSerializer):
         model = UserGroup
         fields = ('user_group_id', 'user', 'group')
 
-    def create(self, validated_data):
-        user = User.objects.create(**validated_data.get('user'))
-        group = Group.objects.create(**validated_data.get('group'))
-        conn = UserGroup.objects.create(
+    def create(user, group):
+        user = user
+        group = Group.objects.create(group_name = group['group_name'], group_description = group['group_description'])
+        userGroup = UserGroup.objects.create(
             user = user, group = group
         )
-        return conn
+        return userGroup
 
 
 class UserSerializer(serializers.ModelSerializer):

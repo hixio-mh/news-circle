@@ -52,3 +52,18 @@ class UserGroup(models.Model):
     class Meta:
         managed = True
         db_table = 'user_group'
+
+class Invitation(models.Model):
+    invitation_id = models.AutoField(primary_key = True)
+    sender = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="inviter")
+    receiver = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="invitee")
+    group = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    status = models.TextField(null = False, max_length = 100, default = "pending")
+
+    class Meta:
+        managed = True
+        db_table = 'invitation'
+
+    def __str__(self):
+        return self.invitation_id
