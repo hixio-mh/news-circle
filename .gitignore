@@ -34,12 +34,18 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 .env
+venv/*
 *./env/.*
 *./venv/.*
 backend/venv/
+.environments/
+*.DS_Store
+config.py
 
 package-lock.json
 /e2e
 /backend/server/server/__pycache__/
 /backend/server/rest/nyt/secrets.py
 keys.txt
+
+resources
