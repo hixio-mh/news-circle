@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>group</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor = "let group of groups">
+      <ion-label>
+        {{ group.group_name }}
+      </ion-label>
+      <ion-chip (click) = "manageGroup(group.group_id)">
+        <ion-label color="primary">Manage Group</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label color="secondary">Manage Member</ion-label>
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+</ion-content>
