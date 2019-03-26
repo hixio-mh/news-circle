@@ -4,18 +4,14 @@ import { NavController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer} from '@angular/platform-browser';
+//IMPORTANT, install this https://ionicframework.com/docs/native/in-app-browser#installation
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
+// import { Pipe, PipeTransform } from '@angular/core';
+// import { DomSanitizer} from '@angular/platform-browser';
+
+//INCASE you want to use an iframe, do it this way:
 //Sanitize URL - https://stackoverflow.com/questions/38037760/how-to-set-iframe-src-in-angular-2-without-causing-unsafe-value-exception
-
-@Pipe({ name: 'safe' })
-export class SafePipe implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer) {}
-  transform(article) { //Article here refers to the article url, same is true in the export class below
-    return this.sanitizer.bypassSecurityTrustResourceUrl(article);
-  }
-} 
 
 
 //Page elements
@@ -30,7 +26,7 @@ export class ArticlePage implements OnInit {
   sub: any;
   title: any;
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router, private iab: InAppBrowser) {}
   
   //https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
 
@@ -41,11 +37,14 @@ export class ArticlePage implements OnInit {
 
       this.sub = this.route.params.subscribe(params => {
         this.article = params['article']; 
-        this.title = params['article']['news_title'];
       });
 
       console.log("Do we have it?");
       console.log(this.article);
+
+      const browser = this.iab.create(this.article);
+
+      // browser.executeScript();
   }
 
   onGoBack() {

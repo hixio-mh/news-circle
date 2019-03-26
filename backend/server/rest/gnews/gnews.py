@@ -16,7 +16,10 @@ class Article_G(object):
 		else:
 			self.pub_date = ''
 		if 'title' in article_dict:
-			self.title = article_dict['title'].replace(","," ")
+			self.title = article_dict['title']
+			dash = self.title.find(" - ")
+			self.title = self.title[:dash]
+			self.title = self.title.replace(","," ")
 		else:
 			self.title = ''
 		if 'content' in article_dict:
@@ -131,11 +134,16 @@ def update_pgdb(article_list):
 	conn = psycopg2.connect(host="localhost", database="newscircle", user="postgres", password=PGDB_PW)
 	cur = conn.cursor()
 
+	#Load data into pgdb
 	for article in article_list:
 		#Load in data, only if it doesn't already exist
 		cur.execute("INSERT INTO news(news_title, news_content, news_author, news_url, news_source) VALUES(%s, %s, %s, %s, %s) ON CONFLICT DO NOTHING",article.db_row())
 
 	conn.commit()
+
+	#Cut source out of titles in db
+
+
 	conn.close()
 	#return output # for testing purposes
 

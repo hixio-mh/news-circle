@@ -11,14 +11,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
 import { ArticlePage } from './newsfeed/newsfeed.article';
-import { SafePipe } from './newsfeed/newsfeed.article';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlePage,
-    SafePipe
   ],
   entryComponents: [],
   imports: [
@@ -28,6 +27,7 @@ import { SafePipe } from './newsfeed/newsfeed.article';
     AppRoutingModule],
   providers: [
     StatusBar,
+    InAppBrowser,
     NewsService,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

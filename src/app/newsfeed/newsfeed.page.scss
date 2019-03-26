@@ -5,10 +5,14 @@
   overflow: hidden;
 }
 
-ion-card-title.hydrated {
+
+/*Headlines*/
+h2 {
     font-size: 1.2em;
+    font-weight: bold;
 }
 
-ion-card-content.card-content.card-content-ios.hydrated {
-    margin-top: -1.2em;
+ion-button {
+    margin-top: 1em;
 }
+
