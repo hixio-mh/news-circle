@@ -8,48 +8,33 @@ import { InvitationService } from './invitation.service';
   styleUrls: ['./invitation.page.scss'],
 })
 export class InvitationPage implements OnInit {
-  contact:any;
-  groups: any;
-  checkedGroups:any;
-  user:any;
-  id:number;
+  users:any;
+  receiver: any;
 
   constructor(private navParams:NavParams,private modalController:ModalController, private invitation:InvitationService) {
-    this.contact= this.navParams.get('contact');
-    this.user = this.navParams.get('user');
-    console.log(this.user);
-    
-    this.id =this.invitation.uid;
-    this.groups = this.invitation.oldgroups;
-
-    this.invitation.getIdbyEmail(this.user.user_email).subscribe(
-      data => {
-        this.id = data;
-        
-      });
-      
-    this.invitation.getGroup().subscribe(
-         data=>{
-          this.groups =data;
-         }
-    );
-   
-   }
+      this.invitation.getUser().then(
+          res=>{
+            this.users = res;
+          }
+      )
+      console.log(this.users);
+  }
 
   ngOnInit() {
     
   }
-close(){
-  this.modalController.dismiss();
-}
-send(){
-  this.checkedGroups =  this.groups.filter(group => {
-    return group.checked;
+  close(){
+    this.modalController.dismiss();
+  }
+  send(){
+    this.receiver =  this.users.filter(user => {
+    return user.checked;
   });  
-  console.log(this.id);
-  
-  this.close();
+    console.log(this.receiver);
+    // invitation sent: groupid,userid,receiverid
+    this.close();
   }
   
 
 }
+

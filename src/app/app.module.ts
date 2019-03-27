@@ -14,6 +14,7 @@ import { InvitationPageModule } from './invitation/invitation.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { GroupPageModule } from './group/group.module';
 import { GroupModalComponent } from './group/group-modal/group-modal.component';
+import {GroupMemberPageModule} from './group-member/group-member.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,9 +23,11 @@ import { GroupModalComponent } from './group/group-modal/group-modal.component';
     BrowserModule, 
     HttpClientModule,
     GroupPageModule,
+    GroupMemberPageModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
-    InvitationPageModule],
+    InvitationPageModule,
+  ],
   providers: [
     StatusBar,
     NewsService,

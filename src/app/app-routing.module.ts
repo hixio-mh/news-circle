@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'message', loadChildren: './message/message.module#MessagePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'group', loadChildren: './group/group.module#GroupPageModule' },
+  { path: 'group/:id', loadChildren: './group-member/group-member.module#GroupMemberPageModule' },
 ];
 @NgModule({
   imports: [

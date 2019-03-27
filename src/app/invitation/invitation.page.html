@@ -1,17 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>invitation to {{contact.friend_name}}</ion-title>
+    <ion-title>Send Invitation to </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  Select Group
-<ion-toolbar>
+  <ion-toolbar>
 
     <ion-list>
-        <ion-item *ngFor="let group of groups">
-          <ion-label>{{group.group_name}}</ion-label>
-          <ion-checkbox slot="end" [(ngModel)]="group.checked"></ion-checkbox>
+        <ion-item *ngFor="let user of users">
+          <ion-label>{{user.user_name}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="user.checked"></ion-checkbox>
         </ion-item>
       </ion-list>
 

@@ -13,7 +13,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./group.page.scss'],
 })
 export class GroupPage implements OnInit {
-  private groups: any[];
+  private groups: any;
   private groupsUpdate = new Subject();
   private curUser: User = {
     user_email: "admin@umich.edu",
