@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+// import { PopoverComponent } from '../../component/popover/popover.component';
 
 @Component({
   selector: 'app-tab2',

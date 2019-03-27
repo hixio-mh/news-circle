@@ -18,7 +18,7 @@ class NewsView(APIView):
 class GroupsView(APIView):
     def get(self, request, pk):
         # Return all groups by user id
-        user = User.objects.get(pk = pk);
+        user = User.objects.get(pk = pk)
         groups = user.user_group.all()
         serializer = GroupSerializer(groups, many=True)
         return Response(serializer.data)
@@ -90,7 +90,25 @@ class LoginView(APIView):
         return Response(serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
 class UsersView(APIView):
+    def get_queryset(self):
+        queryset = User.objects.all()
+        user_email = self.request.query_params.get('user_email', None)
+        if user_email is not None:
+            queryset = queryset.filter(user_email=user_email)
+        return queryset
+
     def get(self, request):
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        serializer = UserSerializer(self.get_queryset(), many=True)
+        return Response(serializer.data)
+
+class ContactView(APIView):
+    def get_queryset(self):
+        queryset = Contact.objects.all()
+        user_email = self.request.query_params.get('curuser_email', None)
+        if user_email is not None:
+            queryset = queryset.filter(curuser_email=user_email)
+        return queryset
+
+    def get(self, request):
+        serializer = ContactSerializer(self.get_queryset(),many=True)     
         return Response(serializer.data)

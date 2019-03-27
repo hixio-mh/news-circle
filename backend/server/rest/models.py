@@ -52,6 +52,22 @@ class UserGroup(models.Model):
         managed = True
         db_table = 'user_group'
 
+class Contact(models.Model):
+    contact_id = models.AutoField(primary_key = True)
+    curuser_name = models.TextField(null = False, max_length = 100)
+    curuser_email = models.TextField(null = False, max_length = 100)
+    friend_name = models.TextField(null = False, max_length = 100)
+    friend_email = models.TextField(null = False, max_length = 100)
+
+
+    class Meta:
+        managed = True
+        db_table = 'contact'
+
+    def __str__(self):
+        return self.contact_id
+
+
 class Invitation(models.Model):
     invitation_id = models.AutoField(primary_key = True)
     sender_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="inviter")

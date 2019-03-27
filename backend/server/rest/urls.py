@@ -1,6 +1,11 @@
 from django.conf.urls import include
 from django.conf.urls import url
 from . import views
+from rest.views import *
+from rest_framework.routers import SimpleRouter
+
+router = SimpleRouter()
+# router.register(r'contacts', ContactView, base_name='contacts')
 
 urlpatterns = [
     url(r'^news/', views.NewsView.as_view()),
@@ -14,4 +19,6 @@ urlpatterns = [
     url(r'^group/(?P<pk>\d+)/$',  views.GroupView.as_view()),
     # Groups with user id
     url(r'^groups/(?P<pk>\d+)/$',  views.GroupsView.as_view()),
+    # Contacts
+    url(r'^contacts',  views.ContactView.as_view()),
 ]
