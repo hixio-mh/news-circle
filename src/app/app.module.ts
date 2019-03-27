@@ -12,13 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
 import { InvitationPageModule } from './invitation/invitation.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { GroupPageModule } from './group/group.module';
+import { GroupModalComponent } from './group/group-modal/group-modal.component';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [GroupModalComponent],
   imports: [
     BrowserModule, 
     HttpClientModule,
+    GroupPageModule,
     IonicModule.forRoot(), 
     AppRoutingModule,
     InvitationPageModule],

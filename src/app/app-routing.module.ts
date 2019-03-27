@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'invitation', loadChildren: './invitation/invitation.module#InvitationPageModule' },
   { path: 'message', loadChildren: './message/message.module#MessagePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'group', loadChildren: './group/group.module#GroupPageModule' },
 ];
 @NgModule({
   imports: [
