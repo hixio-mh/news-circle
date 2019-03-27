@@ -3,9 +3,8 @@ from django.db import models
 class News(models.Model):
     news_id = models.AutoField(primary_key = True)
     news_title = models.TextField(null = False)
-    news_description = models.TextField(null = True)
     news_author = models.TextField(max_length = 255)
-    news_url = models.URLField(null = True)
+    news_url = models.TextField(null = True)
     news_source = models.TextField(null = True)
     news_content = models.TextField(null = True)
 

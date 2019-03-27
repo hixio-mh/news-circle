@@ -47,3 +47,5 @@ package-lock.json
 /backend/server/server/__pycache__/
 /backend/server/rest/nyt/secrets.py
 keys.txt
+
+resources
