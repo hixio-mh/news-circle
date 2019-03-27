@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { LoadingController } from '@ionic/angular';
-import {AuthAPIService} from '../auth/auth.service';
+import { AuthAPIService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',

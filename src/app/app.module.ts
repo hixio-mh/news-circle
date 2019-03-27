@@ -10,11 +10,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
+import { ArticlePage } from './newsfeed/newsfeed.article';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GroupPageModule } from './group/group.module';
 import { GroupModalComponent } from './group/group-modal/group-modal.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    ArticlePage,
+  ],
   entryComponents: [GroupModalComponent],
   imports: [
     BrowserModule, 
@@ -24,9 +29,10 @@ import { GroupModalComponent } from './group/group-modal/group-modal.component';
     AppRoutingModule],
   providers: [
     StatusBar,
+    InAppBrowser,
     NewsService,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
 })
