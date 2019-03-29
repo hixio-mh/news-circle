@@ -19,6 +19,10 @@ urlpatterns = [
     url(r'^group/(?P<pk>\d+)/$',  views.GroupView.as_view()),
     # Groups with user id
     url(r'^groups/(?P<pk>\d+)/$',  views.GroupsView.as_view()),
-    # Contacts
-    url(r'^contacts',  views.ContactView.as_view()),
+    url(r'^invitation/(?P<pk>\d+)/$',  views.InvitationView.as_view()),
+    url(r'^invitation/',  views.InvitationView.as_view()),
+
+
+    # # Contacts
+    # url(r'^contacts',  views.ContactView.as_view()),
 ]

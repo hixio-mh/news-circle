@@ -25,3 +25,9 @@ class UserGroupAdmin(admin.ModelAdmin):
 	fields = ['user', 'group']
 	list_display = ['user', 'group']
 	ordering = ['user']
+
+@admin.register(models.Invitation)
+class InvitationAdmin(admin.ModelAdmin):
+	fields = ['sender', 'receiver', 'group', 'status']
+	list_display = ['sender', 'receiver', 'timestamp', 'group', 'status']
+	ordering = ['sender']

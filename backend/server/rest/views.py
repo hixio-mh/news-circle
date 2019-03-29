@@ -101,14 +101,30 @@ class UsersView(APIView):
         serializer = UserSerializer(self.get_queryset(), many=True)
         return Response(serializer.data)
 
-class ContactView(APIView):
-    def get_queryset(self):
-        queryset = Contact.objects.all()
-        user_email = self.request.query_params.get('curuser_email', None)
-        if user_email is not None:
-            queryset = queryset.filter(curuser_email=user_email)
-        return queryset
+class InvitationView(APIView):
+    def get(self, request, pk):
+        invitation = Invitation.objects.select_related('receiver').get(receiver_id = pk)
+        invitation_serializer = InvitationSerializer(invitation, many = False)
+        return Response(invitation_serializer.data)
 
-    def get(self, request):
-        serializer = ContactSerializer(self.get_queryset(),many=True)     
-        return Response(serializer.data)
+    def post(self, request):
+        """
+        Send a new invitation from sender to receiver
+        """
+        invitation_serializer = InvitationSerializer(data = request.data)
+        if invitation_serializer.is_valid():
+            invitation_serializer.save()
+            return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, pk):
+        """
+        Update pending -> accept / reject
+        """
+        invitation = Invitation.objects.get(pk = pk)
+        invitation_serializer = InvitationSerializer(invitation, data = request.data)
+        if invitation_serializer.is_valid():
+            invitation_serializer.save()
+            return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
