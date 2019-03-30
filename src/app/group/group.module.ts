@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { GroupPage } from './group.page';
 import { GroupModalComponent } from './group-modal/group-modal.component';
+import { CreateModalComponent } from './create-modal/create-modal.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [GroupPage, GroupModalComponent],
-  exports: [GroupModalComponent]
+  declarations: [GroupPage, GroupModalComponent, CreateModalComponent],
+  exports: [GroupModalComponent, CreateModalComponent]
 })
 export class GroupPageModule {}

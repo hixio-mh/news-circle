@@ -10,12 +10,17 @@
       <ion-label>
         {{ group.group_name }}
       </ion-label>
+      <ion-button (click)="deleteGroup(group.group_id)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
       <ion-chip (click) = "manageGroup(group.group_id)">
         <ion-label color="primary">Manage Group</ion-label>
       </ion-chip>
-      <ion-chip>
+      <ion-chip routerLink="group/{{group.group_id}}" routerDirection="forward">
         <ion-label color="secondary">Manage Member</ion-label>
       </ion-chip>
     </ion-item>
   </ion-list>
+  <ion-button color="primary" (click)="createGroup()">Create New Group
+  </ion-button>
 </ion-content>

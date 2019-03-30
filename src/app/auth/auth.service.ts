@@ -14,7 +14,7 @@ const BACKEND_URL = 'http://localhost:8000/rest/auth/';
 export class AuthAPIService {
   private isAuth: Boolean = false;
   private isAuthListener = new Subject<boolean>();
-  private curUser: User = null;
+  public curUser: User = null;
   private curUserListener = new Subject<User>();
 
   constructor(private httpClient: HttpClient,

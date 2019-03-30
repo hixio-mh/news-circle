@@ -10,29 +10,37 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
+import { InvitationPageModule } from './invitation/invitation.module';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { ArticlePage } from './newsfeed/newsfeed.article';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GroupPageModule } from './group/group.module';
+import { CreateModalComponent } from './group/create-modal/create-modal.component';
 import { GroupModalComponent } from './group/group-modal/group-modal.component';
+import {GroupMemberPageModule} from './group-member/group-member.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlePage,
   ],
-  entryComponents: [GroupModalComponent],
+  entryComponents: [GroupModalComponent, CreateModalComponent],
   imports: [
     BrowserModule, 
     HttpClientModule,
     GroupPageModule,
+    GroupMemberPageModule,
     IonicModule.forRoot(), 
-    AppRoutingModule],
+    AppRoutingModule,
+    InvitationPageModule,
+  ],
   providers: [
     StatusBar,
     InAppBrowser,
     NewsService,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    NativeStorage,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })

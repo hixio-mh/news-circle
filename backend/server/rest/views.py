@@ -18,7 +18,7 @@ class NewsView(APIView):
 class GroupsView(APIView):
     def get(self, request, pk):
         # Return all groups by user id
-        user = User.objects.get(pk = pk);
+        user = User.objects.get(pk = pk)
         groups = user.user_group.all()
         serializer = GroupSerializer(groups, many=True)
         return Response(serializer.data)
@@ -90,7 +90,41 @@ class LoginView(APIView):
         return Response(serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
 class UsersView(APIView):
+    def get_queryset(self):
+        queryset = User.objects.all()
+        user_email = self.request.query_params.get('user_email', None)
+        if user_email is not None:
+            queryset = queryset.filter(user_email=user_email)
+        return queryset
+
     def get(self, request):
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        serializer = UserSerializer(self.get_queryset(), many=True)
         return Response(serializer.data)
+
+class InvitationView(APIView):
+    def get(self, request, pk):
+        invitation = Invitation.objects.select_related('receiver').get(receiver_id = pk)
+        invitation_serializer = InvitationSerializer(invitation, many = False)
+        return Response(invitation_serializer.data)
+
+    def post(self, request):
+        """
+        Send a new invitation from sender to receiver
+        """
+        invitation_serializer = InvitationSerializer(data = request.data)
+        if invitation_serializer.is_valid():
+            invitation_serializer.save()
+            return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def put(self, request, pk):
+        """
+        Update pending -> accept / reject
+        """
+        invitation = Invitation.objects.get(pk = pk)
+        invitation_serializer = InvitationSerializer(invitation, data = request.data)
+        if invitation_serializer.is_valid():
+            invitation_serializer.save()
+            return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

@@ -1,0 +1,17 @@
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label 
+      position="floating" 
+      >Group Name</ion-label>
+        <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label 
+      position="floating"
+      >Group Description</ion-label>
+        <ion-input [(ngModel)]="description"></ion-input>
+    </ion-item>
+    <ion-button color="primary" (click)="onSave()">Save</ion-button>
+  </ion-list>
+</ion-content>

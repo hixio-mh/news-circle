@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Send Invitation to </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-toolbar>
+
+    <ion-list>
+        <ion-item *ngFor="let user of users">
+          <ion-label>{{user.user_name}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="user.checked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+  <ion-button color="danger" (click)="close()" float-right>
+    Close
+  </ion-button>
+  <ion-button (click)="send()" float-left>
+    Send
+  </ion-button>  
+</ion-toolbar>
+</ion-content>
