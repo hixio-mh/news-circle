@@ -18,7 +18,7 @@ class News(models.Model):
 
 class Group(models.Model):
     group_id = models.AutoField(primary_key = True)
-    group_name = models.TextField(null = False, max_length = 255, unique = True)
+    group_name = models.TextField(null = False, max_length = 255)
     group_description = models.TextField(null = True)
 
     class Meta:

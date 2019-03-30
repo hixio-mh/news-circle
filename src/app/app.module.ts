@@ -15,6 +15,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { ArticlePage } from './newsfeed/newsfeed.article';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GroupPageModule } from './group/group.module';
+import { CreateModalComponent } from './group/create-modal/create-modal.component';
 import { GroupModalComponent } from './group/group-modal/group-modal.component';
 import {GroupMemberPageModule} from './group-member/group-member.module'
 
@@ -23,7 +24,7 @@ import {GroupMemberPageModule} from './group-member/group-member.module'
     AppComponent,
     ArticlePage,
   ],
-  entryComponents: [GroupModalComponent],
+  entryComponents: [GroupModalComponent, CreateModalComponent],
   imports: [
     BrowserModule, 
     HttpClientModule,
