@@ -1,0 +1,5 @@
+android how to deploy:
+
+cd news-circle/platform/android
+
+ionic cordova run androd
