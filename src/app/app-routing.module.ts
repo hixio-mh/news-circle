@@ -3,7 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ArticlePage } from './newsfeed/newsfeed.article';
 
 const routes: Routes = [
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: '', loadChildren: './newsfeed/newsfeed.module#NewsfeedPageModule' },
+  // { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'newsfeed', loadChildren: './newsfeed/newsfeed.module#NewsfeedPageModule' },
   { path: 'invitation', loadChildren: './invitation/invitation.module#InvitationPageModule' },
   { path: 'message', loadChildren: './message/message.module#MessagePageModule' },

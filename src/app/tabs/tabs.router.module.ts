@@ -21,7 +21,8 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../contact/contact.module#ContactPageModule'
+            // loadChildren: '../contact/contact.module#ContactPageModule'
+            loadChildren: '../newsfeed/newsfeed.module#NewsfeedPageModule'
           }
         ]
       },

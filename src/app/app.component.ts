@@ -12,6 +12,9 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+
+  rootPage:any = 'NewsFeedPage'
+  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
