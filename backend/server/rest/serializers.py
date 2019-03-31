@@ -21,6 +21,12 @@ class UserGroupSerializer(serializers.ModelSerializer):
         )
         return userGroup
 
+    def update(self, instance, validated_data): 
+        user = validated_data.get('user', instance.user)
+        group =  validated_data.get('group', instance.group)
+        instance.save()
+        return instance
+
 
 class UserSerializer(serializers.ModelSerializer):
     user_group = UserGroupSerializer(

@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { GroupService } from './group.service';
 import { User } from '../models/user.model';
 import { GroupModalComponent } from './group-modal/group-modal.component';
-import { ModalController } from '@ionic/angular';
+import {NavController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-group',
@@ -22,7 +22,7 @@ export class GroupPage implements OnInit {
     user_name: "admin"
 };
 
-  constructor(private groupService: GroupService,
+  constructor(private nav: NavController, private groupService: GroupService,
     private modalController: ModalController) {
     groupService.getGroups(this.curUser).then(
       res => {
@@ -46,6 +46,10 @@ export class GroupPage implements OnInit {
     return await modal.present();
   } 
 
+  manageMember(groupId){
+    this.nav.navigateForward(`/group/${groupId}`);
+
+  }
   ngOnInit() {
   }
 

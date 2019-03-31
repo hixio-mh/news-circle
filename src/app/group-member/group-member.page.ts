@@ -16,13 +16,13 @@ export class GroupMemberPage implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private groupMemberservice: GroupMemberService, private modaltrl:ModalController) {
     this.groupId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.groupMemberservice.getMembers(this.groupId).then(
-      res => {
-        this.members = res['users'];
-        this.groupName = res['group']['group_name']
-        console.log(this.groupName);
-      }
-    )
+
+    this.groupMemberservice.getMembers(this.groupId).subscribe(res => {
+                console.log(res);
+                this.members = res["users"];
+                this.groupName = res['group']['group_name']
+    });
+    
    }
   
    async addUser(){
@@ -37,11 +37,12 @@ export class GroupMemberPage implements OnInit {
     return await modal.present();
   } 
 
-  remove(){
-    console.log('remove');
+  remove(userId){
+      this.groupMemberservice.removeMember(this.groupId, userId);
+      this.groupMemberservice.memberListUpdate(this.groupId);
   }
-
   ngOnInit() {
+      this.groupMemberservice.memberListUpdate(this.groupId);
   }
 
 }

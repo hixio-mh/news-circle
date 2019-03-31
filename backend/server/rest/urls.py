@@ -19,6 +19,6 @@ urlpatterns = [
     url(r'^group/(?P<pk>\d+)/$',  views.GroupView.as_view()),
     # Groups with user id
     url(r'^groups/(?P<pk>\d+)/$',  views.GroupsView.as_view()),
-    # Contacts
-    url(r'^contacts',  views.ContactView.as_view()),
+    # Groups-Users M2M 
+    url(r'^usergroup/',views.UserGroupView.as_view()),
 ]

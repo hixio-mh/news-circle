@@ -13,7 +13,7 @@
       <ion-chip (click) = "manageGroup(group.group_id)">
         <ion-label color="primary">Manage Group</ion-label>
       </ion-chip>
-      <ion-chip routerLink="group/{{group.group_id}}" routerDirection="forward">
+      <ion-chip  (click)="manageMember(group.group_id)">   
         <ion-label color="secondary">Manage Member</ion-label>
       </ion-chip>
     </ion-item>

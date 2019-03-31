@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,detail_route
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.response import Response
@@ -7,6 +7,7 @@ from rest_framework import status
 from .models import *
 from .serializers import *
 from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 class NewsView(APIView):
@@ -70,6 +71,9 @@ class GroupView(APIView):
         group = Group.objects.get(pk = pk)
         group.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+     
+    
+        
 
 class RegisterView(APIView):
     def post(self, request):
@@ -101,14 +105,20 @@ class UsersView(APIView):
         serializer = UserSerializer(self.get_queryset(), many=True)
         return Response(serializer.data)
 
-class ContactView(APIView):
-    def get_queryset(self):
-        queryset = Contact.objects.all()
-        user_email = self.request.query_params.get('curuser_email', None)
-        if user_email is not None:
-            queryset = queryset.filter(curuser_email=user_email)
-        return queryset
+class UserGroupView(APIView):
+    queryset = UserGroup.objects.all()
+    
 
     def get(self, request):
-        serializer = ContactSerializer(self.get_queryset(),many=True)     
+        query = UserGroup.objects.all()
+        serializer = UserGroupSerializer(query, many=True)
         return Response(serializer.data)
+
+    def delete(self, request,*args, **kwargs):
+        userId = self.request.query_params.get('user_id', None)
+        groupId = self.request.query_params.get('group_id', None)
+        userGroup = self.queryset.filter(group=groupId, user=userId)
+        userGroup.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    
