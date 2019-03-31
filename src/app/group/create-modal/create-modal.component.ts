@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GroupService } from '../group.service';
 import { Group } from '../../models/group.model';
 import { ModalController } from '@ionic/angular';
@@ -9,6 +9,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./create-modal.component.scss']
 })
 export class CreateModalComponent implements OnInit {
+  @Input() uid: Number;
   private name: string;
   private description: string;
 
@@ -25,7 +26,7 @@ export class CreateModalComponent implements OnInit {
       group_name: this.name,
       group_description: this.description,
     }
-    this.groupService.createGroup(newGroup, 1);
+    this.groupService.createGroup(newGroup, this.uid);
     this.modalController.dismiss();
   }
 

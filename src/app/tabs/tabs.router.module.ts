@@ -17,20 +17,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: '../contact/contact.module#ContactPageModule'
-          }
-        ]
-      },
-      {
         path: 'tab3',
         children: [
           {
             path: '',
-            loadChildren: '../message/message.module#MessagePageModule'
+            loadChildren: '../group/group.module#GroupPageModule'
           }
         ]
       },
@@ -41,11 +32,6 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
 ];
 
 @NgModule({

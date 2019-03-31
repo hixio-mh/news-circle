@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Group } from '../models/group.model';
+import { AppService } from '../app.service';
 
 const BACKEND_URL = 'http://localhost:8000/rest/';
 
@@ -11,18 +12,22 @@ const BACKEND_URL = 'http://localhost:8000/rest/';
 export class GroupService {
     private groups: Group[];
     private groupsListender = new Subject();
-    
-    constructor (private httpClient: HttpClient) {
+
+    constructor (private httpClient: HttpClient, private appService: AppService) {
     }
 
-    fetchGroups (user) {
+    fetchGroups (uid) {
         return new Promise(
             (resolve, reject) => {
-                this.httpClient.get<any>(`${BACKEND_URL}groups/${user.user_id}`).subscribe(res => {
+                this.httpClient.get<any>(`${BACKEND_URL}groups/${uid}/`).subscribe(res => {
                     this.groups = res;
                     this.groupsListender.next([...this.groups]);
                     resolve(res);
                 }, err => {
+                    if (err.status == 404) {
+                        this.groups = [];
+                        this.groupsListender.next([...this.groups]);
+                    }
                     console.log("cannot get groups");
                     reject(err);
                 });
@@ -66,10 +71,9 @@ export class GroupService {
     createGroup(group, uid) {
         return new Promise(
             (resolve, reject) => {
-                this.httpClient.post<any>(`${BACKEND_URL}group/${uid}`, group).subscribe(res => {
+                this.httpClient.post<any>(`${BACKEND_URL}group/${uid}/`, group).subscribe(res => {
                     // Update local list
-                    let last_id = Math.max.apply(Math, this.groups.map(group => group.group_id));
-                    group.group_id = last_id
+                    group.group_id = res.group_id;
                     this.groups.push(group);
                     this.groupsListender.next([...this.groups]);
                     resolve(res);
@@ -96,9 +100,18 @@ export class GroupService {
         )
     }
 
+    getGroupIdByName(name) {
+        return new Promise(
+            (resolve, reject) => {
+                this.httpClient.get<any>(`${BACKEND_URL}group/?group_name=${name}`).subscribe(res => {
+                    console.log(`Fetched group id is ${res[0].group_id}`)
+                    resolve(res);
+                })
+            }
+        )
+    }
+
     getGroupUpdated() {
         return this.groupsListender.asObservable();
     }
-
-    // TODO: POST new group and DELETE group
 }
