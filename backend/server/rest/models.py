@@ -31,7 +31,7 @@ class Group(models.Model):
 
 class User(models.Model):
     user_id = models.AutoField(primary_key = True)
-    user_name = models.TextField(null = False, max_length = 100)
+    user_name = models.TextField(null = False, max_length = 100, unique = True)
     user_key = models.TextField(null = False, max_length = 100)
     user_email = models.EmailField(max_length=254, blank=False, unique=True, error_messages={'required': 'Please provide your email address.','unique': 'An account with this email exist.'})
     user_group = models.ManyToManyField(Group, through='UserGroup')
@@ -45,34 +45,18 @@ class User(models.Model):
 
 class UserGroup(models.Model):
     user_group_id = models.AutoField(primary_key = True)
-    user = models.ForeignKey('User', models.CASCADE, blank=True, null=True)
+    user = models.ForeignKey('User', models.CASCADE, blank=True)
     group = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
 
     class Meta:
         managed = True
         db_table = 'user_group'
 
-class Contact(models.Model):
-    contact_id = models.AutoField(primary_key = True)
-    curuser_name = models.TextField(null = False, max_length = 100)
-    curuser_email = models.TextField(null = False, max_length = 100)
-    friend_name = models.TextField(null = False, max_length = 100)
-    friend_email = models.TextField(null = False, max_length = 100)
-
-
-    class Meta:
-        managed = True
-        db_table = 'contact'
-
-    def __str__(self):
-        return self.contact_id
-
-
 class Invitation(models.Model):
     invitation_id = models.AutoField(primary_key = True)
-    sender_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="inviter")
-    receiver_id = models.ForeignKey('User', models.CASCADE, blank=True, null=True,related_name="invitee")
-    group_id = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
+    sender = models.ForeignKey('User', models.CASCADE, blank=True, null=True, related_name="sender")
+    receiver = models.ForeignKey('User', models.CASCADE, blank=True, null=True, related_name="receiver")
+    group = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     status = models.TextField(null = False, max_length = 100, default = "pending")
 
@@ -81,4 +65,4 @@ class Invitation(models.Model):
         db_table = 'invitation'
 
     def __str__(self):
-        return self.invitation_id
+        return str(self.timestamp)

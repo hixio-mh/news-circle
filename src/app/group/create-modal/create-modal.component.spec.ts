@@ -1,22 +1,20 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactPage } from './contact.page';
+import { CreateModalComponent } from './create-modal.component';
 
-describe('ContactPage', () => {
-  let component: ContactPage;
-  let fixture: ComponentFixture<ContactPage>;
+describe('CreateModalComponent', () => {
+  let component: CreateModalComponent;
+  let fixture: ComponentFixture<CreateModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [ CreateModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactPage);
+    fixture = TestBed.createComponent(CreateModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -48,3 +48,8 @@ class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
         fields = ('group_id', 'group_name', 'group_description', 'user_group')
+
+class InvitationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Invitation
+        fields = ('invitation_id', 'sender', 'receiver', 'group', 'timestamp', 'status')
