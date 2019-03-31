@@ -52,4 +52,4 @@ class GroupSerializer(serializers.ModelSerializer):
 class InvitationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Invitation
-        fields = ('invitation_id', 'sender', 'receiver', 'group', 'timestamp', 'status')
+        fields = ('invitation_id', 'sender','receiver', 'group', 'timestamp', 'status')

@@ -45,7 +45,7 @@ class User(models.Model):
 
 class UserGroup(models.Model):
     user_group_id = models.AutoField(primary_key = True)
-    user = models.ForeignKey('User', models.CASCADE, blank=True)
+    user = models.ForeignKey('User', models.CASCADE, blank=True, null=True)
     group = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
 
     class Meta:
