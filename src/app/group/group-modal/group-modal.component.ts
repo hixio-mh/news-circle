@@ -13,7 +13,6 @@ export class GroupModalComponent implements OnInit {
 
   private name: string;
   private description: string;
-  private curGroup: Group;
 
   constructor(private groupService: GroupService, private modalController: ModalController) {
      

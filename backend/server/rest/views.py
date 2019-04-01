@@ -45,10 +45,12 @@ class GroupView(APIView):
         group_serializer = GroupSerializer(data=request.data)
 
         user_group_serializer = UserGroupSerializer.create(user = user, group = request.data)
-
+        instance = user_group_serializer
         if group_serializer.is_valid():
             user_group_serializer.save()
-            return Response(group_serializer.data, status=status.HTTP_201_CREATED)
+            gid = instance.group.group_id
+            group_serializer.data['group_id'] = gid
+            return Response({'data': group_serializer.data, 'group_id': gid}, status=status.HTTP_201_CREATED)
         return Response(group_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         # TODO: Avoid repeating user_group

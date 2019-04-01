@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Group } from '../models/group.model';
-import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { GroupService } from './group.service';
 import { User } from '../models/user.model';
@@ -9,7 +8,7 @@ import {NavController, ModalController } from '@ionic/angular';
 
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 @Component({
   selector: 'app-group',
   templateUrl: './group.page.html',
@@ -18,21 +17,20 @@ import { Router } from '@angular/router';
 export class GroupPage implements OnInit {
   private groups: any;
   private groupsUpdate = new Subject();
-  private curUser: User = {
-    user_email: "admin@umich.edu",
-    user_id: 1,
-    user_key: "admin",
-    user_name: "admin"
-};
+  private curUserId: number;
 
   constructor(private groupService: GroupService,
-    private modalController: ModalController, public alertController: AlertController,private nav:NavController) {
-    groupService.fetchGroups(this.curUser).then(
+    private modalController: ModalController, public alertController: AlertController, private nav:NavController) {
+    
+    this.curUserId = parseInt(localStorage.getItem('user_id'));
+    groupService.fetchGroups(this.curUserId).then(
       res => {
         this.groups = res;
+        console.log(this.groups);
         this.groupService.getGroupUpdated().subscribe(
           updated => {
             this.groups = updated;
+            
           }
         )
       }
@@ -42,6 +40,7 @@ export class GroupPage implements OnInit {
   async createGroup() {
     const modal = await this.modalController.create({
       component: CreateModalComponent,
+      componentProps: {'uid': this.curUserId}
     });
 
     return await modal.present();
