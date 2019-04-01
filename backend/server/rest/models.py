@@ -70,3 +70,14 @@ class Invitation(models.Model):
     def __str__(self):
         return str(self.timestamp)
 
+class NewsGroup(models.Model):
+    news_group_id = models.AutoField(primary_key = True)
+    news = models.ForeignKey('News', models.CASCADE, null = False, related_name="news")
+    group = models.ForeignKey('Group', models.CASCADE, null = False, related_name = "group")
+
+    class Meta:
+        managed = True
+        db_table = 'newsgroup'
+
+    def __str__(self):
+        return str(self.news_group_id)
