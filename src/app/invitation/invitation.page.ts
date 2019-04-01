@@ -9,29 +9,39 @@ import { InvitationService } from './invitation.service';
 })
 export class InvitationPage implements OnInit {
   users:any;
+  sender:any;
   receiver: any;
+  groupId:number;
 
   constructor(private navParams:NavParams,private modalController:ModalController, private invitation:InvitationService) {
-      this.invitation.getUser().then(
+    this.groupId = this.navParams.get("groupId");
+    this.sender =  this.navParams.get("curUserId");
+    this.invitation.getUser().then(
           res=>{
+            console.log(res);
             this.users = res;
+            //filter curUser & user in the group;
           }
       )
-      console.log(this.users);
+      
   }
 
   ngOnInit() {
     
   }
+  
   close(){
     this.modalController.dismiss();
   }
-  send(){
+
+  send(){ 
     this.receiver =  this.users.filter(user => {
     return user.checked;
-  });  
-    console.log(this.receiver);
-    // invitation sent: groupid,userid,receiverid
+    });
+    this.receiver.forEach(receiver => {
+      this.invitation.invite(this.groupId,this.sender,receiver.user_id);
+    })
+
     this.close();
   }
   

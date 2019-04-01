@@ -9,6 +9,7 @@ import {NavController, ModalController } from '@ionic/angular';
 
 import { CreateModalComponent } from './create-modal/create-modal.component';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-group',
   templateUrl: './group.page.html',
@@ -25,7 +26,7 @@ export class GroupPage implements OnInit {
 };
 
   constructor(private groupService: GroupService,
-    private modalController: ModalController, public alertController: AlertController,private nav: NavController) {
+    private modalController: ModalController, public alertController: AlertController,private nav:NavController) {
     groupService.fetchGroups(this.curUser).then(
       res => {
         this.groups = res;
@@ -82,8 +83,8 @@ export class GroupPage implements OnInit {
 
   manageMember(groupId){
     this.nav.navigateForward(`/group/${groupId}`);
-
   }
+  
   ngOnInit() {
   }
 

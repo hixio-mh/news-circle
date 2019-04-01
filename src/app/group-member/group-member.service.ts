@@ -9,44 +9,46 @@ const BACKEND_URL = 'http://localhost:8000/rest/';
   providedIn: 'root'
 })
 export class GroupMemberService {
-  membersObservable:Observable<any>;
-  membersObserver: Observer<any>;
-  memberList:Subject<any>;
-  groupId: any;
+  // membersObservable:Observable<any>;
+  // membersObserver: Observer<any>;
+  // memberList:Subject<any>;
+  private members: any;
+  private membersListener = new Subject();
 
-  constructor(private httpClient:HttpClient,private activatedRoute: ActivatedRoute) { 
-    this.membersObserver = new Subject<any>();
-    this.membersObservable = Observable.create(observer=>{
-      this.membersObserver = observer;
-    });
+  constructor(private httpClient:HttpClient) { 
+    // this.membersObserver = new Subject<any>();
+    // this.membersObservable = Observable.create(observer=>{
+    //   this.membersObserver = observer;
+    // });
   }
 
   
   getMembers (groupId) {
-    this.membersObservable =this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`);
-    return this.membersObservable;
-  }
+  //   this.membersObservable =this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`);
+  //   return this.membersObservable;
+  // }
+    return new Promise(
+        (resolve, reject) => {
+            this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`).subscribe(res => {
+              this.members = res;
+              this.membersListener.next(this.members)  ;
+              resolve(res);
+            }, err => {
+                console.log("cannot get group's members");
+                reject(err);
+            });
+        }
+    );
+      }
 
-
-    // return new Promise(
-    //     (resolve, reject) => {
-    //         this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`).subscribe(res => {
-    //             resolve(res);
-    //         }, err => {
-    //             console.log("cannot get group's members");
-    //             reject(err);
-    //         });
-    //     }
-    // );
-
-memberListUpdate(groupId){
-   this.getMembers(groupId).subscribe(res=>{
-     this.membersObservable = res["users"];
-     this.membersObserver.next(this.membersObservable);
-
-   }
-
-   );
+memberUpdate(){
+  return this.membersListener.asObservable();
+  //  this.getMembers(groupId).subscribe(res=>{
+  //    this.membersObservable = res["users"];
+  //    this.membersObserver.next(this.membersObservable);
+  //    console.log(this.membersObservable);
+  //  }
+  //  );
   
   }
 
@@ -56,8 +58,11 @@ removeMember(groupId, userId){
       const params = new HttpParams()
             .set('group_id',groupId)
             .set('user_id', userId);
-        this.httpClient.delete<any>(`${BACKEND_URL}usergroup/`,{params}).subscribe(res => {
-            resolve(res);
+        this.httpClient.delete<any>(`${BACKEND_URL}usergroup/`,{params}).subscribe(res => { 
+          console.log(this.members);
+          this.getMembers(groupId);
+          resolve(res);
+            
         }, err => {
             console.log("cannot delete group-member");
             reject(err);
