@@ -39,10 +39,9 @@ acceptInvitation(invitationId,receiverId){
     res=>{
        this.getInvitation(receiverId);
     });
-  
-  //update userGroup
-  // let request = {user}
-  // this.httpClient.post<any>(`${BACKEND_URL}group/${receiverId}/`,request).subscribe(
+  //TODO: 2.update userGroup
+  // let request = {"group":this.group}
+  // this.httpClient.post<any>(`${BACKEND_URL}usergroup/${receiverId}/`,request).subscribe(
    
 }
 rejectInvitation(invitationId,receiverId){

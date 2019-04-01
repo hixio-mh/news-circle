@@ -19,7 +19,7 @@ export class GroupService {
     fetchGroups (uid) {
         return new Promise(
             (resolve, reject) => {
-                this.httpClient.get<any>(`${BACKEND_URL}groups/${uid}/`).subscribe(res => {
+                this.httpClient.get<any>(`${BACKEND_URL}groups/${uid}/`).subscribe( res => {
                     this.groups = res;
                     this.groupsListender.next([...this.groups]);
                     resolve(res);

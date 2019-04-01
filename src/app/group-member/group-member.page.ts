@@ -17,8 +17,7 @@ export class GroupMemberPage implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private groupMemberservice: GroupMemberService, private modaltrl:ModalController) {
     this.groupId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.curUserId = 1; //TODO: userService to get cur_user_id
-    console.log("cur:"+this.curUserId);
+    this.curUserId = parseInt(localStorage.getItem('user_id'));
 
     this.groupMemberservice.getMembers(this.groupId).then(res => {
                 console.log(res);

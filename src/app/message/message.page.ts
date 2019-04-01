@@ -9,21 +9,21 @@ import { MessageService } from './message.service';
 export class MessagePage implements OnInit {
   invitationList:any;
   receiverId: any;
-  filterList: any;
+  group: any;
 
   constructor(private message: MessageService) {
-    this.receiverId = 1; //TODO: GET cur-user
+    this.receiverId = parseInt(localStorage.getItem('user_id'));
+    console.log(this.receiverId);
     this.message.getInvitation(this.receiverId).then(res=>{
         this.invitationList = res;
           })
-        console.log(this.invitationList);
-          this.message.invitationUpdate().subscribe(
+        this.message.invitationUpdate().subscribe(
           updated=>{
             this.invitationList = updated;
             console.log(this.invitationList);
           });
     
-        }
+    }
     
 
 
@@ -32,10 +32,9 @@ export class MessagePage implements OnInit {
 }
 
   accept(invitationId){
-    //status change: accept
+    //status change: accept, then put into userGroup 
     console.log(invitationId);
     this.message.acceptInvitation(invitationId,this.receiverId);
-    // put into userGroup 
   }
 
   decline(invitationId){
