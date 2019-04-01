@@ -123,35 +123,24 @@ class UserGroupView(APIView):
         userGroup.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-    # def put(self, request, *args, **kwargs):
-    #     userId = self.request.query_params.get('user_id', None)
-    #     groupId = self.request.query_params.get('group_id', None)
-    #     user = UserGroup.objects.select_related(user = pk)
-    #     UserGroup_serializer = UserGroupSerializer(user, group)
-    #     if UserGroup_serializer.is_valid():
-    #         UserGroup_serializer.save()
-    #         return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
-    #     return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+    # def post(self, request, *args, **kwargs):
+    #     # userId = self.request.query_params.get('user_id', None)
+    #     # groupId = self.request.query_params.get('group_id', None)
+    #     # user = User.objects.get(pk = userId)
+    #     # group = Group.objects.get(pk = groupId)
+    #     # group_serializer = GroupSerializer(group)
+    #     # user_group_serializer = UserGroupSerializer(user,group_serializer)
+    #     # if user_group_serializer.is_valid():
+    #     #     user_group_serializer.save()
+    #     #     return Response({'data': user_group_serializer.data}, status=status.HTTP_201_CREATED)
+    #     # return Response(user_group_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
     
 class InvitationView(APIView):
     def get(self, request, pk):
         invitation = Invitation.objects.select_related('receiver').filter(receiver_id = pk)
         invitation_serializer = InvitationSerializer(invitation, many = True)
-        # # # reciever = User.objects.get(pk=invitation.sender)
-        # sender = User.objects.select_related('sender').all()
-        # sender_serializer = UserSerializer(sender, many = True)
-        # # group = invitation.select_related('group')
-        # # print(group)
-        # # group_serializer = GroupSerializer(group, many=True)
-
-        # content = {
-        #     'invitation':invitation_serializer.data,
-        #     # 'group': group_serializer.data,
-        #     'sender': sender_serializer.data
-        # }
-        # return Response(content)
         return Response(invitation_serializer.data)
 
     def post(self, request):
