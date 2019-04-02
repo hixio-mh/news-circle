@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthAPIService } from './auth/auth.service';
 import { User } from './models/user.model';
+import { Group } from './models/group.model';
 
 // const BACKEND_URL = 'http://localhost:8000/rest/';
 const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
@@ -13,6 +14,7 @@ const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
 
 export class AppService {
     public curUser: User;
+    public groups: Group[];
 
     constructor(private authService: AuthAPIService, private httpClient: HttpClient) {
         this.curUser = null;
@@ -31,7 +33,17 @@ export class AppService {
         )
     }
 
-    getCurUser() {
-        return this.curUser;
+    getCurUserId() {
+        return localStorage.getItem('user_id');
+    }
+
+    getGroups(uid) {
+        return new Promise((resolve, reject) => {
+            this.httpClient.get<any>(`${BACKEND_URL}groups/${uid}`).subscribe(res => {
+                resolve(res);
+            }, err => {
+                reject(err);
+            });
+        });
     }
 }

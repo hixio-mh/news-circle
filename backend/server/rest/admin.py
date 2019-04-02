@@ -4,8 +4,9 @@ import rest.models as models
 
 @admin.register(models.News)
 class NewsAdmin(admin.ModelAdmin):
-	fields = ['news_title', 'news_content', 'news_author']
-	list_display = ['news_title', 'news_content', 'news_author']
+	fields = ['news_title', 'news_content', 'news_author', 'news_url' 
+	]
+	list_display = ['news_title', 'news_content', 'news_author', 'news_url' ]
 	ordering = ['news_title']
 
 @admin.register(models.Group)

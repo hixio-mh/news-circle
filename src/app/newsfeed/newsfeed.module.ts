@@ -10,7 +10,11 @@ import { NewsfeedPage } from './newsfeed.page';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: NewsfeedPage }])
+    RouterModule.forChild([
+      { path: '', component: NewsfeedPage, children: [
+        { path: ':id', component: NewsfeedPage },
+      ] },
+    ])
   ],
   declarations: [NewsfeedPage]
 })

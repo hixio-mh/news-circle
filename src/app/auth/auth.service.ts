@@ -27,6 +27,10 @@ export class AuthAPIService {
     return this.isAuth;
   }
 
+  isAuthedUpdate() {
+    return this.isAuthListener.asObservable();
+  }
+
   curUserUpdate() {
     return this.curUserListener.asObservable();
   }
