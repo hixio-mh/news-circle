@@ -123,17 +123,18 @@ class UserGroupView(APIView):
         userGroup.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-    # def post(self, request, *args, **kwargs):
-    #     # userId = self.request.query_params.get('user_id', None)
-    #     # groupId = self.request.query_params.get('group_id', None)
-    #     # user = User.objects.get(pk = userId)
-    #     # group = Group.objects.get(pk = groupId)
-    #     # group_serializer = GroupSerializer(group)
-    #     # user_group_serializer = UserGroupSerializer(user,group_serializer)
-    #     # if user_group_serializer.is_valid():
-    #     #     user_group_serializer.save()
-    #     #     return Response({'data': user_group_serializer.data}, status=status.HTTP_201_CREATED)
-    #     # return Response(user_group_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request,*args, **kwargs):
+        groupId = self.request.query_params.get('group_id', None)
+        userId = self.request.query_params.get('user_id', None)
+        user = User.objects.get(pk=userId)
+        group = Group.objects.get(pk=groupId)
+        userGroup = UserGroup.objects.create(group=group,user=user)
+        user_group_serializer = UserGroupSerializer(data=userGroup)
+        print(user_group_serializer)
+        if user_group_serializer.is_valid():
+            user_group_serializer.save()
+            return Response(user_group_serializer.data, status=status.HTTP_200_OK)
+        return Response(user_group_serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
 
     

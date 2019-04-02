@@ -31,10 +31,10 @@ export class MessagePage implements OnInit {
     
 }
 
-  accept(invitationId){
+  accept(invitationId,groupId){
     //status change: accept, then put into userGroup 
     console.log(invitationId);
-    this.message.acceptInvitation(invitationId,this.receiverId);
+    this.message.acceptInvitation(invitationId,this.receiverId,groupId);
   }
 
   decline(invitationId){

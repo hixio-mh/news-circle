@@ -14,7 +14,7 @@
     
       <ion-card-content>
       </ion-card-content>
-      <ion-button (click)="accept(invitation.invitation_id)" shape="round" color="primary" slot="primary" float-left>Accept</ion-button>
+      <ion-button (click)="accept(invitation.invitation_id,invitation.group)" shape="round" color="primary" slot="primary" float-left>Accept</ion-button>
       <ion-button (click)="decline(invitation.invitation_id)" shape="round" color="danger" fill="outline" float-right>Decline</ion-button>
 </ion-card>
 </ion-content>

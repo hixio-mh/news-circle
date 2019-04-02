@@ -32,18 +32,21 @@ export class MessageService {
   invitationUpdate(){
     return this.invitationListener.asObservable();
   }
-acceptInvitation(invitationId,receiverId){
+acceptInvitation(invitationId,receiverId,groupId){
   //change status:  pending->accept 
   const body = {"status":"accept"};
   this.httpClient.put<any>(`${BACKEND_URL}invitation/${invitationId}/`,body).subscribe(
     res=>{
        this.getInvitation(receiverId);
     });
-  //TODO: 2.update userGroup
-  // let request = {"group":this.group}
-  // this.httpClient.post<any>(`${BACKEND_URL}usergroup/${receiverId}/`,request).subscribe(
-   
-}
+  //2.update userGroup
+  console.log('params');
+  this.httpClient.post<any>(`${BACKEND_URL}usergroup/?user_id=${receiverId}&group_id=${groupId}`,{}).subscribe(
+    res=>{
+       console.log(res);
+    })
+  }
+
 rejectInvitation(invitationId,receiverId){
   const body = {"status":"reject"};
   this.httpClient.put<any>(`${BACKEND_URL}invitation/${invitationId}/`,body).subscribe(
