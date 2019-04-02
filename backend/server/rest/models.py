@@ -21,6 +21,7 @@ class Group(models.Model):
     group_id = models.AutoField(primary_key = True)
     group_name = models.TextField(null = False, max_length = 255)
     group_description = models.TextField(null = True)
+    news_group = models.ManyToManyField(News, through='NewsGroup')
 
     class Meta:
         managed = True
@@ -69,7 +70,7 @@ class Invitation(models.Model):
 
     def __str__(self):
         return str(self.timestamp)
-
+ 
 class NewsGroup(models.Model):
     news_group_id = models.AutoField(primary_key = True)
     news = models.ForeignKey('News', models.CASCADE, null = False, related_name="news")
