@@ -2,4 +2,8 @@ android how to deploy:
 
 cd news-circle/platform/android
 
+adb devices 
+
+#if your device is found, 
+
 ionic cordova run android

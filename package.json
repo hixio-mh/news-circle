@@ -75,6 +75,9 @@
         "TWITTER_SECRET": "LkfmTNmb6lFrRQqZj5IOCXRULQ495uHku6inXUsmhxP4RZZSid"
       },
       "cordova-plugin-nativestorage": {}
-    }
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
