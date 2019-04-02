@@ -5,7 +5,19 @@ iframe {
 	height: 100%;
 }
 
-.button-right {
-	float: right;
+.article-page-save {
+	position: fixed;
+	bottom: 6em;
+	right: 1em;
+	width: 6em;
+	height: 4em;
+}
+
+.article-page-share {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	width: 6em;
+	height: 4em;
 }
 

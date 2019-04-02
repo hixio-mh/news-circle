@@ -1,12 +1,10 @@
 <ion-header>
   <ion-toolbar>
     
-    <ion-button (click)="onGoBack()" size="small">Back to feed</ion-button>
+    <ion-back-button (click)="onGoBack()" size="small"></ion-back-button>
     <ion-title>
       {{source}}
     </ion-title>
-    <ion-button class="button-right" size="small">Share</ion-button>
-    <ion-button class="button-right" size="small">Save</ion-button>
     
 
   </ion-toolbar>
@@ -15,5 +13,6 @@
 
 <ion-content>
   <!-- <iframe [src]="article | safe"></iframe> -->
-
+  <ion-button class="article-page-share" size="small">Share</ion-button>
+  <ion-button class="article-page-save" size="small">Save</ion-button>
 </ion-content>
