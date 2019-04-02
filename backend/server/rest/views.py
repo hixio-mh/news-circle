@@ -140,8 +140,8 @@ class UserGroupView(APIView):
     
 class InvitationView(APIView):
     def get(self, request, pk):
-        invitation = Invitation.objects.select_related('receiver').filter(receiver_id = pk)
-        invitation_serializer = InvitationSerializer(invitation, many = True)
+        invitations = Invitation.objects.select_related('receiver').filter(receiver_id = pk)
+        invitation_serializer = InvitationSerializer(invitations, many = True)
         return Response(invitation_serializer.data)
 
     def post(self, request):
