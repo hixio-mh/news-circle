@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NewsService } from './newsfeed.service';
-import { ArticlePage } from './newsfeed.article';
+import { ArticlePage } from './article.page';
 import { NavParams } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -34,7 +34,7 @@ export class NewsfeedPage {
 
   goToArticle(article) {
 
-    this.router.navigate(['tabs/tab1/article',{article:article}]);
+    this.router.navigate(['article',{article:article}]);
 
 
   }

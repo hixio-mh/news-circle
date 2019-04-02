@@ -34,7 +34,8 @@
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "twitter-connect-plugin": "0.6.0",
-    "zone.js": "~0.8.29"
+    "zone.js": "~0.8.29",
+    "cordova-android": "7.1.4"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
@@ -73,6 +74,9 @@
         "TWITTER_SECRET": "LkfmTNmb6lFrRQqZj5IOCXRULQ495uHku6inXUsmhxP4RZZSid"
       },
       "cordova-plugin-nativestorage": {}
-    }
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

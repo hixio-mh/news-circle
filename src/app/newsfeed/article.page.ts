@@ -17,8 +17,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 //Page elements
 @Component({
   selector: 'app-article',
-  templateUrl: 'newsfeed.article.html',
-  styleUrls: ['newsfeed.article.scss']
+  templateUrl: 'article.page.html',
+  styleUrls: ['article.page.scss']
 })
 export class ArticlePage implements OnInit {
   newsfeed: any[];
