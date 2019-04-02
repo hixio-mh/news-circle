@@ -32,21 +32,20 @@ class GroupsView(APIView):
         """
         Return group of user == pk
         """
-        user = User.objects.get(pk = pk)
-        groups = user.user_group.all()
+        groups = Group.objects.filter(usergroup__user_id = pk)
         serializer = GroupSerializer(groups, many=True)
         return Response(serializer.data)
 
 class GroupView(APIView):
     def get(self, request, pk):
         group = get_object_or_404(Group, pk = pk)
-        users = group.user_set.all()
-        user_serializer = UserSerializer(users, many = True)
+        # users = group.user_set.all()
+        # user_serializer = UserSerializer(users, many = True)
         group_serializer = GroupSerializer(group, many=False)
 
         content = {
             'group': group_serializer.data,
-            'users': user_serializer.data
+            # 'users': user_serializer.data
         }
         return Response(content)
 

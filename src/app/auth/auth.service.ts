@@ -54,7 +54,7 @@ export class AuthAPIService {
     return new Promise(
       (resolve, reject) => {
         this.httpClient.post<any>(`${BACKEND_URL}login/`, user).subscribe(res => {
-          console.log(`successfully login, current user is ${user}`);
+          console.log(`successfully login, current user is ${user.user_name}`);
           this.isAuth = true;
           this.isAuthListener.next(true);
           this.getUserByEmail(user.user_email);
