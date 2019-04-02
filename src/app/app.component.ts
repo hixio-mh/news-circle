@@ -24,8 +24,8 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.router.navigate(['/login']);
-      // this.router.navigate(['/newsfeed']);//TEMPORARY to avoid need to login during development
+      // this.router.navigate(['/login']);
+      this.router.navigate(['/newsfeed']);//TEMPORARY to avoid need to login during development
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();

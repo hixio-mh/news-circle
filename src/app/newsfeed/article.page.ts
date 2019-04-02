@@ -23,6 +23,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 export class ArticlePage implements OnInit {
   newsfeed: any[];
   article: any;
+  source: any;
   sub: any;
   title: any;
 
@@ -37,10 +38,13 @@ export class ArticlePage implements OnInit {
 
       this.sub = this.route.params.subscribe(params => {
         this.article = params['article']; 
+        this.source = params['source']
       });
 
       console.log("Do we have it?");
       console.log(this.article);
+      console.log(this.source);
+
 
       const browser = this.iab.create(this.article);
 

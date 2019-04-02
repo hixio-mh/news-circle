@@ -32,9 +32,9 @@ export class NewsfeedPage {
 
   }
 
-  goToArticle(article) {
+  goToArticle(article, source) {
 
-    this.router.navigate(['article',{article:article}]);
+    this.router.navigate(['article',{article:article, source:source}]);
 
 
   }
