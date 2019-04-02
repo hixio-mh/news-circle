@@ -4,8 +4,9 @@ import { Subject } from 'rxjs';
 import { GroupService } from './group.service';
 import { User } from '../models/user.model';
 import { GroupModalComponent } from './group-modal/group-modal.component';
+import {NavController, ModalController } from '@ionic/angular';
+
 import { CreateModalComponent } from './create-modal/create-modal.component';
-import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { AppService } from '../app.service';
 @Component({
@@ -19,7 +20,7 @@ export class GroupPage implements OnInit {
   private curUserId: number;
 
   constructor(private groupService: GroupService,
-    private modalController: ModalController, public alertController: AlertController) {
+    private modalController: ModalController, public alertController: AlertController, private nav:NavController) {
     
     this.curUserId = parseInt(localStorage.getItem('user_id'));
     groupService.fetchGroups(this.curUserId).then(
@@ -79,6 +80,10 @@ export class GroupPage implements OnInit {
     await alert.present();
   }
 
+  manageMember(groupId){
+    this.nav.navigateForward(`/group/${groupId}`);
+  }
+  
   ngOnInit() {
   }
 

@@ -1,23 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>{{groupName}} Members</ion-title>
-    <ion-button shape="round" fill="outline" (click)="addUser()">
-        <ion-icon name="person-add" >      
-          </ion-icon>
-    </ion-button>
-
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/group"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>  
 </ion-header>
 
 <ion-content padding>
-
+  <ion-item>
+      <ion-button shape="round" fill="outline" (click)="addUser()">
+          <ion-icon name="person-add" >      
+            </ion-icon>
+      </ion-button>
+  </ion-item>
+   
 <ion-list>
+  
   <ion-item *ngFor="let member of members">
     <ion-title>
       {{member.user_name}}
     </ion-title>
 
-    <ion-item (click)="remove()">
+    <ion-item (click)="remove(member.user_id)">
         <ion-icon name="trash"></ion-icon>
     </ion-item>
   

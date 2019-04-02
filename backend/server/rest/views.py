@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,detail_route
 from rest_framework.views import APIView
 from rest_framework import generics
 from rest_framework.response import Response
@@ -7,6 +7,7 @@ from rest_framework import status
 from .models import *
 from .serializers import *
 from django.shortcuts import get_object_or_404
+
 
 # Create your views here.
 class NewsView(APIView):
@@ -72,6 +73,9 @@ class GroupView(APIView):
         group = Group.objects.get(pk = pk)
         group.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+     
+    
+        
 
 class RegisterView(APIView):
     def post(self, request):
@@ -103,10 +107,41 @@ class UsersView(APIView):
         serializer = UserSerializer(self.get_queryset(), many=True)
         return Response(serializer.data)
 
+class UserGroupView(APIView):
+    queryset = UserGroup.objects.all()
+    
+
+    def get(self, request):
+        query = UserGroup.objects.all()
+        serializer = UserGroupSerializer(query, many=True)
+        return Response(serializer.data)
+
+    def delete(self, request,*args, **kwargs):
+        userId = self.request.query_params.get('user_id', None)
+        groupId = self.request.query_params.get('group_id', None)
+        userGroup = self.queryset.filter(group=groupId, user=userId)
+        userGroup.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def post(self, request,*args, **kwargs):
+        groupId = self.request.query_params.get('group_id', None)
+        userId = self.request.query_params.get('user_id', None)
+        user = User.objects.get(pk=userId)
+        group = Group.objects.get(pk=groupId)
+        userGroup = UserGroup.objects.create(group=group,user=user)
+        user_group_serializer = UserGroupSerializer(data=userGroup)
+        print(user_group_serializer)
+        if user_group_serializer.is_valid():
+            user_group_serializer.save()
+            return Response(user_group_serializer.data, status=status.HTTP_200_OK)
+        return Response(user_group_serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
+
+
+    
 class InvitationView(APIView):
     def get(self, request, pk):
-        invitation = Invitation.objects.select_related('receiver').get(receiver_id = pk)
-        invitation_serializer = InvitationSerializer(invitation, many = False)
+        invitations = Invitation.objects.select_related('receiver').filter(receiver_id = pk)
+        invitation_serializer = InvitationSerializer(invitations, many = True)
         return Response(invitation_serializer.data)
 
     def post(self, request):

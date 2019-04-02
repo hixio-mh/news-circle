@@ -17,11 +17,20 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'tab2',
         children: [
           {
             path: '',
             loadChildren: '../group/group.module#GroupPageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab3',
+        children: [
+          {
+            path: '',
+            loadChildren: '../message/message.module#MessagePageModule'
           }
         ]
       },
