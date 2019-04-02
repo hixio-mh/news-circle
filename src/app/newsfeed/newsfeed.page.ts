@@ -34,7 +34,11 @@ export class NewsfeedPage {
 
   goToArticle(article, source) {
 
+<<<<<<< HEAD
     this.router.navigate(['article',{article:article, source:source}]);
+=======
+    // this.router.navigate(['tabs/tab1/article',{article:article}]);
+>>>>>>> front end menu
 
 
   }

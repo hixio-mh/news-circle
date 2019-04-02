@@ -17,15 +17,18 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GroupPageModule } from './group/group.module';
 import { CreateModalComponent } from './group/create-modal/create-modal.component';
 import { GroupModalComponent } from './group/group-modal/group-modal.component';
+<<<<<<< HEAD
 import { GroupMemberPageModule } from './group-member/group-member.module';
 import { MenuComponent } from './menu/menu.component'
 import { AppService } from './app.service';
+=======
+import {GroupMemberPageModule} from './group-member/group-member.module';
+>>>>>>> front end menu
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlePage,
-    MenuComponent,
   ],
   entryComponents: [GroupModalComponent, CreateModalComponent],
   imports: [
