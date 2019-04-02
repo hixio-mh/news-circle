@@ -55,4 +55,22 @@ class InvitationSerializer(serializers.ModelSerializer):
     # group = GroupSerializer(many = False)
     class Meta:
         model = Invitation
+<<<<<<< HEAD
         fields = ('invitation_id', 'sender','receiver', 'group', 'timestamp', 'status')
+=======
+        fields = ('invitation_id', 'sender', 'receiver', 'group', 'timestamp', 'status')
+
+class NewsGroupSerializer(serializers.ModelSerializer):
+    news = NewsSerializer(many = False)
+    group = GroupSerializer(many = False)
+
+    def create(news, group):
+        news = news
+        group = group
+        newsgroup = NewsGroup.objects.create(news = news, group = group)
+        return newsgroup
+    
+    class Meta:
+        model = NewsGroup
+        fields = ('news', 'group')
+>>>>>>> Add news group

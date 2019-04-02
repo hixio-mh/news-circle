@@ -8,7 +8,7 @@ router = SimpleRouter()
 # router.register(r'contacts', ContactView, base_name='contacts')
 
 urlpatterns = [
-    url(r'^news/', views.NewsView.as_view()),
+    url(r'^news/(?P<pk>\d+)?/$', views.NewsView.as_view()),
     # Register
     url(r'^auth/register', views.RegisterView.as_view()),
     # Login
@@ -25,6 +25,8 @@ urlpatterns = [
     # url(r'^groups/',  views.GroupsView.as_view()),
     url(r'^invitation/(?P<pk>\d+)/$',  views.InvitationView.as_view()),
     url(r'^invitation/',  views.InvitationView.as_view()),
+    url(r'^newsgroup/(?P<group_pk>\d+)/(?P<news_pk>\d+)/$',  views.NewsGroupView.as_view()),
+
 
 
     # # Contacts

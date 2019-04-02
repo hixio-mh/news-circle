@@ -11,14 +11,27 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class NewsView(APIView):
-    def get(self, request):
-        news = News.objects.all()
+    def get(self, request, pk = ''):
+        """
+        If not pk: return all news
+        If pk: return news by group = pk
+        """
+        news = []
+        print(pk)
+        if pk == '':
+            news = News.objects.all()
+        else:
+            group = Group.objects.get(pk = pk)
+            news = group.news_group.all()
+
         serializer = NewsSerializer(news, many=True)
         return Response(serializer.data)
 
 class GroupsView(APIView):
     def get(self, request, pk):
-        # Return all groups by user id
+        """
+        Return group of user == pk
+        """
         user = User.objects.get(pk = pk)
         groups = user.user_group.all()
         serializer = GroupSerializer(groups, many=True)
@@ -165,3 +178,18 @@ class InvitationView(APIView):
             return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
         return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class NewsGroupView(APIView):
+    def post(self, request, **kwargs):
+        """
+        Create a news in group = group_pk
+        """
+        group_pk = kwargs.get('group_pk', '')
+        news_pk = kwargs.get('news_pk', '')
+        group = Group.objects.get(pk = group_pk)
+        news = News.objects.get(pk = news_pk)
+
+        news_group = NewsGroupSerializer.create(news = news, group = group)
+        if news_group:
+            news_group.save()
+            return Response({'MESSAGE': 'CREATED'}, status=status.HTTP_201_CREATED)
+        return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
