@@ -48,6 +48,7 @@ class UserGroup(models.Model):
     user = models.ForeignKey('User', models.CASCADE, blank=True, null=True)
     group = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
     status = models.TextField(null = False, max_length = 100, default = "accept")
+    # invitation = models.ForeignKey('Invitation', models.CASCADE, blank=True, null=True)
 
 
     class Meta:

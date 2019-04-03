@@ -50,7 +50,7 @@ acceptInvitation(invitationId,receiverId,groupId){
         });
   }
 
-rejectInvitation(invitationId,receiverId){
+rejectInvitation(invitationId,receiverId,groupId){
   // const body = {"status":"reject"};
   let body = new FormData();
   body.append('status', "reject");
@@ -58,6 +58,15 @@ rejectInvitation(invitationId,receiverId){
     res=>{
        this.getInvitation(receiverId);
     });
+  //2.update userGroup status
+  body.append('user_id',receiverId) 
+  body.append('group_id',groupId) 
+  this.httpClient.put<any>(`${BACKEND_URL}usergroup/`,body).subscribe(
+          res=>{
+             console.log(res);
+        });
+  
 }
+
   }
 

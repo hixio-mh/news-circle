@@ -50,7 +50,9 @@ export class InvitationService {
                 console.log(res);
             }
     );
-    }
+    this.groupMemberService.memberUpdate();
+
+}
    
   
 }

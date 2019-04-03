@@ -50,7 +50,7 @@ export class GroupMemberPage implements OnInit {
         'curUserId':this.curUserId
       }
     });
-
+    this.groupMemberservice.memberUpdate();
     return await modal.present();
   } 
 
