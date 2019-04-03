@@ -20,7 +20,13 @@ class GroupsView(APIView):
     def get(self, request, pk):
         # Return all groups by user id
         user = User.objects.get(pk = pk)
-        groups = user.user_group.all()
+        # groups = user.user_group.all()
+        user_group = UserGroup.objects.filter(user = pk).filter(status="accept")
+        # groups = user_group.filter(status="accept")
+        groups = []
+        for i in user_group:
+            groups.append(i.group)
+            
         serializer = GroupSerializer(groups, many=True)
         return Response(serializer.data)
 
