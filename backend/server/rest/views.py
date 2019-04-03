@@ -27,13 +27,16 @@ class GroupsView(APIView):
 class GroupView(APIView):
     def get(self, request, pk):
         group = get_object_or_404(Group, pk = pk)
-        users = group.user_set.all()
-        user_serializer = UserSerializer(users, many = True)
+        userGroup = UserGroup.objects.filter(group=pk)
+        # users = group.user_set.all()
+        # user_serializer = UserSerializer(users, many = True)
         group_serializer = GroupSerializer(group, many=False)
+        userGroup_serializer = UserGroupStatusSerializer(userGroup, many = True)
 
         content = {
             'group': group_serializer.data,
-            'users': user_serializer.data
+            # 'users': user_serializer.data,
+            'userGroupStatus':userGroup_serializer.data
         }
         return Response(content)
 
@@ -75,8 +78,6 @@ class GroupView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
      
     
-        
-
 class RegisterView(APIView):
     def post(self, request):
         serializer = UserSerializer(data = request.data)
@@ -90,7 +91,6 @@ class LoginView(APIView):
         serializer = UserSerializer(data = request.data)
         users = User.objects.all()
         emails = [user.user_email for user in users]
-        print(request.data)
         if request.data['user_email'] in emails and serializer.is_valid():
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
@@ -124,11 +124,16 @@ class UserGroupView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def post(self, request,*args, **kwargs):
-        groupId = self.request.query_params.get('group_id', None)
-        userId = self.request.query_params.get('user_id', None)
+        # groupId = self.request.query_params.get('group_id', None)
+        # userId = self.request.query_params.get('user_id', None)
+        
+        userId = request.data["user_id"]
         user = User.objects.get(pk=userId)
+        groupId = request.data["group_id"]
         group = Group.objects.get(pk=groupId)
-        userGroup = UserGroup.objects.create(group=group,user=user)
+        user_status = request.data['status']
+        userGroup = UserGroup.objects.create(group=group,user=user,status=user_status)
+        print(userGroup)
         user_group_serializer = UserGroupSerializer(data=userGroup)
         if user_group_serializer.is_valid():
             user_group_serializer.save()
@@ -141,12 +146,6 @@ class InvitationView(APIView):
     def get(self, request, pk):
         invitations = Invitation.objects.select_related('receiver').filter(receiver_id = pk)
         invitation_serializer = GetInvitationSerializer(invitations, many = True)
-            # data={
-            #     "invitation":i,
-            #     "group": GroupSerializer(i.group).data,
-            #     "sender":UserSerializer(i.sender).data
-            # }
-            # content.append(data) 
         return Response(invitation_serializer.data)
         
         # return Response(content)
@@ -155,7 +154,9 @@ class InvitationView(APIView):
         """
         Send a new invitation from sender to receiver
         """
+        print(request.data)
         invitation_serializer = ChangeInvitationSerializer(data=request.data,many=True)
+        print(invitation_serializer)
         if invitation_serializer.is_valid():
             invitation_serializer.save()
             return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)

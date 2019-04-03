@@ -14,22 +14,32 @@ export class GroupMemberPage implements OnInit {
   groupId: any;
   groupName: String;
   curUserId: number;
+  userGroup:any;
+  pendingUsers:any;
 
   constructor(private activatedRoute: ActivatedRoute, private groupMemberservice: GroupMemberService, private modaltrl:ModalController) {
     this.groupId = this.activatedRoute.snapshot.paramMap.get('id');
     this.curUserId = parseInt(localStorage.getItem('user_id'));
 
     this.groupMemberservice.getMembers(this.groupId).then(res => {
-                console.log(res);
-                this.members = res["users"];
+                this.userGroup = res["userGroupStatus"];
+                this.members = this.userGroup.filter(user=>{
+                  return user.status=="accept"}
+                  );
+                this.pendingUsers = this.userGroup.filter(user=>{
+                    return user.status=="pending"}
+                    );
+                console.log(this.pendingUsers);
+
                 this.groupName = res['group']['group_name']
                 this.groupMemberservice.memberUpdate().subscribe(
                   updated=>{
-                    this.members = updated["users"];
+                    this.userGroup = updated["userGroupStatus"];
                   }
                 )
                 
     });
+
    }
   
    async addUser(){

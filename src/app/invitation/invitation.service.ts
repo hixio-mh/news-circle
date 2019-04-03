@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { GroupMemberService } from '../group-member/group-member.service';
 
 const BACKEND_URL = 'http://localhost:8000/rest/';
 @Injectable({
@@ -11,7 +12,7 @@ export class InvitationService {
   userUpdate = new Subject<any>();
   user:any;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private groupMemberService: GroupMemberService) {
   
    }
    getUser(){
@@ -27,22 +28,28 @@ export class InvitationService {
   );
 }
     invite(groupId, senderId, receiverId){
-        return new Promise(
-            (resolve, reject) => {
-                let body = new FormData();
-                body.append('sender', senderId);
-                body.append('receiver', receiverId);
-                body.append('group', groupId);
 
-                this.httpClient.post<any>(`${BACKEND_URL}invitation/`, body).subscribe(res => {
-                    console.log()
-                    resolve(res);
-                }, err => {
-                    console.log("cannot invite users");
-                    reject(err);
-                });
+             //1. notify user-group pending status
+
+            let param = new FormData();
+            param.append('user_id', receiverId);
+            param.append('group_id', groupId);
+            param.append('status', 'pending');
+            this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
+                    res=>{
+                       console.log(res);
+                    })
+
+            //2 add invitation
+            let body = new FormData();
+            body.append('sender', senderId);
+            body.append('receiver', receiverId);
+            body.append('group', groupId);
+
+            this.httpClient.post<any>(`${BACKEND_URL}invitation/`, body).subscribe(res => {
+                console.log(res);
             }
-        );
+    );
     }
    
   

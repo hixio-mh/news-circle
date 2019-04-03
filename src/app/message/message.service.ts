@@ -39,11 +39,15 @@ acceptInvitation(invitationId,receiverId,groupId){
     res=>{
        this.getInvitation(receiverId);
     });
-  //2.update userGroup
-  this.httpClient.post<any>(`${BACKEND_URL}usergroup/?user_id=${receiverId}&group_id=${groupId}`,{}).subscribe(
-    res=>{
-       console.log(res);
-    })
+  //2.update userGroup status
+  let param = new FormData();
+  param.append('user_id', receiverId);
+  param.append('group_id', groupId);
+  param.append('status', 'accept');
+  this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
+          res=>{
+             console.log(res);
+        });
   }
 
 rejectInvitation(invitationId,receiverId){

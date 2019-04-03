@@ -30,6 +30,7 @@ export class GroupMemberService {
     return new Promise(
         (resolve, reject) => {
             this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`).subscribe(res => {
+              console.log(res);
               this.members = res;
               this.membersListener.next(this.members)  ;
               resolve(res);
@@ -40,6 +41,11 @@ export class GroupMemberService {
         }
     );
       }
+
+// getReceivers(){
+  
+//   getinvitation.filter(group_id=id)=> user
+// }
 
 memberUpdate(){
   return this.membersListener.asObservable();
@@ -71,5 +77,17 @@ removeMember(groupId, userId){
 );
 }
 
+// statusUpdate(groupId, receiverId, status){
+//   let param = new FormData();
+//   param.append('user_id', receiverId);
+//   param.append('group_id', groupId);
+//   param.append('status', status);
+//   this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
+//           res=>{
+//              console.log('success');
+//              this.getMembers(groupId);
+//              this.memberUpdate();
+//           })
+// }
 
 }
