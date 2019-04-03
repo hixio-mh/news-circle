@@ -29,12 +29,13 @@ export class InvitationService {
     invite(groupId, senderId, receiverId){
         return new Promise(
             (resolve, reject) => {
-                const body = {
-                    "sender": senderId,
-                    "receiver": receiverId,
-                    "group": groupId
-                }
-                this.httpClient.post<any>(`${BACKEND_URL}invitation/`,body).subscribe(res => {
+                let body = new FormData();
+                body.append('sender', senderId);
+                body.append('receiver', receiverId);
+                body.append('group', groupId);
+
+                this.httpClient.post<any>(`${BACKEND_URL}invitation/`, body).subscribe(res => {
+                    console.log()
                     resolve(res);
                 }, err => {
                     console.log("cannot invite users");

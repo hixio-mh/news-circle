@@ -130,7 +130,6 @@ class UserGroupView(APIView):
         group = Group.objects.get(pk=groupId)
         userGroup = UserGroup.objects.create(group=group,user=user)
         user_group_serializer = UserGroupSerializer(data=userGroup)
-        print(user_group_serializer)
         if user_group_serializer.is_valid():
             user_group_serializer.save()
             return Response(user_group_serializer.data, status=status.HTTP_200_OK)
@@ -141,14 +140,22 @@ class UserGroupView(APIView):
 class InvitationView(APIView):
     def get(self, request, pk):
         invitations = Invitation.objects.select_related('receiver').filter(receiver_id = pk)
-        invitation_serializer = InvitationSerializer(invitations, many = True)
+        invitation_serializer = GetInvitationSerializer(invitations, many = True)
+            # data={
+            #     "invitation":i,
+            #     "group": GroupSerializer(i.group).data,
+            #     "sender":UserSerializer(i.sender).data
+            # }
+            # content.append(data) 
         return Response(invitation_serializer.data)
+        
+        # return Response(content)
 
     def post(self, request):
         """
         Send a new invitation from sender to receiver
         """
-        invitation_serializer = InvitationSerializer(data = request.data)
+        invitation_serializer = ChangeInvitationSerializer(data=request.data,many=True)
         if invitation_serializer.is_valid():
             invitation_serializer.save()
             return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
@@ -159,7 +166,7 @@ class InvitationView(APIView):
         Update pending -> accept / reject
         """
         invitation = Invitation.objects.get(pk = pk)
-        invitation_serializer = InvitationSerializer(invitation, data = request.data)
+        invitation_serializer = ChangeInvitationSerializer(invitation, data = request.data)
         if invitation_serializer.is_valid():
             invitation_serializer.save()
             return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)

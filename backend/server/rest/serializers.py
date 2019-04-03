@@ -49,10 +49,17 @@ class GroupSerializer(serializers.ModelSerializer):
         model = Group
         fields = ('group_id', 'group_name', 'group_description', 'user_group')
 
-class InvitationSerializer(serializers.ModelSerializer):
-    # sender = UserSerializer(many = False)
-    # receiver = UserSerializer(many = False)
-    # group = GroupSerializer(many = False)
+class GetInvitationSerializer(serializers.ModelSerializer):
+    sender = UserSerializer(many = False)
+    receiver = UserSerializer(many = False)
+    group = GroupSerializer(many = False)
     class Meta:
         model = Invitation
         fields = ('invitation_id', 'sender','receiver', 'group', 'timestamp', 'status')
+
+
+
+class ChangeInvitationSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Invitation
+            fields = ('invitation_id', 'sender','receiver', 'group', 'timestamp', 'status')
