@@ -47,6 +47,9 @@ class UserGroup(models.Model):
     user_group_id = models.AutoField(primary_key = True)
     user = models.ForeignKey('User', models.CASCADE, blank=True, null=True)
     group = models.ForeignKey('Group', models.CASCADE, blank=True, null=True)
+    status = models.TextField(null = False, max_length = 100, default = "accept")
+    # invitation = models.ForeignKey('Invitation', models.CASCADE, blank=True, null=True)
+
 
     class Meta:
         managed = True
@@ -66,3 +69,4 @@ class Invitation(models.Model):
 
     def __str__(self):
         return str(self.timestamp)
+

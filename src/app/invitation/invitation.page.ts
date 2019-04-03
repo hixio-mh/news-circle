@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams, ModalController } from '@ionic/angular';
+import { NavParams, ModalController,NavController } from '@ionic/angular';
 import { InvitationService } from './invitation.service';
+import { GroupMemberService } from '../group-member/group-member.service';
 
 @Component({
   selector: 'app-invitation',
@@ -13,7 +14,7 @@ export class InvitationPage implements OnInit {
   receiver: any;
   groupId:number;
 
-  constructor(private navParams:NavParams,private modalController:ModalController, private invitation:InvitationService) {
+  constructor(private navParams:NavParams, private nav:NavController, private modalController:ModalController, private invitation:InvitationService, private groupMemberService: GroupMemberService) {
     this.groupId = this.navParams.get("groupId");
     this.sender =  this.navParams.get("curUserId");
     this.invitation.getUser().then(
@@ -42,7 +43,11 @@ export class InvitationPage implements OnInit {
       this.invitation.invite(this.groupId,this.sender,receiver.user_id);
     })
 
+    //TODO: Update groupmembe listener
+    // this.nav.navigateForward(`/group/${this.groupId}`);
+    this.groupMemberService.memberUpdate();
     this.close();
+
   }
   
 
