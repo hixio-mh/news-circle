@@ -40,7 +40,37 @@ email: murrayn@umich.edu
 
 password: damnkitties!5
 
+
 #Heroku deployment
+
+From this 
+
+https://medium.com/@BennettGarner/deploying-django-to-heroku-procfile-static-root-other-pitfalls-e7ab8b2ba33b
+
+And this
+
+https://medium.com/@BennettGarner/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
+
+Of note
+1. You really do have to make a new git repo in the django project folder
+2. Procfile should look like 
+
+web: gunicorn server.wsgi
+
+Verify its working with
+
+heroku ps:scale web=1
+
+
+
+
+
+
+
+
+
+
+#Heroku deployment DEPRECATED
 
 https://devcenter.heroku.com/articles/getting-started-with-python
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 from config import *
 from dotenv import load_dotenv
 load_dotenv()
@@ -148,7 +149,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 CORS_ORIGIN_ALLOW_ALL = True  
 
@@ -180,5 +183,4 @@ SOCIAL_AUTH_TWITTER_PROFILE_EXTRA_PARAMS = {
 PROPRIETARY_BACKEND_NAME = 'twitter'
 
 # Configure Django App for Heroku.
-import django_heroku
 django_heroku.settings(locals())

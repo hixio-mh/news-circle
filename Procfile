@@ -1,1 +1,0 @@
-web: gunicorn news-circle.wsgi
