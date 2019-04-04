@@ -1,3 +1,3 @@
 web: gunicorn gettingstarted.wsgi
 
-web: gunicorn news-circle
+web: gunicorn news-circle:app
