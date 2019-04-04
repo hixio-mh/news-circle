@@ -178,3 +178,7 @@ SOCIAL_AUTH_TWITTER_PROFILE_EXTRA_PARAMS = {
 }
 
 PROPRIETARY_BACKEND_NAME = 'twitter'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
