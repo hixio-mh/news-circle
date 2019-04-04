@@ -34,3 +34,24 @@ GRANT ALL ON SCHEMA public TO postgres;
 DELETE FROM news
 GRANT ALL ON SCHEMA public TO public;
 
+#Heroku credentials
+
+email: murrayn@umich.edu
+
+password: damnkitties!5
+
+#Heroku deployment
+
+https://devcenter.heroku.com/articles/getting-started-with-python
+
+1. login via heroku CLI (use credentials above)
+
+heroku login
+
+2. commit you changes or make sure you're on the version you want to commit and 
+
+git push heroku master
+
+3. 
+
+
