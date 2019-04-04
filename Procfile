@@ -1,1 +1,1 @@
-web: gunicorn news-circle:app
+web: gunicorn news-circle.wsgi

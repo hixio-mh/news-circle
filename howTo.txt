@@ -52,6 +52,13 @@ heroku login
 
 git push heroku master
 
-3. 
+3. Ensure at least one instance of the app is running
+
+heroku ps:scale web=1
+
+4. To troubleshoot, follow this
+
+https://www.codingforentrepreneurs.com/blog/go-live-with-django-project-and-heroku/
+
 
 
