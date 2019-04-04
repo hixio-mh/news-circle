@@ -1,0 +1,57 @@
+#Connect to phone
+
+1. install android studio
+
+2. Connect device
+
+3. cd news-circle/platforms
+
+4. Check if device is connected:
+
+adb devices
+
+5. Build app on phone
+
+ionic cordova run android
+
+#Drop all tables in psql database (to apply new migration)
+
+1. start psql, specifying db and user
+
+psql newscircle postgres
+
+2. Enter password
+
+3. run
+
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
+GRANT ALL ON SCHEMA public TO postgres;
+
+#Drop all records from table (eg news)
+
+DELETE FROM news
+GRANT ALL ON SCHEMA public TO public;
+
+#Heroku credentials
+
+email: murrayn@umich.edu
+
+password: damnkitties!5
+
+#Heroku deployment
+
+https://devcenter.heroku.com/articles/getting-started-with-python
+
+1. login via heroku CLI (use credentials above)
+
+heroku login
+
+2. commit you changes or make sure you're on the version you want to commit and 
+
+git push heroku master
+
+3. 
+
+

@@ -52,19 +52,19 @@ def g_format(unique_id):
 	print("Google News article count " + str(len(g_articles)))
 	return g_articles
 
-
-
 #Caching and API request
 CACHE_FILE_NAME = "gcache.json"
 
 #Load the cache file into a python dictionary
 
-try: 
-	cache_file = open(CACHE_FILE_NAME, 'r')
-	cache_str = cache_file.read()
-	CACHE_DICT = json.loads(cache_str)
-except:
-	CACHE_DICT = {}
+# try: 
+# 	cache_file = open(CACHE_FILE_NAME, 'r')
+# 	cache_str = cache_file.read()
+# 	CACHE_DICT = json.loads(cache_str)
+# except:
+# 	CACHE_DICT = {}
+
+CACHE_DICT = {}
 
 #Define the unique identifier function
 
@@ -87,23 +87,24 @@ def get_g_data(page=0):
 	#build unique identifier
 	unique_ident_g = unique_id(baseurl, params_dict,['apiKey'])
 	#Pull data from cache if it's in there
-	if unique_ident_g in CACHE_DICT:
-		print("Getting cached data from Google News")
-		return g_format(unique_ident_g)
-	#otherwise request it from the g API	
-	else:
-		print("Requesting new data from Google News")
-		g_resp = requests.get(baseurl,params_dict)
-		print(g_resp.url)
-		print("Google News request status:" + str(g_resp.status_code))
-		#add response to the cache dictionary
-		CACHE_DICT[unique_ident_g] = json.loads(g_resp.text)
-		dumped_data = json.dumps(CACHE_DICT)
-		cache_write_file = open(CACHE_FILE_NAME,'w')
-		cache_write_file.write(dumped_data)
-		cache_write_file.close()
-		print("New Google News data written to cache")
-		return g_format(unique_ident_g)
+	# if unique_ident_g in CACHE_DICT:
+	# 	print("Getting cached data from Google News")
+	# 	return g_format(unique_ident_g)
+	# #otherwise request it from the g API	
+	# else:
+	print("Requesting new data from Google News")
+	g_resp = requests.get(baseurl,params_dict)
+	print(g_resp.url)
+	print("Google News request status:" + str(g_resp.status_code))
+	#add response to the cache dictionary
+	CACHE_DICT[unique_ident_g] = json.loads(g_resp.text)
+	# dumped_data = json.dumps(CACHE_DICT)
+	# cache_write_file = open(CACHE_FILE_NAME,'w')
+	# cache_write_file.write(dumped_data)
+	# cache_write_file.close()
+	print("New Google News data added")
+	return g_format(unique_ident_g)
+
 
 g = get_g_data()
 
