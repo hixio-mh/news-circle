@@ -19,9 +19,9 @@
   <ion-title>Members</ion-title>
 
   <ion-item *ngFor="let member of members">
-    <ion-title>
+    <ion-label>
       {{member.user.user_name}}
-    </ion-title>
+    </ion-label>
 
     <ion-item (click)="remove(member.user.user_id)">
         <ion-icon name="trash"></ion-icon>
@@ -29,16 +29,16 @@
 </ion-item>
 
 </ion-list>
-
+<div>
 <ion-list > 
-  <ion-title color="medium">Pending Users</ion-title>
+  <ion-label color="medium">Pending Users</ion-label>
 
   <ion-item  *ngFor="let user of pendingUsers">
-      <ion-title color="medium">
+      <ion-label color="medium">
        {{user.user.user_name}}
-      </ion-title>
+      </ion-label>
   </ion-item>
   
   </ion-list>
-
+</div>
 </ion-content>

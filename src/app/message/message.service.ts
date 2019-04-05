@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { GroupMemberService } from '../group-member/group-member.service';
+import { GroupService } from '../group/group.service';
 
 const BACKEND_URL = 'http://localhost:8000/rest/';
 
@@ -12,7 +13,7 @@ export class MessageService {
   private invitation: any;
   private invitationListener = new Subject();
 
-  constructor(private httpClient:HttpClient, private groupMemberService: GroupMemberService) { }
+  constructor(private httpClient:HttpClient, private groupMemberService: GroupMemberService, private groupService: GroupService) { }
 
   getInvitation(receiverId){
     return new Promise(
@@ -48,6 +49,7 @@ acceptInvitation(invitationId,receiverId,groupId){
   param.append('status', 'accept');
   this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
           res=>{
+            //TODO: UPDATE MEMBERS
              this.groupMemberService.getMembers(res.group);
         });
   }
@@ -66,7 +68,9 @@ rejectInvitation(invitationId,receiverId,groupId){
   this.httpClient.put<any>(`${BACKEND_URL}usergroup/`,body).subscribe(
           res=>{
              console.log(res.group);
+             //TODO: UPDATE GROUP
              this.groupMemberService.getMembers(res.group);
+            //  this.groupService.getGroupById(res.group);
 
         });
   
