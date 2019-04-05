@@ -37,9 +37,9 @@ export class MessagePage implements OnInit {
     this.message.acceptInvitation(invitationId,this.receiverId,groupId);
   }
 
-  decline(invitationId){
+  decline(invitationId,groupId){
     //status change: decline
-    this.message.rejectInvitation(invitationId,this.receiverId);
+    this.message.rejectInvitation(invitationId,this.receiverId,groupId);
   }
 
 }
