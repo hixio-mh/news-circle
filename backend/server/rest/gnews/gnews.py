@@ -132,7 +132,10 @@ test_g = g[0]
 #Populate PGDB with articles if it isn't already in there, data comes from cache
 
 def update_pgdb(article_list): 
-	conn = psycopg2.connect(host="localhost", database="newscircle", user="postgres", password=PGDB_PW)
+	#Heroku
+	conn = psycopg2.connect(host="ec2-23-23-92-204.compute-1.amazonaws.com", database="dc1cnht8753itc", user="pmufszntlviprx", password="f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3")
+	#Local
+	# conn = psycopg2.connect(host="localhost", database="newscircle", user="postgres", password=PGDB_PW)
 	cur = conn.cursor()
 
 	#Load data into pgdb
@@ -142,6 +145,7 @@ def update_pgdb(article_list):
 
 	conn.commit()
 
+	print("Loaded data to pgdb")
 	#Cut source out of titles in db
 
 
