@@ -11,7 +11,7 @@ class NewsSerializer(serializers.ModelSerializer):
 class UserGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserGroup
-        fields = ('user_group_id', 'user', 'group')
+        fields = ('user_group_id', 'user', 'group','status')
 
     def create(user, group):
         user = user
@@ -21,11 +21,6 @@ class UserGroupSerializer(serializers.ModelSerializer):
         )
         return userGroup
 
-    def update(self, instance, validated_data): 
-        user = validated_data.get('user', instance.user)
-        group =  validated_data.get('group', instance.group)
-        instance.save()
-        return instance
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -49,10 +44,32 @@ class GroupSerializer(serializers.ModelSerializer):
         model = Group
         fields = ('group_id', 'group_name', 'group_description', 'user_group')
 
-class InvitationSerializer(serializers.ModelSerializer):
-    # sender = UserSerializer(many = False)
-    # receiver = UserSerializer(many = False)
-    # group = GroupSerializer(many = False)
+class UserGroupStatusSerializer(serializers.ModelSerializer):
+        user = UserSerializer(many = False)
+        class Meta:
+                model = UserGroup
+                fields = ('user_group_id', 'user', 'group','status')
+
+
+class GetInvitationSerializer(serializers.ModelSerializer):
+    sender = UserSerializer(many = False)
+    receiver = UserSerializer(many = False)
+    group = GroupSerializer(many = False)
     class Meta:
         model = Invitation
         fields = ('invitation_id', 'sender','receiver', 'group', 'timestamp', 'status')
+
+
+
+class ChangeInvitationSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Invitation
+            fields = ('invitation_id', 'sender','receiver', 'group', 'timestamp', 'status')
+        
+        def create(self, validated_data):
+            return Invitation.objects.create(**validated_data)
+
+        def update(self, instance, validated_data):
+            instance.status = validated_data.get('status', instance.status)
+            instance.save()
+            return instance

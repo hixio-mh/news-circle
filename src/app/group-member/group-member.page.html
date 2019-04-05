@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{groupName}} Members</ion-title>
+    <ion-title>{{groupName}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/group"></ion-back-button>
     </ion-buttons>
@@ -16,16 +16,29 @@
   </ion-item>
    
 <ion-list>
-  
-  <ion-item *ngFor="let member of members">
-    <ion-title>
-      {{member.user_name}}
-    </ion-title>
+  <ion-title>Members</ion-title>
 
-    <ion-item (click)="remove(member.user_id)">
+  <ion-item *ngFor="let member of members">
+    <ion-label>
+      {{member.user.user_name}}
+    </ion-label>
+
+    <ion-item (click)="remove(member.user.user_id)">
         <ion-icon name="trash"></ion-icon>
     </ion-item>
-  
-  </ion-item>
+</ion-item>
+
 </ion-list>
+<div>
+<ion-list > 
+  <ion-label color="medium">Pending Users</ion-label>
+
+  <ion-item  *ngFor="let user of pendingUsers">
+      <ion-label color="medium">
+       {{user.user.user_name}}
+      </ion-label>
+  </ion-item>
+  
+  </ion-list>
+</div>
 </ion-content>
