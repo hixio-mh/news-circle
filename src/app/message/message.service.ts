@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { GroupMemberService } from '../group-member/group-member.service';
 
 const BACKEND_URL = 'http://localhost:8000/rest/';
 
@@ -11,7 +12,7 @@ export class MessageService {
   private invitation: any;
   private invitationListener = new Subject();
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private groupMemberService: GroupMemberService) { }
 
   getInvitation(receiverId){
     return new Promise(
@@ -20,7 +21,8 @@ export class MessageService {
             res = res.filter(msg =>{
               return msg.status=="pending";
             });
-            this.invitationListener.next(res)  ;
+            this.invitation = res;
+            this.invitationListener.next( this.invitation)  ;
             resolve(res);
           }, err => {
               console.log("cannot get invitaions");
@@ -46,7 +48,7 @@ acceptInvitation(invitationId,receiverId,groupId){
   param.append('status', 'accept');
   this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
           res=>{
-             console.log(res);
+             this.groupMemberService.getMembers(res.group);
         });
   }
 
@@ -63,7 +65,9 @@ rejectInvitation(invitationId,receiverId,groupId){
   body.append('group_id',groupId) 
   this.httpClient.put<any>(`${BACKEND_URL}usergroup/`,body).subscribe(
           res=>{
-             console.log(res);
+             console.log(res.group);
+             this.groupMemberService.getMembers(res.group);
+
         });
   
 }

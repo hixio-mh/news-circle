@@ -43,9 +43,6 @@ export class InvitationPage implements OnInit {
       this.invitation.invite(this.groupId,this.sender,receiver.user_id);
     })
 
-    //TODO: Update groupmembe listener
-    // this.nav.navigateForward(`/group/${this.groupId}`);
-    this.groupMemberService.memberUpdate();
     this.close();
 
   }

@@ -37,8 +37,14 @@ export class InvitationService {
             param.append('status', 'pending');
             this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
                     res=>{
-                       console.log(res);
-                    })
+                        this.httpClient.get<any>(`${BACKEND_URL}user/${res['user']}`).subscribe(
+                        res=>{
+                        console.log(res);
+                            let newPending = {};
+                            newPending['user'] = res;
+                            this.groupMemberService.statusUpdate(newPending);
+                        })
+                    });
 
             //2 add invitation
             let body = new FormData();
@@ -50,7 +56,6 @@ export class InvitationService {
                 console.log(res);
             }
     );
-    this.groupMemberService.memberUpdate();
 
 }
    

@@ -12,50 +12,60 @@ export class GroupMemberService {
   // membersObservable:Observable<any>;
   // membersObserver: Observer<any>;
   // memberList:Subject<any>;
-  private members: any;
-  private membersListener = new Subject();
+  members: any;
+  membersListener = new Subject();
+  groupId: any;
+  groupName: String;
+  curUserId: number;
+  userGroup:any;
+  pendingUsers:any;
+  pendingListener = new Subject();
 
   constructor(private httpClient:HttpClient) { 
-    // this.membersObserver = new Subject<any>();
-    // this.membersObservable = Observable.create(observer=>{
-    //   this.membersObserver = observer;
-    // });
   }
 
-  
+  getGroup(groupId){
+    return new Promise(
+      (resolve, reject) => {
+        this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`).subscribe( res => {
+              resolve(res);
+          }, err => {
+            reject(err);
+          });
+        }
+        );
+  }
   getMembers (groupId) {
-  //   this.membersObservable =this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`);
-  //   return this.membersObservable;
-  // }
     return new Promise(
         (resolve, reject) => {
-            this.httpClient.get<any>(`${BACKEND_URL}group/${groupId}`).subscribe(res => {
+            this.httpClient.get<any>(`${BACKEND_URL}usergroup/${groupId}/`).subscribe(res => {
               console.log(res);
-              this.members = res;
+              this.members = res.filter(user=>{
+                return user.status=="accept"}
+                );
+                console.log(this.members);
+
               this.membersListener.next(this.members)  ;
+              this.pendingUsers = res.filter(user=>{
+                  return user.status=="pending"}
+                  );
+              console.log(this.pendingUsers);
+              this.pendingListener.next(this.pendingUsers);
               resolve(res);
             }, err => {
                 console.log("cannot get group's members");
                 reject(err);
             });
         }
-    );
-      }
+    )
+    }
 
-// getReceivers(){
-  
-//   getinvitation.filter(group_id=id)=> user
-// }
+pendingListUpdate(){
+return this.pendingListener.asObservable();
+}
 
 memberUpdate(){
   return this.membersListener.asObservable();
-  //  this.getMembers(groupId).subscribe(res=>{
-  //    this.membersObservable = res["users"];
-  //    this.membersObserver.next(this.membersObservable);
-  //    console.log(this.membersObservable);
-  //  }
-  //  );
-  
   }
 
 removeMember(groupId, userId){
@@ -77,17 +87,10 @@ removeMember(groupId, userId){
 );
 }
 
-// statusUpdate(groupId, receiverId, status){
-//   let param = new FormData();
-//   param.append('user_id', receiverId);
-//   param.append('group_id', groupId);
-//   param.append('status', status);
-//   this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
-//           res=>{
-//              console.log('success');
-//              this.getMembers(groupId);
-//              this.memberUpdate();
-//           })
-// }
+statusUpdate(res){
+  this.pendingUsers.push(res);
+  this.pendingListener.next(this.pendingUsers);
+}
+
 
 }

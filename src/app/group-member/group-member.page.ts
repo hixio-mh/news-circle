@@ -17,30 +17,24 @@ export class GroupMemberPage implements OnInit {
   userGroup:any;
   pendingUsers:any;
 
+
   constructor(private activatedRoute: ActivatedRoute, private groupMemberservice: GroupMemberService, private modaltrl:ModalController) {
     this.groupId = this.activatedRoute.snapshot.paramMap.get('id');
     this.curUserId = parseInt(localStorage.getItem('user_id'));
+    this.groupMemberservice.getGroup(this.groupId).then(res=>
+        this.groupName= res['group']['group_name']
+    );
 
-    this.groupMemberservice.getMembers(this.groupId).then(res => {
-                this.userGroup = res["userGroupStatus"];
-                this.members = this.userGroup.filter(user=>{
-                  return user.status=="accept"}
-                  );
-                this.pendingUsers = this.userGroup.filter(user=>{
-                    return user.status=="pending"}
-                    );
-                console.log(this.pendingUsers);
-
-                this.groupName = res['group']['group_name']
-                this.groupMemberservice.memberUpdate().subscribe(
-                  updated=>{
-                    this.userGroup = updated["userGroupStatus"];
-                  }
-                )
-                
-    });
-
-   }
+    this.groupMemberservice.getMembers(this.groupId);
+    this.groupMemberservice.pendingListUpdate().subscribe(res=>{
+        this.pendingUsers = res;
+      }
+    );
+    this.groupMemberservice.memberUpdate().subscribe(res=>{
+      this.members = res;
+      }
+    );  
+  }
   
    async addUser(){
       const modal = await this.modaltrl.create({
