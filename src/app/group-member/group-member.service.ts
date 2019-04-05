@@ -4,7 +4,8 @@ import { Subject } from 'rxjs';
 import { Observable,Observer } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
-const BACKEND_URL = 'http://localhost:8000/rest/';
+// const BACKEND_URL = 'http://localhost:8000/rest/';
+const BACKEND_URL = 'https://news-circle.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })

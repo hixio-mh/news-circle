@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
-const BACKEND_URL = 'http://localhost:8000/rest/';
+const BACKEND_URL = 'https://news-circle.herokuapp.com/';
+// const BACKEND_URL = 'http://localhost:8000/rest/';
+
 @Injectable({
   providedIn: 'root'
 })

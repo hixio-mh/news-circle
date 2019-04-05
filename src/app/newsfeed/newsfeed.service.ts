@@ -28,7 +28,7 @@ export class NewsService {
 
     //Get articles via API
     getNews() {
-        this.httpClient.get<any>('http://127.0.0.1:8000/rest/news/').subscribe(
+        this.httpClient.get<any>('https://news-circle.herokuapp.com/rest/news/').subscribe(
             result => {
                 console.log(result); //NYT nests results in 'results ' object
                 this.news = result;

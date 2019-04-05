@@ -41,17 +41,17 @@ email: murrayn@umich.edu
 password: damnkitties!5
 
 
-#Heroku deployment
+#Heroku deployment - App
 
 From this 
 
 https://medium.com/@BennettGarner/deploying-django-to-heroku-procfile-static-root-other-pitfalls-e7ab8b2ba33b
 
-And this
-
-https://medium.com/@BennettGarner/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
-
 Of note
+0. you really have to do all this from the django project folder for us its
+
+news-circle/backend/server
+
 1. You really do have to make a new git repo in the django project folder
 2. Procfile should look like 
 
@@ -61,34 +61,56 @@ Verify its working with
 
 heroku ps:scale web=1
 
+Finally, the ssl workaround at the end of the link above was throwing an error, so we skipped it
+
+#Heroku deployment, migrating db from local
+
+https://medium.com/@BennettGarner/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
+
+1. create pg dump file (pg_dumb -U username dbname > outfile)
+
+from inside the django project folder it loos like this
+
+pg_dump --format=c -U postgres newscircle > db_dumps/newscircle.dump
+
+2. Load the dump file (as a restore) to the database
+
+https://devcenter.heroku.com/articles/heroku-postgres-import-export
+
+it involves setting up an S3 bucket 
+
+https://devcenter.heroku.com/articles/s3
+
+AWS credentials:
+
+email: murrayn@umich.edu
+password: damnkitties!5
+
+Of note:
+
+Access security credentials via main console > account name in upper right >
+Security credentials.
+
+Add the newscircle.bak file you created in 1. to the bucket
+
+*Make sure to set permissions so that public as full access
+
+install aws cli here:
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+
+Generate a signed URL like this (url found by checking box next to uploaded file in S3, reading URL from pop up that appears from the right)
+
+aws s3 presign s3://s3.us-east-2.amazonaws.com/news-circle/newscircle.dump
+
+Finally
+
+heroku pg:backups:restore "https://s3.us-east-2.amazonaws.com/news-circle/newscircle.dump" DATABASE_URL
+
+FOR NICK make sure gnews is putting data in heroku and not local db
 
 
 
-
-
-
-
-
-
-#Heroku deployment DEPRECATED
-
-https://devcenter.heroku.com/articles/getting-started-with-python
-
-1. login via heroku CLI (use credentials above)
-
-heroku login
-
-2. commit you changes or make sure you're on the version you want to commit and 
-
-git push heroku master
-
-3. Ensure at least one instance of the app is running
-
-heroku ps:scale web=1
-
-4. To troubleshoot, follow this
-
-https://www.codingforentrepreneurs.com/blog/go-live-with-django-project-and-heroku/
 
 
 

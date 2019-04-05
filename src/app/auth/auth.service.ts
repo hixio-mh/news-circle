@@ -4,8 +4,11 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
-const BACKEND_URL = 'http://localhost:8000/rest/auth/';
-const REST_URL = 'http://localhost:8000/rest/';
+const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/auth/';
+const REST_URL = 'https://news-circle.herokuapp.com/rest/';
+
+//const BACKEND_URL = 'http://localhost:8000/rest/auth/';
+//const REST_URL = 'http://localhost:8000/rest/';
 @Injectable({
   providedIn: 'root'
 })
