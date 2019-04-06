@@ -28,14 +28,14 @@
     "@ionic-native/twitter-connect": "^5.2.0",
     "@ionic/angular": "^4.0.0",
     "@ionic/lab": "^1.0.24",
-    "cordova-plugin-inappbrowser": "3.0.0",
+    "cordova-android": "7.1.4",
+    "cordova-plugin-inappbrowser": "^3.0.0",
     "cordova-plugin-ionic": "^5.3.0",
     "cordova-plugin-nativestorage": "2.3.2",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "twitter-connect-plugin": "0.6.0",
-    "zone.js": "~0.8.29",
-    "cordova-android": "7.1.4"
+    "zone.js": "~0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",

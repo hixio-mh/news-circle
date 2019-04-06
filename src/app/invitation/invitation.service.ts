@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { GroupMemberService } from '../group-member/group-member.service';
 
-const BACKEND_URL = 'https://news-circle.herokuapp.com/';
+const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
 // const BACKEND_URL = 'http://localhost:8000/rest/';
 
 @Injectable({

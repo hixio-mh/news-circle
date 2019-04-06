@@ -5,7 +5,7 @@ import { Group } from '../models/group.model';
 import { AppService } from '../app.service';
 
 // const BACKEND_URL = 'http://localhost:8000/rest/';
-const BACKEND_URL = 'https://news-circle.herokuapp.com/';
+const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
 @Injectable({
     providedIn: 'root'
   })
