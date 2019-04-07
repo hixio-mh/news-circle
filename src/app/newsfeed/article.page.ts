@@ -45,17 +45,9 @@ export class ArticlePage implements OnInit {
       console.log(this.article);
       console.log(this.source);
 
-      document.addEventListener("deviceready", onDeviceReady, false);
-      function onDeviceReady() {
-          console.log("window.open works well");
 
-          const browser = this.iab.create(this.article);
+      const browser = this.iab.create(this.article);
 
-          var ref = browser.open(this.article, target, options);
-
-      }
-
-      onDeviceReady() 
 
 
       // const browser = this.iab.create(this.article);
