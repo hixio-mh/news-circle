@@ -11,18 +11,18 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let news of newsfeed" (click)="goToArticle(news.news_url, news.news_source)">
+    <ion-card *ngFor="let news of newsfeed" >
       <ion-card-content>
-        <p class="source-header">{{news.news_source}}</p>
-        <h2 class="feed-item-title">{{news.news_title}}</h2>
-        <p>{{news.news_content}}</p> 
+        <p class="source-header" (click)="goToArticle(news.news_url, news.news_source)">{{news.news_source}}</p>
+        <h2 class="feed-item-title" (click)="goToArticle(news.news_url, news.news_source)">{{news.news_title}}</h2>
+        <p (click)="goToArticle(news.news_url, news.news_source)">{{news.news_content}}</p> 
 
         <!-- <ion-button size="small" class="button-ss-feed" fill="clear">
         </ion-button>
          <ion-button size="small" class="button-ss-feed" fill="clear" >
          </ion-button>  -->
           <!-- <button ion-button (click)="getNewsNYT()">Punch it!</button> -->
-
+          <ion-button size="small" class="button-ss-feed" (click)="onShare(news.news_id)">Share</ion-button>
       </ion-card-content>
       <ion-item>
           <ion-label>Shared by Amy, John</ion-label>  

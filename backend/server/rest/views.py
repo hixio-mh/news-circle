@@ -198,13 +198,17 @@ class NewsGroupView(APIView):
         """
         Create a news in group = group_pk
         """
-        group_pk = kwargs.get('group_pk', '')
-        news_pk = kwargs.get('news_pk', '')
-        group = Group.objects.get(pk = group_pk)
-        news = News.objects.get(pk = news_pk)
+        groups = request.data
+        try:
+            for group in groups:
+                group_pk = group['group_id']
+                news_pk = kwargs.get('news_pk', '')
+                group = Group.objects.get(pk = group_pk)
+                news = News.objects.get(pk = news_pk)
 
-        news_group = NewsGroupSerializer.create(news = news, group = group)
-        if news_group:
-            news_group.save()
+                news_group = NewsGroupSerializer.create(news = news, group = group)
+                if news_group:
+                    news_group.save()
             return Response({'MESSAGE': 'CREATED'}, status=status.HTTP_201_CREATED)
-        return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
+        except:
+            return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)

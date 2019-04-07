@@ -29,7 +29,7 @@ urlpatterns = [
     # url(r'^groups/',  views.GroupsView.as_view()),
     url(r'^invitation/(?P<pk>\d+)/$',  views.InvitationView.as_view()),
     url(r'^invitation/',  views.InvitationView.as_view()),
-    url(r'^newsgroup/(?P<group_pk>\d+)/(?P<news_pk>\d+)/$',  views.NewsGroupView.as_view()),
+    url(r'^newsgroup/(?P<news_pk>\d+)/$',  views.NewsGroupView.as_view()),
 
 
 
