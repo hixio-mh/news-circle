@@ -13,7 +13,9 @@
 
    
 <ion-list>
-  <ion-title>Members</ion-title>
+    <ion-list-header>
+        <ion-label>Members</ion-label>
+      </ion-list-header>
 
   <ion-item *ngFor="let member of members">
     <ion-label>
@@ -27,8 +29,11 @@
 
 </ion-list>
 <div>
-<ion-list > 
-  <ion-label color="medium">Pending Users</ion-label>
+<ion-list >
+    <ion-list-header>
+        <ion-label color="medium">Pending Users</ion-label>
+      </ion-list-header> 
+
 
   <ion-item  *ngFor="let user of pendingUsers">
       <ion-label color="medium">
