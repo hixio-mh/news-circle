@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Send Invitation to </ion-title>
+    <ion-title>Add members to {{group.name}} </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-toolbar>
+
 
     <ion-list>
         <ion-item *ngFor="let user of users">
+          <!-- <ion-avatar style="width:50%;height:auto"> <img src="../../assets/image/avatar.png"> </ion-avatar> -->
+          <ion-icon name="person"></ion-icon>
           <ion-label>{{user.user_name}}</ion-label>
           <ion-checkbox slot="end" [(ngModel)]="user.checked"></ion-checkbox>
         </ion-item>
@@ -17,8 +19,15 @@
   <ion-button color="danger" (click)="close()" float-right>
     Close
   </ion-button>
-  <ion-button (click)="send()" float-left>
-    Send
-  </ion-button>  
-</ion-toolbar>
+  
+  
+
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-button (click)="send()" expand="full">
+            Invite to Group
+          </ion-button> 
+  </ion-toolbar>
+  </ion-footer> 

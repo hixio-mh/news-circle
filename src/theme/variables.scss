@@ -9,7 +9,7 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #2f32a0;
+  --ion-color-primary: #055A75;
   --ion-color-primary-rgb: 47, 50, 160;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -17,7 +17,7 @@
   --ion-color-primary-tint: #5457B1;
 
   /** secondary **/
-  --ion-color-secondary: #5b5fde;
+  --ion-color-secondary: #FEBE10;
   --ion-color-secondary-rgb: 91, 95, 222;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
@@ -84,6 +84,8 @@
 
 $dark-gray: #22222a;
 
+$toolbar-title-color: #055A75;
+
 .menu-custom {
   color: red;
 }
@@ -113,4 +115,8 @@ button.button-native.sc-ion-back-button-md {
 //Feed item titles
 .feed-item-title {
     color: $dark-gray;
+}
+.toolbar-title{
+  color:var(--ion-color-primary);
+  display: center;
 }

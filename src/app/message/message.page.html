@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar class="toolbar-background">
-    <ion-title class="toolbar-title">Inbox</ion-title>
+    <ion-title class="toolbar-title">Message</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button class="menu-button" autoHide="false"></ion-menu-button>
     </ion-buttons>
@@ -10,7 +10,9 @@
 <ion-content padding>
 <ion-card *ngFor="let invitation of invitationList">
   <ion-title></ion-title>
-    <ion-card-header>   
+    <ion-card-header>
+        <!-- <ion-thumbnail><ion-avatar style="width:50%;height:auto"> <img src="../../assets/image/avatar.png"> </ion-avatar></ion-thumbnail> -->
+        <ion-icon name="person"></ion-icon>
         <ion-card-title>{{invitation.sender.user_name}} Invite you to join {{invitation.group.group_name}}</ion-card-title>
         <ion-card-subtitle>Status: {{invitation.status}}</ion-card-subtitle>
         <ion-card-subtitle>Time: {{invitation.timestamp | date:'fullDate'}}</ion-card-subtitle>
@@ -18,7 +20,12 @@
     
       <ion-card-content>
       </ion-card-content>
-      <ion-button (click)="accept(invitation.invitation_id,invitation.group.group_id)" shape="round" color="primary" slot="primary" float-left>Accept</ion-button>
-      <ion-button (click)="decline(invitation.invitation_id,invitation.group.group_id)" shape="round" color="danger" fill="outline" float-right>Decline</ion-button>
+      <ion-button (click)="accept(invitation.invitation_id,invitation.group.group_id)" fill="clear" float-left>
+          <ion-icon name="checkmark-circle"></ion-icon>
+          Accept</ion-button>
+
+      <ion-button (click)="decline(invitation.invitation_id,invitation.group.group_id)" fill="clear"  float-right> 
+        <ion-icon name="close"></ion-icon>
+        Decline</ion-button>
 </ion-card>
 </ion-content>

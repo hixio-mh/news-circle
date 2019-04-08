@@ -16,8 +16,16 @@ h2 {
 	float: right;
     margin-top: 1em;
     margin-bottom: 1em;
+    background-color: white;
+    color: var(--ion-color-secondary)
 
 }
-.toolbar-background{
-    --background:var(--ion-color-primary);
+
+.card-subline{
+    display:flex;
+    height: auto;
+}
+.avatar{
+    display:inline-block;
+    height:auto;
 }

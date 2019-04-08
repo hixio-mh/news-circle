@@ -4,6 +4,7 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { LoadingController } from '@ionic/angular';
 import { AuthAPIService } from '../auth/auth.service';
 
+const logo = "../../assets/image/logo.png";
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -13,6 +14,7 @@ export class LoginPage {
   private username: string;
   private password: string;
   private email: string;
+  private logo: string;
 
   constructor(
     private nativeStorage: NativeStorage,
@@ -23,6 +25,7 @@ export class LoginPage {
     this.username = "";
     this.password = "";
     this.email = "";
+    this.logo = logo;
   }
 
   onRegister() {
