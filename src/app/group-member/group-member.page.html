@@ -1,12 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="toolbar-title">Group {{groupName}}</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/group"></ion-back-button>
-      <ion-button shape="round" fill="clear" float-right (click)="addUser()">
-          <ion-icon name="person-add"></ion-icon>
-          </ion-button>
-    </ion-buttons>
+      <ion-back-button slot="start" defaultHref="/group"></ion-back-button>
+    <ion-button shape="round" fill="clear" float-right (click)="addUser()">
+        <ion-icon name="person-add"></ion-icon>
+        </ion-button>
   </ion-toolbar> 
    
 </ion-header>
