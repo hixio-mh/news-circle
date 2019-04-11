@@ -3,6 +3,12 @@ import requests
 import sys
 import secrets
 import psycopg2
+import os
+
+# for o in os.environ:
+# 	print(o)
+
+
 
 KEY_G = secrets.KEY_G
 PGDB_PW = secrets.PGDB_PW
@@ -133,7 +139,10 @@ test_g = g[0]
 
 def update_pgdb(article_list): 
 	#Heroku
-	conn = psycopg2.connect(host="ec2-23-23-92-204.compute-1.amazonaws.com", database="dc1cnht8753itc", user="pmufszntlviprx", password="f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3")
+	# DATABASE_URL = os.environ['DATABASE_URL']
+	# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+	conn = psycopg2.connect(host="postgres://pmufszntlviprx:f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3@ec2-23-23-92-204.compute-1.amazonaws.com:5432/dc1cnht8753itc", database="dc1cnht8753itc", user="pmufszntlviprx", password="f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3")
+
 	#Local
 	# conn = psycopg2.connect(host="localhost", database="newscircle", user="postgres", password=PGDB_PW)
 	cur = conn.cursor()

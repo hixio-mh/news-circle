@@ -19,7 +19,7 @@ ionic cordova run android
 1. start psql, specifying db and user
 
 psql newscircle postgres
-
+;;
 2. Enter password
 
 3. run
@@ -107,8 +107,9 @@ Finally
 
 heroku pg:backups:restore "https://s3.us-east-2.amazonaws.com/news-circle/newscircle.dump" DATABASE_URL
 
-FOR NICK make sure gnews is putting data in heroku and not local db
+#Connect to Heroku DB
 
+https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-python
 
 
 
