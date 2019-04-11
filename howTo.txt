@@ -67,7 +67,7 @@ Finally, the ssl workaround at the end of the link above was throwing an error, 
 
 https://medium.com/@BennettGarner/deploying-django-to-heroku-connecting-heroku-postgres-fcc960d290d1
 
-1. create pg dump file (pg_dumb -U username dbname > outfile)
+1. create pg dump file (pg_dump -U username dbname > outfile)
 
 from inside the django project folder it loos like this
 
