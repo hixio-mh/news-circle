@@ -12,6 +12,7 @@ class News(models.Model):
         managed = True
         db_table = 'news'
         app_label = 'rest'
+        ordering = ['-news_id']
         
     def __str__(self):
         return self.news_content
