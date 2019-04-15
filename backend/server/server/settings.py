@@ -124,7 +124,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 #FOLLOWING USES HEROKU DB URL 
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600,default='postgres://pmufszntlviprx:f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3@ec2-23-23-92-204.compute-1.amazonaws.com:5432/dc1cnht8753itc')
 
 #END DATABASE PART 
 
