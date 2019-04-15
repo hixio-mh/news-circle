@@ -13,10 +13,14 @@ export class InvitationPage implements OnInit {
   sender:any;
   receiver: any;
   groupId:number;
+  groupName: any;
 
   constructor(private navParams:NavParams, private nav:NavController, private modalController:ModalController, private invitation:InvitationService, private groupMemberService: GroupMemberService) {
     this.groupId = this.navParams.get("groupId");
     this.sender =  this.navParams.get("curUserId");
+    this.groupMemberService.getGroup(this.groupId).then(res=>
+      this.groupName= res['group']['group_name']
+  );
     this.invitation.getUser().then(
           res=>{
             console.log(res);

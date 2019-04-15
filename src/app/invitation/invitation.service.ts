@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { GroupMemberService } from '../group-member/group-member.service';
+import { MessageService } from '../message/message.service';
 
 const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
 // const BACKEND_URL = 'http://localhost:8000/rest/';
@@ -14,7 +15,7 @@ export class InvitationService {
   userUpdate = new Subject<any>();
   user:any;
 
-  constructor(private httpClient: HttpClient, private groupMemberService: GroupMemberService) {
+  constructor(private httpClient: HttpClient, private groupMemberService: GroupMemberService, private messageService:MessageService) {
   
    }
    getUser(){
@@ -56,8 +57,11 @@ export class InvitationService {
 
             this.httpClient.post<any>(`${BACKEND_URL}invitation/`, body).subscribe(res => {
                 console.log(res);
-            }
-    );
+                }
+            );
+
+            //3 update message inbox
+            this.messageService.getInvitation(receiverId);
 
 }
    
