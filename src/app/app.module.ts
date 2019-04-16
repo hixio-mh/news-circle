@@ -18,9 +18,6 @@ import { GroupPageModule } from './group/group.module';
 import { CreateModalComponent } from './group/create-modal/create-modal.component';
 import { GroupModalComponent } from './group/group-modal/group-modal.component';
 import { GroupMemberPageModule } from './group-member/group-member.module';
-import { MenuComponent } from './menu/menu.component'
-import { AppService } from './app.service';
-import {GroupMemberPageModule} from './group-member/group-member.module';
 import { ShareModalComponent } from './newsfeed/share-modal/share-modal.component';
 import { FormsModule } from '@angular/forms';
 
