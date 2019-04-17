@@ -9,6 +9,7 @@ import {NavController, ModalController } from '@ionic/angular';
 import { GroupService } from '../group/group.service';
 import { ShareModalComponent } from './share-modal/share-modal.component';
 import { News } from '../models/news.model';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-newsfeed',
@@ -26,7 +27,7 @@ export class NewsfeedPage {
 //https://forum.ionicframework.com/t/how-to-pass-data-from-1-page-to-another-using-navigation-in-ionic-4/151060/2
 
   //Notice multiple parameters in one constructor
-  constructor(private newsService: NewsService, private router: Router,private authService: AuthAPIService, private modalController: ModalController, private groupService: GroupService) {
+  constructor(private newsService: NewsService, private router: Router,private authService: AuthAPIService, private modalController: ModalController, private groupService: GroupService, private iab: InAppBrowser) {
       this.newsfeed = newsService.news;
       this.newsService.getNews();
       this.newsService.getNewsUpdate().subscribe(
