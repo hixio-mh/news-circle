@@ -73,3 +73,18 @@ class ChangeInvitationSerializer(serializers.ModelSerializer):
             instance.status = validated_data.get('status', instance.status)
             instance.save()
             return instance
+
+
+class NewsGroupSerializer(serializers.ModelSerializer):
+    news = NewsSerializer(many = False)
+    group = GroupSerializer(many = False)
+
+    def create(news, group):
+        news = news
+        group = group
+        newsgroup = NewsGroup.objects.create(news = news, group = group)
+        return newsgroup
+    
+    class Meta:
+        model = NewsGroup
+        fields = ('news', 'group')

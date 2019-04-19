@@ -11,8 +11,19 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class NewsView(APIView):
-    def get(self, request):
-        news = News.objects.all()
+    def get(self, request, pk = ''):
+        """
+        If not pk: return all news
+        If pk: return news by group = pk
+        """
+        news = []
+        print(pk)
+        if pk == '':
+            news = News.objects.all()
+        else:
+            group = Group.objects.get(pk = pk)
+            news = group.news_group.all()
+
         serializer = NewsSerializer(news, many=True)
         return Response(serializer.data)
 
@@ -29,13 +40,13 @@ class GroupsView(APIView):
 class GroupView(APIView):
     def get(self, request, pk):
         group = get_object_or_404(Group, pk = pk)
-        users = group.user_set.all()
-        user_serializer = UserSerializer(users, many = True)
+        # users = group.user_set.all()
+        # user_serializer = UserSerializer(users, many = True)
         group_serializer = GroupSerializer(group, many=False)
 
         content = {
             'group': group_serializer.data,
-            'users': user_serializer.data
+            # 'users': user_serializer.data
         }
         return Response(content)
 
@@ -182,3 +193,22 @@ class InvitationView(APIView):
             return Response(invitation_serializer.data, status=status.HTTP_201_CREATED)
         return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class NewsGroupView(APIView):
+    def post(self, request, **kwargs):
+        """
+        Create a news in group = group_pk
+        """
+        groups = request.data
+        try:
+            for group in groups:
+                group_pk = group['group_id']
+                news_pk = kwargs.get('news_pk', '')
+                group = Group.objects.get(pk = group_pk)
+                news = News.objects.get(pk = news_pk)
+
+                news_group = NewsGroupSerializer.create(news = news, group = group)
+                if news_group:
+                    news_group.save()
+            return Response({'MESSAGE': 'CREATED'}, status=status.HTTP_201_CREATED)
+        except:
+            return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)

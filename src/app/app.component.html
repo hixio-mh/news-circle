@@ -1,6 +1,6 @@
 <ion-app>
   <!--Ripped this code for the menu-->
-  <ion-menu style="color:red;"contentId="content1" side="start">
+  <!-- <ion-menu style="color:red;"contentId="content1" side="start">
     <ion-header style="box-shaow: none;">
       <ion-toolbar>
         <ion-title>Menu</ion-title>
@@ -28,6 +28,22 @@
     </ion-content>
 
   </ion-menu>
-  <ion-router-outlet  id="content1" main></ion-router-outlet>
+  <ion-router-outlet  id="content1" main></ion-router-outlet> -->
   
+  <!-- <ion-split-pane> -->
+      <ion-menu side="start" menuId="first" contentId="content">
+          <ion-header>
+            <ion-toolbar color="primary">
+              <ion-title>Start Menu</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <ion-list *ngFor="let group of groups">
+              <ion-item (click)="toGroupNews(group.group_id)">{{group.group_name}}</ion-item>
+            </ion-list>
+          </ion-content>
+        </ion-menu>
+      
+    <ion-router-outlet id="content"></ion-router-outlet>
+  <!-- </ion-split-pane> -->
 </ion-app>
