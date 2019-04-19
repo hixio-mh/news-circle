@@ -111,7 +111,20 @@ heroku pg:backups:restore "https://s3.us-east-2.amazonaws.com/news-circle/newsci
 
 https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-python
 
+(Make sure DATABASE_URL is declared as an environment variable here)
+https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application
+
+#Remote into Heroku DB
+
+heroku pg:psql
+
+//do yourstuff!
 
 
+#Heroku Scheduler
 
+https://devcenter.heroku.com/articles/scheduler
 
+And this, more specifically for Python
+
+https://devcenter.heroku.com/articles/clock-processes-python
