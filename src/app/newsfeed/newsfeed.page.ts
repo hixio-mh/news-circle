@@ -53,7 +53,7 @@ export class NewsfeedPage {
     // this.router.navigate(['article',{article:article, source:source}]);
     const browser = this.iab.create(article);
 
-    this.router.navigate(['article',{article:article, source:source}]);
+    //this.router.navigate(['article',{article:article, source:source}]);
 
     // this.router.navigate(['tabs/tab1/article',{article:article}]);
 

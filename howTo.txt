@@ -132,4 +132,86 @@ https://devcenter.heroku.com/articles/clock-processes-python
 
 #Deploying Android app for download
 
+
+0. Get your app set up to be deployed on the play store 
+
 https://android.jlelse.eu/publishing-an-android-app-da3502c652af
+
+
+
+1. Generate upload key and keystore
+https://developer.android.com/studio/publish/app-signing.html#generate-key
+
+1.a Open Android studio and select "open existing project" open the following:
+
+news-circle/platforms/android/app
+
+1.b. after the build, Menu > Build > Analyze APK
+
+THEN
+
+1.c. Menu > Build > Generate signed bundle/APK
+
+Select "APK" choice and hit next
+
+Under Keystore path field click "Create New"
+
+Choose a Keystore path, I chose 
+
+C:\UCAD\news-circle\platforms\android\upload-keystore.jks 
+
+Password: damnkitties!5
+
+Dialog box will pop up asking if you want to generare signed release, click yes. This will create an app release, app-release.apk, to the following path:
+
+C:\UCAD\news-circle\platforms\android\app\release
+
+2. Sign app with your new key
+
+-Change your config.xml file to have a widget id as something different than io.ionic.starter. Find config.xml here:
+
+C:\UCAD\news-circle\platforms\android\app\src\main\res\xml
+
+AND 
+
+C:\UCAD\news-circle\config.xml
+
+THEN copy and paste this config.xml file to the android directory
+
+C:\UCAD\news-circle\platforms\android\config.xml
+
+we used this instead of ionic.io.starter = 'com.test.news-circle'
+
+THEN 
+
+-Close android studio, open android product from C:\UCAD\news-circle\platforms\android
+
+-For good measure: Android Studio > Menu > Build > Rebuild Project
+
+-In Android Studio (make sure project is open to the path specified in step 1.a.), Menu > Build > Generate Signed Bundle or APK
+
+-Module: app
+-Key store path: C:\UCAD\news-circle\platforms\android\upload-keystore.jks
+-Hit Next
+-Select release, and check both boxes (V2 and V1)
+
+-Hit Analyze APK in the window that appears at the end make sure app is labeled com.test.news_circle
+
+3. Upload your APK to the Google developer console
+
+-In Console, select "App reelases" on the left
+
+-Select Open track (Beta) > Create Release
+
+Upload your .apk from 
+C:\UCAD\news-circle\platforms\android\app\release
+
+
+
+Other helpful links
+
+Releasing test versions
+https://developer.android.com/distribute/best-practices/launch/test-tracks
+
+Open test: surface your test app on Google Play
+https://support.google.com/googleplay/android-developer/answer/3131213
