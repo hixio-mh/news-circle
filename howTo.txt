@@ -128,3 +128,8 @@ https://devcenter.heroku.com/articles/scheduler
 And this, more specifically for Python
 
 https://devcenter.heroku.com/articles/clock-processes-python
+
+
+#Deploying Android app for download
+
+https://android.jlelse.eu/publishing-an-android-app-da3502c652af
