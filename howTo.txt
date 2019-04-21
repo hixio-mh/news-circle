@@ -206,6 +206,23 @@ THEN
 Upload your .apk from 
 C:\UCAD\news-circle\platforms\android\app\release
 
+FOR SIMPLE DOWNLOAD
+
+-Just add the file to our S3 bucket, making permissions public. File will be available for download at this address
+
+http://news-circle.s3.amazonaws.com/app-release.apk
+
+
+RE-DEPLOYING FOR DOWNLOAD AFTER UPDATE
+
+-make sure to increment up the version number in "C:\UCAD\news-circle\platforms\android\app\src\main\AndroidManifest.xml"
+
+FOR THE GOOGLE PLAY STORE
+
+4. Complete the checklist items on the left till they're all green.
+
+
+
 
 
 Other helpful links
