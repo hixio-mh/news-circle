@@ -1,2 +1,0 @@
-web: gunicorn server.wsgi
-clock: python clock.py

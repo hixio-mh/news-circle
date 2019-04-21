@@ -8,11 +8,45 @@
 </ion-header>
 
 <ion-content padding>
-<ion-card *ngFor="let invitation of invitationList">
-  <ion-title></ion-title>
+  <ion-list>
+      <ion-list-header>
+          <ion-chip>
+              <ion-icon name="heart"></ion-icon>
+              <ion-label>Thanks</ion-label>
+            </ion-chip>
+        </ion-list-header>
+        <ion-slides [options]="sliderConfig"> 
+        <ion-slide *ngFor="let invitation of invitationList">
+            <ion-card>
+                <ion-card-header>
+                    <!-- <ion-button float-left size="small"  shape="round" fill="outline">  -->
+                        <ion-icon float-left name="close-circle-outline"></ion-icon>
+                        <!-- </ion-button>               -->
+                <ion-card-title> Amy thanks your share of post 'WSJ'. 
+                  </ion-card-title>
+                <ion-card-subtitle>(07/10/2019 07:10 pm)</ion-card-subtitle>
+                  </ion-card-header>
+              <ion-card-content>
+              </ion-card-content>
+            </ion-card>
+      </ion-slide>
+      </ion-slides>
+
+</ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        <ion-chip>
+          <ion-icon name="mail"></ion-icon>
+          <ion-label>Invitation</ion-label>
+        </ion-chip>
+        </ion-list-header>
+      <ion-slides [options]="sliderConfig">
+        <ion-slide  *ngFor="let invitation of invitationList">
+  <ion-card>
     <ion-card-header>
         <!-- <ion-thumbnail><ion-avatar style="width:50%;height:auto"> <img src="../../assets/image/avatar.png"> </ion-avatar></ion-thumbnail> -->
-        <ion-icon name="person"></ion-icon>
+        <!-- <ion-icon name="person"></ion-icon> -->
         <ion-card-title>{{invitation.sender.user_name}} Invite you to join {{invitation.group.group_name}}</ion-card-title>
         <ion-card-subtitle>Status: {{invitation.status}}</ion-card-subtitle>
         <ion-card-subtitle>Time: {{invitation.timestamp | date:'fullDate'}}</ion-card-subtitle>
@@ -28,4 +62,8 @@
         <ion-icon name="close"></ion-icon>
         Decline</ion-button>
 </ion-card>
+</ion-slide>
+</ion-slides>
+</ion-list>
+
 </ion-content>

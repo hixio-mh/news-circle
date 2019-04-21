@@ -47,7 +47,7 @@ acceptInvitation(invitationId,receiverId,groupId){
   param.append('user_id', receiverId);
   param.append('group_id', groupId);
   param.append('status', 'accept');
-  this.httpClient.post<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
+  this.httpClient.put<any>(`${BACKEND_URL}usergroup/`,param).subscribe(
           res=>{
             //TODO: UPDATE MEMBERS
              this.groupMemberService.getMembers(res.group);
@@ -77,6 +77,10 @@ rejectInvitation(invitationId,receiverId,groupId){
 
         });
   
+}
+
+getThanks(userId){
+
 }
 
   }

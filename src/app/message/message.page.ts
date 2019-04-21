@@ -10,6 +10,12 @@ export class MessagePage implements OnInit {
   invitationList:any;
   receiverId: any;
   group: any;
+  thanksList:any;
+
+  sliderConfig = {
+    slidesPerView: 2.2,
+    spaceBetween: 2,
+  };
 
   constructor(private message: MessageService) {
     this.receiverId = parseInt(localStorage.getItem('user_id'));
@@ -17,12 +23,12 @@ export class MessagePage implements OnInit {
     this.message.getInvitation(this.receiverId).then(res=>{
         this.invitationList = res;
           })
-        this.message.invitationUpdate().subscribe(
+    this.message.invitationUpdate().subscribe(
           updated=>{
             this.invitationList = updated;
             console.log(this.invitationList);
           });
-    
+    this.thanksList = this.message.getThanks(this.receiverId);
     }
     
 
