@@ -235,19 +235,33 @@ class ThankView(APIView):
         """
         Get all the thank got by user_id
         """
-        tks = Thank.objects.get(thank_target = pk)
+        tks = Thank.objects.filter(thank_target = pk)
         thank_serializer = ThankSerializer(tks, many = True)
         return Response(thank_serializer.data)
 
-    def post(self, request):
+    def post(self, request, pk):
         """
         Thank thank_target from thank_origin
         """
         data = request.data
         thank_target_id = data['thank_target']
+        thank_target = User.objects.get(user_id = thank_target_id)
         thank_origin_id = data['thank_origin']
+        thank_origin = User.objects.get(user_id = thank_origin_id)
         group_id = data['group_id']
-        user_id = data['user_id']
+        group = Group.objects.get(group_id = group_id)
+        user_id = thank_target_id
+        user = User.objects.get(user_id = user_id)
         news_id = data['news_id']
-        news_group = NewsGroup.objects.filter(news = news_id, group = group_id, poster = user_id)
-        pass
+        news = News.objects.get(news_id = news_id)
+
+        news_group = NewsGroup.objects.filter(news = news, group = group, poster = user)[0]
+        try:
+            thank = Thank.objects.create(thank_target = thank_target, thank_origin = thank_origin, news_group = news_group)
+            if thank:
+                thank.save()
+            return Response({'MESSAGE': 'CREATED'}, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            print(e)
+            return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
