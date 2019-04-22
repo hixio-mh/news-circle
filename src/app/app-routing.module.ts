@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ArticlePage } from './newsfeed/article.page';
+import { ArticlePage } from './newsfeed/article/article.page';
 
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'article', component: ArticlePage },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'group', loadChildren: './group/group.module#GroupPageModule' },
-  { path: 'group/:id', loadChildren: './group-member/group-member.module#GroupMemberPageModule' },
+  { path: 'group/:id', loadChildren: './group-news/group-news.module#GroupNewsPageModule' },
 ];
 @NgModule({
   imports: [

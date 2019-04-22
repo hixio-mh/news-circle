@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from './newsfeed.service';
+import { NewsService } from '../newsfeed.service';
 import { NavController } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';

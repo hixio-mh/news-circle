@@ -54,16 +54,6 @@ INSTALLED_APPS = [
     'rest.apps.RestConfig',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
-    # Social oauth
-    'oauth2_provider',
-    'social_django',
-    'rest_framework_social_oauth2',
-    # 
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.twitter',
 ]
 
 SITE_ID = 1
@@ -78,7 +68,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'server.urls'
@@ -94,9 +83,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # Social Oauth
-                'social_django.context_processors.backends',
-                'social_django.context_processors.login_redirect'
             ],
         },
     },
@@ -110,21 +96,22 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 #LOCAL DATABASE - COMMENT IN FOR LOCAL RUN
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME', 'newscircle'),
-#         'USER': os.getenv('DB_USER', 'newscircle'),
-#         'PASSWORD': os.getenv('DB_PASSWORD', 'newscircle'),
-#         'HOST': os.getenv('DB_HOST', 'localhost'),
-#         'PORT': os.getenv('DB_PORT', '5432'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'newscircle'),
+        'USER': os.getenv('DB_USER', 'newscircle'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'newscircle'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
+    },
+    'prod': dj_database_url.config(conn_max_age=600,default='postgres://pmufszntlviprx:f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3@ec2-23-23-92-204.compute-1.amazonaws.com:5432/dc1cnht8753itc')
+}
 
 #FOLLOWING USES HEROKU DB URL 
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600,default='postgres://pmufszntlviprx:f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3@ec2-23-23-92-204.compute-1.amazonaws.com:5432/dc1cnht8753itc')
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600,default='postgres://pmufszntlviprx:f84ad2111d4357cedee754bbb004a1a9056bbf704aef16dc581b79be6c48d0d3@ec2-23-23-92-204.compute-1.amazonaws.com:5432/dc1cnht8753itc')
 
 #END DATABASE PART 
 
@@ -176,28 +163,14 @@ CORS_ORIGIN_ALLOW_ALL = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',  # django-oauth-toolkit >= 1.0.0
-        'rest_framework_social_oauth2.authentication.SocialAuthentication',
     ),
 }
 
 AUTHENTICATION_BACKENDS = (
-    # Twitter OAuth2
-    'social_core.backends.twitter.TwitterOAuth',
-    'rest_framework_social_oauth2.backends.DjangoOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
 WHITELISTED_DOMAINS = ['example.com']
-# Twitter configuration
-
-# Define SOCIAL_AUTH_FACEBOOK_SCOPE to get extra permissions from facebook. Email is not sent by default, to get it, you must request the email permission:
-SOCIAL_AUTH_TWITTER_SCOPE = ['email']
-SOCIAL_AUTH_TWITTER_PROFILE_EXTRA_PARAMS = {
-    'fields': 'id, name, email'
-}
-
-PROPRIETARY_BACKEND_NAME = 'twitter'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())

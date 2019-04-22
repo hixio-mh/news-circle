@@ -65,12 +65,12 @@ export class AppComponent {
   }
 
   toGroupNews(gid) {
-    this.router.navigate(['/newsfeed', gid]);
+    this.router.navigate(['/group', gid]);
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.router.navigate(['/login']);
+      // this.router.navigate(['/login']);
       // this.router.navigate(['/newsfeed']);//TEMPORARY to avoid need to login during development
 
       this.statusBar.styleDefault();

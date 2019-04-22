@@ -3,9 +3,10 @@ import { HttpClient,HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Observable,Observer } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../environments/environment';
 
-// const BACKEND_URL = 'http://localhost:8000/rest/';
-const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
+const BACKEND_URL = environment.BACKEND_URL;
+
 @Injectable({
   providedIn: 'root'
 })

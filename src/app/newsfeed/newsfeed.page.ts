@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NewsService } from './newsfeed.service';
-import { ArticlePage } from './article.page';
+import { ArticlePage } from './article/article.page';
 import { NavParams } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Subscription, Subject } from 'rxjs';
@@ -65,7 +65,7 @@ export class NewsfeedPage {
     const modal = await this.modalController.create(
       {
         component: ShareModalComponent,
-        componentProps: {'groups': this.groups, 'id': id}
+        componentProps: {'groups': this.groups, 'id': id, 'userId': this.curUserId}
       }
     )
     return await modal.present();

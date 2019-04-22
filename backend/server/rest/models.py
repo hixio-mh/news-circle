@@ -75,10 +75,25 @@ class NewsGroup(models.Model):
     news_group_id = models.AutoField(primary_key = True)
     news = models.ForeignKey('News', models.CASCADE, null = False, related_name="news")
     group = models.ForeignKey('Group', models.CASCADE, null = False, related_name = "group")
-
+    poster = models.ForeignKey('User', models.CASCADE, null = False, related_name = "user")
+ 
     class Meta:
         managed = True
         db_table = 'newsgroup'
 
     def __str__(self):
         return str(self.news_group_id)
+
+class Thank(models.Model):
+    thank_id = models.AutoField(primary_key = True)
+    thank_target = models.ForeignKey('User', models.CASCADE, null = False, related_name = "target")
+    thank_origin = models.ForeignKey('User', models.CASCADE, null = False, related_name = "origin")
+    news_group = models.ForeignKey('NewsGroup', models.CASCADE, null = False, related_name = "newsgroup")
+
+    class Meta:
+        managed = True
+        db_table = 'thank'
+
+    def __str__(self):
+        return f"{self.thank_origin} thanks {self.thank_target}"
+

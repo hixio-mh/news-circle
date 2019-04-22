@@ -78,13 +78,24 @@ class ChangeInvitationSerializer(serializers.ModelSerializer):
 class NewsGroupSerializer(serializers.ModelSerializer):
     news = NewsSerializer(many = False)
     group = GroupSerializer(many = False)
+    poster = UserSerializer(many = False)
 
-    def create(news, group):
-        news = news
-        group = group
-        newsgroup = NewsGroup.objects.create(news = news, group = group)
+    def create(self, news, group, user):
+        poster = user.user_id
+        news = news.news_id
+        group = group.group.group_id
+        newsgroup = NewsGroup.objects.create(news = news, group = group, poster = poster)
         return newsgroup
     
     class Meta:
         model = NewsGroup
-        fields = ('news', 'group')
+        fields = ('news', 'group', 'poster')
+
+class ThankSerializer(serializers.ModelSerializer):
+    thank_target = UserSerializer(many = False)
+    thank_origin = UserSerializer(many = False)
+    news_group = NewsGroupSerializer(many = False)
+
+    class Meta:
+        model = Thank
+        fields = ('thank_id', 'thank_target', 'thank_origin', 'news_group')

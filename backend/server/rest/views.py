@@ -155,8 +155,6 @@ class UserGroupView(APIView):
         return Response(user_group_serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
     def put(self, request):
-
-        print(request.data)
         userId = request.data["user_id"]
         groupId = request.data["group_id"]
         userGroup = UserGroup.objects.all().filter(user_id=userId).filter(group_id=groupId).first()
@@ -194,21 +192,62 @@ class InvitationView(APIView):
         return Response(invitation_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class NewsGroupView(APIView):
+    def get(self, request, **kwargs):
+        """
+        Get news by group id
+        """
+        try:
+            group_pk = kwargs.get("group_pk")
+            newsGroup = NewsGroup.objects.filter(group_id = group_pk)
+            news = set()
+            for item in newsGroup:
+                news.add(item.news)
+            news_serializer = NewsSerializer(list(news), many = True)
+            return Response(news_serializer.data, status = status.HTTP_200_OK)
+        except Exception as e:
+            print(e)
+            return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
+
     def post(self, request, **kwargs):
         """
         Create a news in group = group_pk
         """
-        groups = request.data
-        try:
-            for group in groups:
-                group_pk = group['group_id']
-                news_pk = kwargs.get('news_pk', '')
-                group = Group.objects.get(pk = group_pk)
-                news = News.objects.get(pk = news_pk)
+        data = request.data
 
-                news_group = NewsGroupSerializer.create(news = news, group = group)
+        try:
+            for item in data:
+                group_pk = item['group_id']
+                poster_pk = item['user_id']
+                news_pk = item['news_id']
+                group = Group.objects.get(pk = group_pk)
+                user = User.objects.get(pk = poster_pk)
+                news = News.objects.get(pk = news_pk)
+                news_group = NewsGroup.objects.create(news = news, group = group, poster = user)
                 if news_group:
                     news_group.save()
             return Response({'MESSAGE': 'CREATED'}, status=status.HTTP_201_CREATED)
-        except:
+        except Exception as e:
+            print(e)
             return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
+
+class ThankView(APIView):
+    def get(self, request, pk):
+        """
+        Get all the thank got by user_id
+        """
+        tks = Thank.objects.get(thank_target = pk)
+        thank_serializer = ThankSerializer(tks, many = True)
+        return Response(thank_serializer.data)
+
+    def post(self, request):
+        """
+        Thank thank_target from thank_origin
+        """
+        data = request.data
+        thank_target_id = data['thank_target']
+        thank_origin_id = data['thank_origin']
+        group_id = data['group_id']
+        user_id = data['user_id']
+        news_id = data['news_id']
+        news_group = NewsGroup.objects.filter(news = news_id, group = group_id, poster = user_id)
+        pass

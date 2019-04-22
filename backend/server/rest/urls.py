@@ -29,7 +29,10 @@ urlpatterns = [
     # url(r'^groups/',  views.GroupsView.as_view()),
     url(r'^invitation/(?P<pk>\d+)/$',  views.InvitationView.as_view()),
     url(r'^invitation/',  views.InvitationView.as_view()),
-    url(r'^newsgroup/(?P<news_pk>\d+)/$',  views.NewsGroupView.as_view()),
+    url(r'^newsgroup/(?P<group_pk>\d+)/',  views.NewsGroupView.as_view()),
+    url(r'^thank/(?P<pk>\d+)/',  views.ThankView.as_view()),
+    # Post news as a poster
+    # url(r'^newsgroup/',  views.NewsGroupView.as_view()),
 
 
 

@@ -6,9 +6,9 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { HttpHeaders } from '@angular/common/http';
 import { GroupService } from '../group/group.service';
 import { reject } from 'q';
+import { environment } from '../../environments/environment';
 
-// const BACKEND_URL = 'http://localhost:8000/rest/';
-const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
+let BACKEND_URL = environment.BACKEND_URL;
 //Ok let's roll
 
 @Injectable({
@@ -68,7 +68,7 @@ export class NewsService implements OnInit {
     //Add article to DB
     shareToGroup(groups, news_id) {
         return new Promise( (resolve, reject) => {
-            this.httpClient.post<any>(`${BACKEND_URL}newsgroup/${news_id}/`, groups).subscribe(res => {
+            this.httpClient.post<any>(`${BACKEND_URL}newsgroup/1/`, groups).subscribe(res => {
                 console.log(res)
                 resolve(res);
             }, err => {
