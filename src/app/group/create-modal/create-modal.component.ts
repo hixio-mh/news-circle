@@ -19,6 +19,7 @@ export class CreateModalComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.uid)
   }
 
   onSave() {

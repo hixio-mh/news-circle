@@ -1,7 +1,0 @@
-Started here:
-
-https://ionicframework.com/docs/api/menu
-
-Used this to implement:
-
-https://stackoverflow.com/questions/53657275/ionic-4-adding-side-menu

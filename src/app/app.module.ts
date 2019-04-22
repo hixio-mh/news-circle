@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsService } from './newsfeed/newsfeed.service';
 import { InvitationPageModule } from './invitation/invitation.module';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
-import { ArticlePage } from './newsfeed/article.page';
+import { ArticlePage } from './newsfeed/article/article.page';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GroupPageModule } from './group/group.module';
 import { CreateModalComponent } from './group/create-modal/create-modal.component';
