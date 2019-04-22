@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { AuthAPIService } from './auth/auth.service';
 import { User } from './models/user.model';
 import { Group } from './models/group.model';
+import { environment } from '../environments/environment';
 
-// const BACKEND_URL = 'http://localhost:8000/rest/';
-const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
+const BACKEND_URL = environment.BACKEND_URL;
 
 @Injectable({
     providedIn: 'root'
