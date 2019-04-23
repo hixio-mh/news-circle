@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'group', loadChildren: './group/group.module#GroupPageModule' },
   { path: 'group/:id', loadChildren: './group-news/group-news.module#GroupNewsPageModule' },
+  { path: 'groupmember/:id', loadChildren: './group-member/group-member.module#GroupMemberPageModule' },
+
 ];
 @NgModule({
   imports: [

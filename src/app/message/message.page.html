@@ -16,15 +16,15 @@
             </ion-chip>
         </ion-list-header>
         <ion-slides [options]="sliderConfig"> 
-        <ion-slide *ngFor="let invitation of invitationList">
+        <ion-slide *ngFor="let thank of thanksList">
             <ion-card>
                 <ion-card-header>
-                    <!-- <ion-button float-left size="small"  shape="round" fill="outline">  -->
+                    <!-- <ion-button float-left size="small"  shape="round" fill="clear">  -->
                         <ion-icon float-left name="close-circle-outline"></ion-icon>
                         <!-- </ion-button>               -->
-                <ion-card-title> Amy thanks your share of post 'WSJ'. 
+                <ion-card-title> {{thank.thank_origin.user_name}} thanks your share '{{thank.news_group.news.news_title}}'
                   </ion-card-title>
-                <ion-card-subtitle>(07/10/2019 07:10 pm)</ion-card-subtitle>
+                <ion-card-subtitle>in the Group [{{thank.news_group.group.group_name}}]</ion-card-subtitle>
                   </ion-card-header>
               <ion-card-content>
               </ion-card-content>
