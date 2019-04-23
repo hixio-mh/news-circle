@@ -152,7 +152,7 @@ class UserGroupView(APIView):
         if user_group_serializer.is_valid():
             user_group_serializer.save()
             return Response(user_group_serializer.data, status=status.HTTP_200_OK)
-        return Response(user_group_serializer.data, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
+        return Response(user_group_serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
     def put(self, request):
         userId = request.data["user_id"]

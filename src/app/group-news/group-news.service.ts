@@ -48,6 +48,11 @@ export class GroupNewsService {
             (resolve, reject) => {
                 this.httpClient.post<any>(`${BACKEND_URL}thank/1/`, data).subscribe(
                     result => {
+                        this.news.map (d => {
+                            if (d.newsgroup.news_group_id === newsGroupId) {
+                                d.num_thank++;
+                            }
+                        })
                         resolve(result);
                     }, err => {
                         console.log(`Cannot post data.`)

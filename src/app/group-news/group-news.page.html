@@ -14,8 +14,8 @@
     <ion-card *ngFor="let news of newsfeed" >
       <ion-card-content>
         <p class="source-header" (click)="goToArticle(news.newsgroup.news.news_url, news.newsgroup.news.news_source)">{{news.newsgroup.news.news_source}}</p>
-        <h2 class="feed-item-title" (click)="goToArticle(news.news_url, news.news_source)">{{news.newsgroup.news.news_title}}</h2>
-        <p (click)="goToArticle(news.news_url, news.news_source)">{{news.newsgroup.news.news_content}}</p>
+        <h2 class="feed-item-title" (click)="goToArticle(news.newsgroup.news.news_url, news.news_source)">{{news.newsgroup.news.news_title}}</h2>
+        <p (click)="goToArticle(news.newsgroup.news.news_url, news.news_source)">{{news.newsgroup.news.news_content}}</p>
         <p>Shared by {{news.newsgroup.poster.user_name}}</p>
         
       </ion-card-content>
