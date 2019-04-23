@@ -89,7 +89,7 @@ class NewsGroupSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = NewsGroup
-        fields = ('news_group_id', 'news', 'group', 'poster')
+        fields = ('news', 'group', 'poster')
 
 class ThankSerializer(serializers.ModelSerializer):
     thank_target = UserSerializer(many = False)
