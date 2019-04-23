@@ -76,4 +76,7 @@ export class GroupNewsPage {
       return await modal.present();
     }
 
+    onThank(newsId, targetId, groupId) {
+      this.groupNewsService.sendThank(newsId, groupId, this.curUserId, targetId);
+    }
 }
