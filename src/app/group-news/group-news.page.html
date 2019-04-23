@@ -22,7 +22,7 @@
       <ion-item>
           <ion-icon name="md-heart"  float-right></ion-icon>
           <ion-icon name="share-alt"  float-right (click)="onShare(news.newsgroup.news.news_id)"></ion-icon>
-          <ion-icon name="md-thumbs-up"  float-right (click)="onThank(news.newsgroup.news.news_id, news.newsgroup.group.group_id, news.newsgroup.poster.user_id)"></ion-icon>
+          <ion-icon name="md-thumbs-up"  float-right (click)="onThank(news.id, news.newsgroup.poster.user_id)"></ion-icon>
           <p>Has {{news.num_thank}} Thanks</p>
       </ion-item>
     </ion-card>

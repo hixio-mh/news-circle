@@ -37,12 +37,11 @@ export class GroupNewsService {
         return this.newsListener.asObservable();
     }
 
-    sendThank(newsId, groupId, userId, targetId) {
+    sendThank(newsGroupId,  userId, targetId) {
         let data = {
             thank_target: targetId,
             thank_origin: userId,
-            group_id: groupId,
-            news_id: newsId
+            news_group_id: newsGroupId 
         }
         console.log(data)
         return new Promise(
