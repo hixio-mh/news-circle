@@ -14,9 +14,9 @@ import { ShareModalComponent } from '../newsfeed/share-modal/share-modal.compone
 })
 export class GroupNewsPage {
   newsfeed: any;
+  newsUpdate = new Subject();
   groups: any;
   groupId: number;
-  groupsUpdate = new Subject();
   private curUserId: number;
 
   constructor(
@@ -27,7 +27,6 @@ export class GroupNewsPage {
     private route: ActivatedRoute,
     private groupService: GroupService) {
       this.groupId = this.route.snapshot.params.id
-      console.log(`News of group ${this.groupId}`);
       this.newsfeed = this.groupNewsService.news;
       this.groupNewsService.getGroupNews(this.groupId);
       this.groupNewsService.getGroupNewsUpdate().subscribe( updated => {
