@@ -37,4 +37,26 @@ export class GroupNewsService {
         return this.newsListener.asObservable();
     }
 
+    sendThank(newsId, groupId, userId, targetId) {
+        let data = {
+            thank_target: targetId,
+            thank_origin: userId,
+            group_id: groupId,
+            news_id: newsId
+        }
+        console.log(data)
+        return new Promise(
+            (resolve, reject) => {
+                this.httpClient.post<any>(`${BACKEND_URL}thank/1/`, data).subscribe(
+                    result => {
+                        resolve(result);
+                    }, err => {
+                        console.log(`Cannot post data.`)
+                        reject(err);
+                    }
+                )
+            }
+        )
+    }
+
 }
