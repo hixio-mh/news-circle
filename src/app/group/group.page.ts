@@ -81,7 +81,7 @@ export class GroupPage implements OnInit {
   }
 
   manageMember(groupId){
-    this.nav.navigateForward(`/group/${groupId}`);
+    this.nav.navigateForward(`/groupmember/${groupId}`);
   }
   
   ngOnInit() {

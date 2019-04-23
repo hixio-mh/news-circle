@@ -4,8 +4,9 @@ import { Subject } from 'rxjs';
 import { GroupMemberService } from '../group-member/group-member.service';
 import { MessageService } from '../message/message.service';
 
-const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
-// const BACKEND_URL = 'http://localhost:8000/rest/';
+import { environment } from '../../environments/environment';
+
+let BACKEND_URL = environment.BACKEND_URL;
 
 @Injectable({
   providedIn: 'root'

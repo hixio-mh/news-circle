@@ -25,7 +25,7 @@ export class GroupNewsPage {
     private modalController: ModalController,
     private iab: InAppBrowser,
     private route: ActivatedRoute,
-    private groupService: GroupService ) {
+    private groupService: GroupService) {
       this.groupId = this.route.snapshot.params.id
       console.log(`News of group ${this.groupId}`);
       this.newsfeed = this.groupNewsService.news;
@@ -76,7 +76,8 @@ export class GroupNewsPage {
       return await modal.present();
     }
 
-    onThank(newsId, targetId, groupId) {
-      this.groupNewsService.sendThank(newsId, groupId, this.curUserId, targetId);
+    onThank(newsGroupId, targetId) {
+      this.groupNewsService.sendThank(newsGroupId, this.curUserId, targetId);
+      this.groupNewsService.getGroupNews(this.groupId);
     }
 }

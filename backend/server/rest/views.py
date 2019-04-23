@@ -202,9 +202,8 @@ class NewsGroupView(APIView):
             news_serializer = NewsGroupSerializer(newsGroup, many = True)
             data = []
             for newsgroup in news_serializer.data:
-                print(newsgroup)
                 num_thank = Thank.objects.filter(news_group = newsgroup['news_group_id']).count()
-                data.append({"newsgroup": newsgroup, "num_thank": num_thank})
+                data.append({"id":newsgroup['news_group_id'],"newsgroup": newsgroup, "num_thank": num_thank})
             return Response(data, status = status.HTTP_200_OK)
         except Exception as e:
             print(e)
@@ -250,14 +249,9 @@ class ThankView(APIView):
         thank_target = User.objects.get(user_id = thank_target_id)
         thank_origin_id = data['thank_origin']
         thank_origin = User.objects.get(user_id = thank_origin_id)
-        group_id = data['group_id']
-        group = Group.objects.get(group_id = group_id)
-        user_id = thank_target_id
-        user = User.objects.get(user_id = user_id)
-        news_id = data['news_id']
-        news = News.objects.get(news_id = news_id)
+        news_group_id = data['news_group_id']
         try:
-            news_group = NewsGroup.objects.filter(news = news, group = group, poster = user)[0]
+            news_group = NewsGroup.objects.get(news_group_id = news_group_id)
             thank = Thank.objects.create(thank_target = thank_target, thank_origin = thank_origin, news_group = news_group)
             if thank:
                 thank.save()

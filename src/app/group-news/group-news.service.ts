@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { MessageService } from '../message/message.service';
 
 let BACKEND_URL = environment.BACKEND_URL;
 
@@ -13,7 +14,7 @@ export class GroupNewsService {
     public news: any;
     private newsListener = new Subject<any>();
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private messageService: MessageService ) {
         
     }
 
@@ -37,18 +38,18 @@ export class GroupNewsService {
         return this.newsListener.asObservable();
     }
 
-    sendThank(newsId, groupId, userId, targetId) {
+    sendThank(newsGroupId, userId, targetId) {
         let data = {
             thank_target: targetId,
             thank_origin: userId,
-            group_id: groupId,
-            news_id: newsId
+            news_group_id: newsGroupId
         }
         console.log(data)
         return new Promise(
             (resolve, reject) => {
                 this.httpClient.post<any>(`${BACKEND_URL}thank/1/`, data).subscribe(
                     result => {
+                        this.messageService.getThanks(targetId);
                         resolve(result);
                     }, err => {
                         console.log(`Cannot post data.`)
