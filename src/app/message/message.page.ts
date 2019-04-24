@@ -28,8 +28,15 @@ export class MessagePage implements OnInit {
             this.invitationList = updated;
             console.log(this.invitationList);
           });
-    this.thanksList = this.message.getThanks(this.receiverId);
-    }
+    this.message.getThanks(this.receiverId).then(res=>{
+      this.thanksList = res;
+        })
+        this.message.thanksUpdate().subscribe(
+          updated=>{
+            this.thanksList = updated;
+            console.log(this.thanksList);
+    })
+  }
     
 
 
@@ -47,5 +54,8 @@ export class MessagePage implements OnInit {
     //status change: decline
     this.message.rejectInvitation(invitationId,this.receiverId,groupId);
   }
+  readThank(thank_id){
+    this.message.readThank(thank_id,this.receiverId);
+}
 
 }

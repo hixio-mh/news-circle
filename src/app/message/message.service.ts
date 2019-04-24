@@ -3,15 +3,19 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { GroupMemberService } from '../group-member/group-member.service';
 import { GroupService } from '../group/group.service';
+import { environment } from '../../environments/environment';
 
-// const BACKEND_URL = 'http://localhost:8000/rest/';
-const BACKEND_URL = 'https://news-circle.herokuapp.com/rest/';
+let BACKEND_URL = environment.BACKEND_URL;
+
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
   private invitation: any;
   private invitationListener = new Subject();
+  private thanksList: any;
+  private thanksListListener = new Subject();
+
 
   constructor(private httpClient:HttpClient, private groupMemberService: GroupMemberService, private groupService: GroupService) { }
 
@@ -51,13 +55,12 @@ acceptInvitation(invitationId,receiverId,groupId){
           res=>{
             //TODO: UPDATE MEMBERS
              this.groupMemberService.getMembers(res.group);
-             this.groupService.getGroupById(receiverId);
+            //  this.groupService.getGroupById(receiverId);
 
         });
   }
 
 rejectInvitation(invitationId,receiverId,groupId){
-  // const body = {"status":"reject"};
   let body = new FormData();
   body.append('status', "reject");
   this.httpClient.put<any>(`${BACKEND_URL}invitation/${invitationId}/`,body).subscribe(
@@ -69,17 +72,46 @@ rejectInvitation(invitationId,receiverId,groupId){
   body.append('group_id',groupId) 
   this.httpClient.put<any>(`${BACKEND_URL}usergroup/`,body).subscribe(
           res=>{
-             console.log(res.group);
-             //TODO: UPDATE GROUP
              this.groupMemberService.getMembers(res.group);
-             this.groupService.getGroupById(receiverId);
-
-
+            //  this.groupService.getGroupById(receiverId);
         });
   
 }
 
 getThanks(userId){
+  return new Promise(
+    (resolve, reject) => {
+        this.httpClient.get<any>(`${BACKEND_URL}thank/${userId}/`).subscribe(res => {
+          this.thanksList = res.filter(thank=>{
+            return thank.status=="unread"}
+            );
+          console.log(this.thanksList);
+          this.thanksListListener.next(this.thanksList);
+          resolve(res);
+        }, err => {
+            console.log("cannot get thanks");
+            reject(err);
+        });
+    }
+);
+  }
+  thanksUpdate(){
+  return this.thanksListListener.asObservable();
+}
+readThank(thankId,userId){
+    return new Promise(
+      (resolve, reject) => {
+          let body = new FormData();
+          body.append('status', "read");
+          this.httpClient.put<any>(`${BACKEND_URL}thank/${thankId}/`,body).subscribe(res => {
+            this.getThanks(userId);
+            resolve(res);
+          }, err => {
+              console.log("cannot unread thank");
+              reject(err);
+          });
+      }
+  );
 
 }
 

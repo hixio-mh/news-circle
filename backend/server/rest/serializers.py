@@ -89,7 +89,7 @@ class NewsGroupSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = NewsGroup
-        fields = ('news', 'group', 'poster')
+        fields = ('news_group_id', 'news', 'group', 'poster')
 
 class ThankSerializer(serializers.ModelSerializer):
     thank_target = UserSerializer(many = False)
@@ -98,4 +98,9 @@ class ThankSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Thank
-        fields = ('thank_id', 'thank_target', 'thank_origin', 'news_group')
+        fields = ('thank_id', 'thank_target', 'thank_origin', 'news_group','status')
+
+class ThankChangeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Thank
+        fields = ('thank_id', 'thank_target_id', 'thank_origin_id', 'news_group_id','status')
