@@ -33,9 +33,11 @@
     "cordova-plugin-ionic": "^5.3.0",
     "cordova-plugin-nativestorage": "2.3.2",
     "core-js": "^2.5.4",
-    "rxjs": "~6.3.3",
+    "q": "^1.5.1",
+    "rxjs": "^6.3.3",
+    "symbol-observable": "^1.2.0",
     "twitter-connect-plugin": "0.6.0",
-    "zone.js": "~0.8.29"
+    "zone.js": "^0.8.29"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
@@ -62,7 +64,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~8.0.0",
     "tslint": "~5.12.0",
-    "typescript": "~3.1.6"
+    "typescript": "^3.1.6"
   },
   "description": "An Ionic project",
   "cordova": {

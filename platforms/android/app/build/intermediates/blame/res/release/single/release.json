@@ -1,0 +1,522 @@
+[
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\xml_config.xml.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__ic_success.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__ic_success.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_default.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_default.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__addressbook_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__addressbook_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__logo.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__logo.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_tw__activity_oauth.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\layout\\tw__activity_oauth.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__ic_success.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__ic_success.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_progress_dark.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable\\progress_dark.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__spinner_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__spinner_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-mdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-port-mdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__share_email_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-hdpi-v4\\tw__share_email_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_retweet_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_retweet_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_tw__tweet.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\layout\\tw__tweet.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_tweet_verified.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_tweet_verified.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__ic_success.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__ic_success.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__bg_tweet_compact.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable\\tw__bg_tweet_compact.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_tweet_photo_error_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_tweet_photo_error_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-xxhdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_icon.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_tw__tweet_compact.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\layout\\tw__tweet_compact.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__spinner_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__spinner_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__addressbook_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__addressbook_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-ldpi_icon.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\mipmap-ldpi\\icon.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__logo.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__logo.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-mdpi_icon.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\mipmap-mdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__activity_contacts.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__activity_contacts.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__spinner_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__spinner_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__bg_tweet.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable\\tw__bg_tweet.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__activity_confirmation.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__activity_confirmation.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_tweet_verified.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_tweet_verified.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__logo_name.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__logo_name.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__logo.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__logo.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__transparent.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__transparent.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\raw_tw__cacerts.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\raw\\tw__cacerts"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__activity_phone_number.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__activity_phone_number.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__logo_name.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__logo_name.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__login_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__login_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__spinner_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__spinner_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_dgts__digits_btn_pressed.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable\\dgts__digits_btn_pressed.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_retweet_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_retweet_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_pressed.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_pressed.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_logo_default.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-xhdpi-v4\\tw__ic_logo_default.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_logo_white.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_logo_white.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_logo_white.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_logo_white.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-mdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-land-mdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-xhdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_tweet_photo_error_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_tweet_photo_error_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_action_next_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_action_previous_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__ic_success.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__ic_success.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_icon.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_logo_default.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-hdpi-v4\\tw__ic_logo_default.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_tweet_photo_error_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_tweet_photo_error_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_default_light.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_default_light.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_dgts__digits_btn.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable\\dgts__digits_btn.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__logo.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__logo.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_logo_default.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-xxhdpi-v4\\tw__ic_logo_default.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_tweet_photo_error_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_tweet_photo_error_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__ic_success.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__ic_success.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_action_previous_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-ldpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-port-ldpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_retweet_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_retweet_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-xxxhdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxxhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__spinner_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__spinner_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_tweet_photo_error_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_tweet_photo_error_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_tw__activity_share_email.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\layout\\tw__activity_share_email.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__addressbook_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__addressbook_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__country_row.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__country_row.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_logo_blue.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_logo_blue.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_action_next_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_action_remove.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-hdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-port-hdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi_ic_action_previous_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__spinner_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__spinner_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__spinner_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__spinner_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_pressed_light.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_pressed_light.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_retweet_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_retweet_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_action_next_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-hdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-land-hdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_retweet_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_retweet_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_logo_default.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-mdpi-v4\\tw__ic_logo_default.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__share_email_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-xxhdpi-v4\\tw__share_email_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-port-xxxhdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxxhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_text_color_light.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_text_color_light.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__login_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__login_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__logo_name.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__logo_name.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_retweet_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_retweet_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__spinner_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__spinner_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__logo_name.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__logo_name.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__addressbook_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__addressbook_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-xhdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-land-xhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_action_previous_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_previous_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_logo_white.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_logo_white.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__addressbook_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__addressbook_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_dgts__digits_btn_default.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable\\dgts__digits_btn_default.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__state_button.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__state_button.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_logo_white.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_logo_white.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_tweet_photo_error_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_tweet_photo_error_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi_icon.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\mipmap-hdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-ldpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-land-ldpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_dgts__login_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xhdpi-v4\\dgts__login_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_retweet_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_retweet_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_dgts__spinner_light.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-mdpi-v4\\dgts__spinner_light.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi_icon.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\mipmap-xhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_disabled.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_disabled.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_tw__login_btn_light.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable\\tw__login_btn_light.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_tweet_photo_error_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_tweet_photo_error_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_action_next_item.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi_ic_action_remove.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__login_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__login_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi_ic_action_remove.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__activity_failure.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__activity_failure.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_logo_blue.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_logo_blue.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__ic_tweet_verified.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xhdpi-v4\\tw__ic_tweet_verified.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_retweet_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_retweet_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-land-xxhdpi_screen.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__logo.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__logo.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi_ic_action_remove.png.flat",
+        "source": "C:\\UCAD\\news-circle\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable_progress_light.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable\\progress_light.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxxhdpi-v4_dgts__logo_name.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxxhdpi-v4\\dgts__logo_name.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__ic_logo_blue.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-mdpi-v4\\tw__ic_logo_blue.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_tw__share_email_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-xhdpi-v4\\tw__share_email_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_logo_blue.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_logo_blue.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_tw__share_email_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\twitter-core-1.3.2.aar\\ab743b1930a2ecf5905ae912a66d884e\\res\\drawable-mdpi-v4\\tw__share_email_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_tw__ic_tweet_verified.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-hdpi-v4\\tw__ic_tweet_verified.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\layout_dgts__activity_pin_code.xml.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\layout\\dgts__activity_pin_code.xml"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_dgts__login_header.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-xxhdpi-v4\\dgts__login_header.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_dgts__spinner_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\digits-1.4.0.aar\\5305850f412e7d7f4eb279c8a6bc2ad6\\res\\drawable-hdpi-v4\\dgts__spinner_dark.png"
+    },
+    {
+        "merged": "C:\\UCAD\\news-circle\\platforms\\android\\app\\build\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_tw__ic_tweet_photo_error_dark.png.flat",
+        "source": "C:\\Users\\Nicho\\.gradle\\caches\\transforms-1\\files-1.1\\tweet-ui-1.1.0.aar\\d8b49644c77e69b1312391afa37149af\\res\\drawable-xxhdpi-v4\\tw__ic_tweet_photo_error_dark.png"
+    }
+]
