@@ -260,3 +260,15 @@ class ThankView(APIView):
         except Exception as e:
             print(e)
             return Response({'ERROR':'BAD REQUEST'}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def put(self, request, pk):
+        """
+        read thank of thankid = pk
+        """
+        thank = Thank.objects.get(thank_id = pk)
+        thank_serializer = ThankChangeSerializer(thank,data =request.data)
+        if thank_serializer.is_valid():
+            thank_serializer.save()
+            return Response(thank_serializer.data, status=status.HTTP_201_CREATED)
+        return Response(thank_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

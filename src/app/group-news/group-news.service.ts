@@ -54,6 +54,7 @@ export class GroupNewsService {
                                 d.num_thank++;
                             }
                         })
+                        this.messageService.getThanks(targetId);
                         resolve(result);
                     }, err => {
                         console.log(`Cannot post data.`)

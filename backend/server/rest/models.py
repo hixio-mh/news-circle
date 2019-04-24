@@ -89,6 +89,7 @@ class Thank(models.Model):
     thank_target = models.ForeignKey('User', models.CASCADE, null = False, related_name = "target")
     thank_origin = models.ForeignKey('User', models.CASCADE, null = False, related_name = "origin")
     news_group = models.ForeignKey('NewsGroup', models.CASCADE, null = False, related_name = "newsgroup")
+    status = models.TextField(null = False, max_length = 100, default = "unread")
 
     class Meta:
         managed = True

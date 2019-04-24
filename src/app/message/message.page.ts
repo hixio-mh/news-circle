@@ -54,5 +54,8 @@ export class MessagePage implements OnInit {
     //status change: decline
     this.message.rejectInvitation(invitationId,this.receiverId,groupId);
   }
+  readThank(thank_id){
+    this.message.readThank(thank_id,this.receiverId);
+}
 
 }

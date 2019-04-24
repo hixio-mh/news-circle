@@ -82,11 +82,14 @@ getThanks(userId){
   return new Promise(
     (resolve, reject) => {
         this.httpClient.get<any>(`${BACKEND_URL}thank/${userId}/`).subscribe(res => {
-          this.thanksList = res;
-          this.thanksListListener.next(this.thanksList)  ;
+          this.thanksList = res.filter(thank=>{
+            return thank.status=="unread"}
+            );
+          console.log(this.thanksList);
+          this.thanksListListener.next(this.thanksList);
           resolve(res);
         }, err => {
-            console.log("cannot get invitaions");
+            console.log("cannot get thanks");
             reject(err);
         });
     }
@@ -94,6 +97,22 @@ getThanks(userId){
   }
   thanksUpdate(){
   return this.thanksListListener.asObservable();
+}
+readThank(thankId,userId){
+    return new Promise(
+      (resolve, reject) => {
+          let body = new FormData();
+          body.append('status', "read");
+          this.httpClient.put<any>(`${BACKEND_URL}thank/${thankId}/`,body).subscribe(res => {
+            this.getThanks(userId);
+            resolve(res);
+          }, err => {
+              console.log("cannot unread thank");
+              reject(err);
+          });
+      }
+  );
+
 }
 
   }

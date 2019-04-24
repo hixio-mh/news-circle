@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   APIKEY: "f4c7e02bf8e34e0f92e8c50173e86026",
   FABRICKEY: "216e42b43ae97a9af6238975fa48fefa2c525a60",
-  BACKEND_URL: "http://localhost:8000/rest/",
-  // BACKEND_URL: 'https://news-circle.herokuapp.com/rest/'
+  // BACKEND_URL: "http://localhost:8000/rest/",
+  BACKEND_URL: 'https://news-circle.herokuapp.com/rest/'
 };
 
 /*
