@@ -55,7 +55,7 @@ acceptInvitation(invitationId,receiverId,groupId){
           res=>{
             //TODO: UPDATE MEMBERS
              this.groupMemberService.getMembers(res.group);
-            //  this.groupService.getGroupById(receiverId);
+             this.groupService.fetchGroups(receiverId);
 
         });
   }
@@ -73,7 +73,7 @@ rejectInvitation(invitationId,receiverId,groupId){
   this.httpClient.put<any>(`${BACKEND_URL}usergroup/`,body).subscribe(
           res=>{
              this.groupMemberService.getMembers(res.group);
-            //  this.groupService.getGroupById(receiverId);
+             this.groupService.fetchGroups(receiverId);
         });
   
 }

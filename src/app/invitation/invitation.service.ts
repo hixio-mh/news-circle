@@ -62,7 +62,7 @@ export class InvitationService {
             );
 
             //3 update message inbox
-            this.messageService.getInvitation(receiverId);
+            // this.messageService.getInvitation(receiverId);
 
 }
    

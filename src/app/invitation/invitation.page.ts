@@ -45,6 +45,7 @@ export class InvitationPage implements OnInit {
     });
     this.receiver.forEach(receiver => {
       this.invitation.invite(this.groupId,this.sender,receiver.user_id);
+      console.log(receiver.user_id);
     })
 
     this.close();
