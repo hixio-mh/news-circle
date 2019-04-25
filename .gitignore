@@ -50,4 +50,7 @@ keys.txt
 
 resources
 
-*.pyc
+*.py
+
+platforms/ios/
+platforms/android/

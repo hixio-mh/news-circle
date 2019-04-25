@@ -85,6 +85,7 @@
 $dark-gray: #22222a;
 
 $toolbar-title-color: #055A75;
+$toolbar-title-text-align:center;
 
 .menu-custom {
   color: red;
@@ -95,6 +96,7 @@ ion-title {
   color: $dark-gray;
   font-weight: bold;
   position: absolute;
+  text-align: center;   
   left: 33%;
   bottom: 0.75em;
 }
@@ -118,5 +120,5 @@ button.button-native.sc-ion-back-button-md {
 }
 .toolbar-title{
   color:var(--ion-color-primary);
-  display: center;
+  text-align: center; 
 }
