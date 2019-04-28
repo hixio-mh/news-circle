@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar mode="md" style="text-align: center">
-    <ion-title text-center text-center class="toolbar-title" color="primary">
+    <ion-title text-center class="toolbar-title" color="primary">
       News Circle
     </ion-title>
     <ion-buttons slot="start">
@@ -16,11 +16,16 @@
       <ion-card-content>
         <p class="source-header" (click)="goToArticle(news.news_url, news.news_source)">{{news.news_source}}</p>
         <h2 class="feed-item-title" (click)="goToArticle(news.news_url, news.news_source)">{{news.news_title}}</h2>
-        <p (click)="goToArticle(news.news_url, news.news_source)">{{news.news_content}}</p> 
+        <p (click)="goToArticle(news.news_url, news.news_source)">{{news.news_content}}        
+           <a href={{news.news_url}}> Orignal Link </a> 
+        </p>
       </ion-card-content>
       <ion-item>
-          <ion-icon name="share-alt"  float-right (click)="onShare(news.news_id)"></ion-icon>
-      </ion-item>
+        <ion-button fill="outline" (click)="onShare(news.news_id)">
+          <ion-icon name="share-alt"  float-right ></ion-icon>
+         Share
+        </ion-button>
+        </ion-item>
     </ion-card>
 
 </ion-content>

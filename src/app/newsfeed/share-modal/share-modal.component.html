@@ -1,3 +1,8 @@
+<ion-header>
+    <ion-toolbar mode="md" style="text-align: center">
+    </ion-toolbar>
+  </ion-header>
+
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let group of groups">
@@ -7,5 +12,8 @@
   </ion-list>
   <ion-button (click)="onShare()" float-left>
     Share
-  </ion-button>  
+  </ion-button> 
+  <ion-button (click)="close()" color="secondary" float-right>
+      Close
+    </ion-button>  
 </ion-content>

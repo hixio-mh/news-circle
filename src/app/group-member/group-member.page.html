@@ -1,18 +1,17 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="md" style="text-align: center">
     
-    <ion-back-button slot="start" defaultHref="group"></ion-back-button>
-    <ion-title text-center class="toolbar-title"> {{groupName}}</ion-title>
-
+    <ion-back-button defaultHref="group"></ion-back-button>
+    <ion-title text-center class="toolbar-title"> Group {{groupName}}</ion-title>
+    <ion-button slot="end" shape="round" fill="clear" (click)="addUser()">
+        <ion-icon float-right name="person-add"></ion-icon>
+    </ion-button>
   </ion-toolbar> 
    
 </ion-header>
 
 <ion-content padding>
-    <ion-button shape="round" (click)="addUser()">
-        <ion-icon float-left name="person-add"></ion-icon>
-         Invite Member
-    </ion-button>
+    
 <ion-list>
     <ion-list-header>
         <ion-label>Members</ion-label>

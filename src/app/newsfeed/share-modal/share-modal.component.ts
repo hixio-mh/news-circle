@@ -30,4 +30,7 @@ export class ShareModalComponent implements OnInit {
     this.newsService.shareToGroup(selectedGroups, this.id);
     this.modal.dismiss();
   }
+  close(){
+    this.modal.dismiss();
+  }
 }

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="md" style="text-align: center">
     <ion-title text-center class="toolbar-title" color="primary">
       {{groupName}}
     </ion-title>
@@ -15,14 +15,23 @@
       <ion-card-content>
         <p class="source-header" (click)="goToArticle(news.newsgroup.news.news_url, news.newsgroup.news.news_source)">{{news.newsgroup.news.news_source}}</p>
         <h2 class="feed-item-title" (click)="goToArticle(news.newsgroup.news.news_url, news.news_source)">{{news.newsgroup.news.news_title}}</h2>
-        <p (click)="goToArticle(news.newsgroup.news.news_url, news.news_source)">{{news.newsgroup.news.news_content}}</p>
-        <p>Shared by {{news.newsgroup.poster.user_name}}</p>
+        <p (click)="goToArticle(news.newsgroup.news.news_url, news.news_source)">{{news.newsgroup.news.news_content}} 
+          <a href={{news.news_url}}> Orignal Link </a> </p>
         
+
+        <p>Shared by {{news.newsgroup.poster.user_name}}</p>
+
       </ion-card-content>
       <ion-item>
-          <ion-icon name="share-alt"  float-right (click)="onShare(news.newsgroup.news.news_id)"></ion-icon>
-          <ion-icon name="thumbs-up"  float-right (click)="onThank(news.id, news.newsgroup.poster.user_id)"></ion-icon>
+        <ion-buttons>
+          <ion-button fill="outline" color="primary" (click)="onShare(news.newsgroup.news.news_id)">
+          <ion-icon name="share-alt"  float-right ></ion-icon>
+         </ion-button>
+        <ion-button fill="outline" color="secondary" (click)="onThank(news.id, news.newsgroup.poster.user_id)">
+          <ion-icon name="thumbs-up"  float-right ></ion-icon>
           <p>({{news.num_thank}})</p>
+        </ion-button>
+        </ion-buttons>
       </ion-item>
     </ion-card>
 
