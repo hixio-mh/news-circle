@@ -30,5 +30,8 @@ export class CreateModalComponent implements OnInit {
     this.groupService.createGroup(newGroup, this.uid);
     this.modalController.dismiss();
   }
+  onClose(){
+    this.modalController.dismiss();
+  }
 
 }

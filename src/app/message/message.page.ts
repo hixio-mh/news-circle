@@ -11,6 +11,7 @@ export class MessagePage implements OnInit {
   receiverId: any;
   group: any;
   thanksList:any;
+  inbox: any;
 
   sliderConfig = {
     slidesPerView: 2.2,
@@ -28,17 +29,18 @@ export class MessagePage implements OnInit {
             this.invitationList = updated;
             console.log(this.invitationList);
           });
-    this.message.getThanks(this.receiverId).then(res=>{
-      this.thanksList = res;
-        })
-        this.message.thanksUpdate().subscribe(
+    this.message.getThanks(this.receiverId);
+    this.message.thanksUpdate().subscribe(
           updated=>{
             this.thanksList = updated;
             console.log(this.thanksList);
-    })
+    });
+    this.inbox = 'invitation';
   }
     
-
+  segmentChanged(event) {
+    this.inbox = event;
+  }
 
   ngOnInit() {
     
@@ -54,8 +56,10 @@ export class MessagePage implements OnInit {
     //status change: decline
     this.message.rejectInvitation(invitationId,this.receiverId,groupId);
   }
-  readThank(thank_id){
-    this.message.readThank(thank_id,this.receiverId);
+  readThank(thank_id,thank){
+    this.message.readThank(thank_id,thank);
+    // this.thanksList.splice(index,1);
+
 }
 
 }

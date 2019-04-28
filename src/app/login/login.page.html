@@ -1,12 +1,13 @@
 <ion-header>
 
   <ion-toolbar>
-      <ion-title class="toolbar-title" color="primary"> 
-        Log In
+      <ion-thumbnail position="center">
+          <ion-img [src]="logo" ></ion-img>  
+      </ion-thumbnail>  
+      <ion-title class="toolbar-title" color="primary" text-center> 
+         NewsCircle
         </ion-title>  
-        <ion-thumbnail slot="start">
-            <ion-img [src]="logo" ></ion-img>  
-        </ion-thumbnail>       
+            
   </ion-toolbar>
 </ion-header>
 
@@ -31,9 +32,10 @@
         <ion-input [(ngModel)]="password"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button color="primary" (click)="onRegister()" float-left>Register
+
+  <ion-button expand="block" color="primary" (click)="onLogIn()" medium>Log In 
   </ion-button>
-  <ion-button color="primary" (click)="onLogIn()" float-right>Log In 
-  </ion-button>
+  <ion-button expand="block" style="display:flex" color="secondary" (click)="onRegister()" medium>Register
+    </ion-button>
 </ion-content>
 

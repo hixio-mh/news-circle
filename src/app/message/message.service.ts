@@ -98,13 +98,15 @@ getThanks(userId){
   thanksUpdate(){
   return this.thanksListListener.asObservable();
 }
-readThank(thankId,userId){
+readThank(thankId,thank){
     return new Promise(
       (resolve, reject) => {
           let body = new FormData();
           body.append('status', "read");
           this.httpClient.put<any>(`${BACKEND_URL}thank/${thankId}/`,body).subscribe(res => {
-            this.getThanks(userId);
+          const index = this.thanksList.indexOf(thank);
+          this.thanksList.splice(index,1);
+          console.log(this.thanksList);
             resolve(res);
           }, err => {
               console.log("cannot unread thank");

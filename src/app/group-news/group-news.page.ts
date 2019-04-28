@@ -16,6 +16,7 @@ export class GroupNewsPage {
   newsfeed: any;
   newsUpdate = new Subject();
   groups: any;
+  groupName: any;
   groupId: number;
   private curUserId: number;
 
@@ -47,10 +48,14 @@ export class GroupNewsPage {
       groupService.fetchGroups(this.curUserId).then(
         res => {
           this.groups = res;
+          this.groupName = res[0]['group_name'];
           console.log(this.groups);
           this.groupService.getGroupUpdated().subscribe(
             updated => {
               this.groups = updated;
+              this.groupName = updated[0]['group_name'];
+              
+              console.log(this.groupName);
             }
           )
         }

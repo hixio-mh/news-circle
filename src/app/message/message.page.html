@@ -1,27 +1,33 @@
 <ion-header>
   <ion-toolbar class="toolbar-background">
-    <ion-title class="toolbar-title">Inbox</ion-title>
+    <!-- <ion-title class="toolbar-title">Inbox</ion-title> -->
     <ion-buttons slot="start">
       <ion-menu-button class="menu-button" autoHide="false"></ion-menu-button>
     </ion-buttons>
+    <ion-segment [(ngModel)]='inbox'>
+        <ion-segment-button value="invitation">
+            <ion-label>Invitation</ion-label>
+            <ion-icon name="mail"></ion-icon>
+          
+        </ion-segment-button>
+        <ion-segment-button value="thanks">
+            <ion-label>Thanks</ion-label>
+            <ion-icon name="heart"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <div>
-        <ion-chip>
-            <ion-icon name="mail"></ion-icon>
-            <ion-label>Invitation</ion-label>
-          </ion-chip> 
-        <ion-list>
-              <ion-list-header>  </ion-list-header>
-              <ion-slides [options]="sliderConfig">
-                <ion-slide  *ngFor="let invitation of invitationList">
-          <ion-card>
+   
+
+    <div [ngSwitch]="inbox">
+ 
+        <ion-list *ngSwitchCase="'invitation'" >
+        <ion-card  *ngFor="let invitation of invitationList">
             <ion-card-header>
-                <!-- <ion-thumbnail><ion-avatar style="width:50%;height:auto"> <img src="../../assets/image/avatar.png"> </ion-avatar></ion-thumbnail> -->
-                <!-- <ion-icon name="person"></ion-icon> -->
-                <ion-card-title>{{invitation.sender.user_name}} Invite you to join {{invitation.group.group_name}}</ion-card-title>
+                 <ion-card-title>{{invitation.sender.user_name}} Invite you to join {{invitation.group.group_name}}</ion-card-title>
                 <ion-card-subtitle>Status: {{invitation.status}}</ion-card-subtitle>
                 <ion-card-subtitle>Time: {{invitation.timestamp | date:'fullDate'}}</ion-card-subtitle>
               </ion-card-header>
@@ -36,27 +42,31 @@
                 <ion-icon name="close"></ion-icon>
                 Decline</ion-button>
         </ion-card>
-      </ion-slide>
-      </ion-slides>
   </ion-list>
-  </div>
-  <div>
-    <ion-chip>
-        <ion-icon name="heart"></ion-icon>
-        <ion-label>Thanks</ion-label>
-      </ion-chip>
 
-  <ion-list *ngFor="let thank of thanksList">
-      <!-- <ion-list-header></ion-list-header> -->
-      <ion-item>
-          <ion-button float-left size="small"  shape="round" fill="clear" (click)="readThank(thank.thank_id)"> 
-            <ion-icon float-left name="close-circle-outline"></ion-icon>
-          </ion-button>              
-        <ion-label> {{thank.thank_origin.user_name}} thanks your share '{{thank.news_group.news.news_title}} in the Group [{{thank.news_group.group.group_name}}].
-        </ion-label>
-      </ion-item>
+  <ion-list *ngSwitchCase="'thanks'">
+      <ion-card *ngFor="let thank of thanksList">
+
+        <ion-card-header>
+            <ion-card-title> {{thank.thank_origin.user_name}} thanks your share
+                </ion-card-title>       
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-card-subtitle>
+                    News title: {{thank.news_group.news.news_title}} 
+            </ion-card-subtitle>
+            <ion-card-subtitle>
+                Group: {{thank.news_group.group.group_name}}
+            </ion-card-subtitle>
+
+      </ion-card-content>
+      <ion-button  slot="start" fill="clear" (click)="readThank(thank.thank_id,thank)"> 
+            <ion-icon size="small" name="close-circle-outline"></ion-icon>
+            Unread
+    </ion-button>
+      </ion-card>
   </ion-list>
+
 </div>
-
-
 </ion-content>
