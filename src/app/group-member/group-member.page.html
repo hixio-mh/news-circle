@@ -3,15 +3,16 @@
     
     <ion-back-button slot="start" defaultHref="group"></ion-back-button>
     <ion-title text-center class="toolbar-title"> {{groupName}}</ion-title>
-    <ion-button shape="round" fill="clear" float-right (click)="addUser()">
-        <ion-icon name="person-add"></ion-icon>
-</ion-button>
+
   </ion-toolbar> 
    
 </ion-header>
 
 <ion-content padding>
-
+    <ion-button shape="round" (click)="addUser()">
+        <ion-icon float-left name="person-add"></ion-icon>
+         Invite Member
+    </ion-button>
 <ion-list>
     <ion-list-header>
         <ion-label>Members</ion-label>
@@ -43,4 +44,5 @@
   
   </ion-list>
 </div>
+
 </ion-content>

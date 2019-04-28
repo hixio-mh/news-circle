@@ -4,23 +4,23 @@
     <ion-buttons slot="start">
       <ion-menu-button class="menu-button" autoHide="false"></ion-menu-button>
     </ion-buttons>
-    <ion-segment [(ngModel)]='inbox'>
-        <ion-segment-button value="invitation">
-            <ion-label>Invitation</ion-label>
-            <ion-icon name="mail"></ion-icon>
-          
-        </ion-segment-button>
-        <ion-segment-button value="thanks">
-            <ion-label>Thanks</ion-label>
-            <ion-icon name="heart"></ion-icon>
-        </ion-segment-button>
-      </ion-segment>
+
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-   
+        <ion-segment [(ngModel)]='inbox'>
+                <ion-segment-button value="invitation">
+                    <ion-label>Invitation</ion-label>
+                    <ion-icon name="mail"></ion-icon>
+                  
+                </ion-segment-button>
+                <ion-segment-button value="thanks">
+                    <ion-label>Thanks</ion-label>
+                    <ion-icon name="heart"></ion-icon>
+                </ion-segment-button>
+              </ion-segment>
 
     <div [ngSwitch]="inbox">
  
