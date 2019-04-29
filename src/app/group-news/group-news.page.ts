@@ -6,6 +6,7 @@ import { GroupService } from '../group/group.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { GroupNewsService } from './group-news.service';
 import { ShareModalComponent } from '../newsfeed/share-modal/share-modal.component';
+import { GroupMemberService } from '../group-member/group-member.service';
 
 @Component({
   selector: 'app-group-news',
@@ -22,17 +23,21 @@ export class GroupNewsPage {
 
   constructor(
     private groupNewsService: GroupNewsService,
+    private groupMemberervice: GroupMemberService,
     private router: Router,
     private modalController: ModalController,
     private iab: InAppBrowser,
     private route: ActivatedRoute,
     private groupService: GroupService) {
       this.groupId = this.route.snapshot.params.id
+      this.groupMemberervice.getGroup(this.groupId).then(res=>{
+          this.groupName = res['group'].group_name;
+          console.log(this.groupName);
+      })
       this.newsfeed = this.groupNewsService.news;
       this.groupNewsService.getGroupNews(this.groupId);
       this.groupNewsService.getGroupNewsUpdate().subscribe( updated => {
         this.newsfeed = updated;
-        console.log(this.newsfeed);
       })
       this.curUserId = parseInt(localStorage.getItem('user_id'));
         this.route.params.subscribe(
@@ -41,6 +46,7 @@ export class GroupNewsPage {
                 this.groupNewsService.getGroupNews(this.groupId).then(
                   res => {
                     this.newsfeed = res;
+
                   }
                 )
             }
@@ -48,15 +54,12 @@ export class GroupNewsPage {
       groupService.fetchGroups(this.curUserId).then(
         res => {
           this.groups = res;
-          this.groupName = res[0]['group_name'];
+          
           console.log(this.groups);
           this.groupService.getGroupUpdated().subscribe(
             updated => {
               this.groups = updated;
-              this.groupName = updated[0]['group_name'];
-              
-              console.log(this.groupName);
-            }
+          }
           )
         }
       )
