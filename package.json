@@ -37,7 +37,7 @@
     "rxjs": "^6.3.3",
     "symbol-observable": "^1.2.0",
     "twitter-connect-plugin": "0.6.0",
-    "zone.js": "^0.8.29"
+    "zone.js": "^0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
